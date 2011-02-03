@@ -1,0 +1,7 @@
+*.elc
+*~
+autocomplete.history
+auto-save-list
+backup
+tramp
+emacs-23.2.tar.gz
