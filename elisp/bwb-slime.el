@@ -11,6 +11,9 @@
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
 (add-hook 'slime-repl-mode-hook 'enable-paredit-mode)
 (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+(add-hook 'slime-repl-mode-hook
+          (lambda ()
+            (setq show-trailing-whitespace nil)))
 (slime-setup '(slime-repl))
 
 (provide 'bwb-slime)
