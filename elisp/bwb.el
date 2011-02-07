@@ -1,4 +1,5 @@
 ;;; Brandon Barry's elisp library.
+(require 'ispell)
 (require 'thingatpt)
 
 (defun bwb-init-mac-os-x ()
@@ -13,13 +14,17 @@
    mac-command-modifier 'meta)
   ;; http://cocoaspell.leuski.net/
   ;; http://www.emacswiki.org/emacs/CocoAspell
-  (setq ispell-program-name "aspell")
-  (setq ispell-dictionary-alist
-        '((nil
-           "[A-Za-z]" "[^A-Za-z]" "'" nil
-           ("-B" "-d" "english" "--dict-dir"
-            "/Library/Application Support/cocoAspell/aspell6-en-6.0-0")
-           nil iso-8859-1))))
+  (add-to-list 'ispell-dictionary-alist
+        '("english"
+          "[A-Za-z]"
+          "[^A-Za-z]"
+          "'"
+          nil
+          ("-B" "-d" "english" "--dict-dir"
+           "/Library/Application Support/cocoAspell/aspell6-en-6.0-0")
+          nil iso-8859-1))
+  (setq ispell-program-name "aspell"
+        ispell-dictionary "english"))
 
 (defun bwb-init-linux ()
   "Tune Emacs for Linux.
