@@ -7,9 +7,19 @@
   (tool-bar-mode 0)
   (global-set-key [(meta return)] 'ns-toggle-fullscreen)
   (add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
+  (add-to-list 'exec-path "/usr/local/bin")
   (setq
    browse-url-generic-program "open"
-   mac-command-modifier 'meta))
+   mac-command-modifier 'meta)
+  ;; http://cocoaspell.leuski.net/
+  ;; http://www.emacswiki.org/emacs/CocoAspell
+  (setq ispell-program-name "aspell")
+  (setq ispell-dictionary-alist
+        '((nil
+           "[A-Za-z]" "[^A-Za-z]" "'" nil
+           ("-B" "-d" "english" "--dict-dir"
+            "/Library/Application Support/cocoAspell/aspell6-en-6.0-0")
+           nil iso-8859-1)))
 
 (defun bwb-init-linux ()
   "Tune Emacs for Linux.
