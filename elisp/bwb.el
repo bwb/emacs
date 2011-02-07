@@ -19,7 +19,7 @@
            "[A-Za-z]" "[^A-Za-z]" "'" nil
            ("-B" "-d" "english" "--dict-dir"
             "/Library/Application Support/cocoAspell/aspell6-en-6.0-0")
-           nil iso-8859-1)))
+           nil iso-8859-1))))
 
 (defun bwb-init-linux ()
   "Tune Emacs for Linux.
@@ -53,7 +53,7 @@ http://emacs-fu.blogspot.com/2008/12/highlighting-lines-that-are-too-long.html"
    nil
    '(("^[^\n]\\{80\\}\\(.*\\)$" 1 font-lock-warning-face t))))
 
-(defun bwb-earmuff-symbol()
+(defun bwb-earmuff-symbol ()
   "Insert earmuffs at `point' or wrap `symbol-at-point' with earmuffs.
 SYMBOL becomes *SYMBOL*, with point after the right *.  Otherwise
 ** is inserted, with point in the middle."
@@ -67,5 +67,10 @@ SYMBOL becomes *SYMBOL*, with point after the right *.  Otherwise
     (progn
       (insert "**")
       (backward-char))))
+
+(defun bwb-prev-window ()
+  "Use `other-window' to select the previous window in the cycle."
+  (interactive)
+  (other-window -1))
 
 (provide 'bwb)

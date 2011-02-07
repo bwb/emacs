@@ -150,7 +150,7 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; Here's the old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-;; Add *earmuffs* used by various Lisps and markup languages.
+(global-set-key (kbd "C-x p") 'bwb-prev-window)
 (global-set-key (kbd "C-c *") 'bwb-earmuff-symbol)
 
 ;;; Enable (default disabled) Commands
