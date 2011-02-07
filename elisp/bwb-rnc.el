@@ -5,5 +5,7 @@
 (add-hook 'rnc-mode-hook
           (lambda ()
             (setq rnc-indent-level 2)))
+;; TODO add a command that runs ~/emacs/vendor/trang on the current
+;; buffer.
 
 (provide 'bwb-rnc)
