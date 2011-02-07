@@ -37,7 +37,6 @@
 ;;
 ;; `~/emacs/feature-fullscreen.patch'
 ;; Adds fullscreen support for Cocoa Emacs.
-
 
 ;;; TODO
 
@@ -48,7 +47,7 @@
 ;;   well-formed XML.  That rules out `nxml-mode'.  Also consider
 ;;   template syntax, CSS, and JavaScript.  Maybe `mumamo-mode'?
 ;; - Try `hippie-expand'
-
+
 ;;; Load Path
 
 (add-to-list 'load-path "~/emacs/elisp")
@@ -102,7 +101,7 @@
 (require 'bwb-tassilo-horn)
 (require 'bwb-woman)            ; Read manual pages without an external program
 (require 'bwb-vc)               ; Interact with version control systems
-
+
 ;;; OS-specific Initialization
 
 (cond
@@ -152,7 +151,7 @@
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 (global-set-key (kbd "C-x p") 'bwb-prev-window)
 (global-set-key (kbd "C-c *") 'bwb-earmuff-symbol)
-
+
 ;;; Enable (default disabled) Commands
 
 (put 'narrow-to-region 'disabled nil)
