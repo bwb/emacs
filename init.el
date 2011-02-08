@@ -3,7 +3,7 @@
 ;; Thanks to all (direct and indirect) Emacs contributors.
 ;; If you're new to Emacs, start here:
 ;; http://www.gnu.org/software/emacs/tour/
-
+
 ;;; Layout
 
 ;; `~/emacs'
@@ -73,7 +73,7 @@
 ;;   (provide 'bwb-MODE-FOO)
 ;;
 ;; Do not load one `bwb-MODE-LIBRARY' from another `bwb-MODE-LIBRARY'.
-;; That way lies madness.
+;; That way madness lies.
 ;;
 ;;   (require 'bwb-MODE-BAR) ; NO
 ;;   ...
@@ -81,6 +81,7 @@
 
 (require 'bwb)                  ; All `~/emacs' can use this
 (require 'bwb-auto-complete)
+(require 'bwb-bookmark)
 (require 'bwb-c)
 (require 'bwb-clojure)
 (require 'bwb-emacs-lisp)

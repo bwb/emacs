@@ -1,0 +1,12 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("emacs-lisp-introduction"
+ (front-context-string . "File: eintr,  No")
+ (rear-context-string)
+ (position . 211751)
+ (filename . "/Applications/Emacs.app/Contents/Resources/info/eintr")
+ (info-node . "Optional Arguments")
+ (handler . Info-bookmark-jump))
+)
