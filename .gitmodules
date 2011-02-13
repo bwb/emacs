@@ -4,3 +4,6 @@
 [submodule "vendor-git/ac-slime"]
 	path = vendor-git/ac-slime
 	url = https://github.com/purcell/ac-slime.git
+[submodule "vendor-git/clojure-mode"]
+	path = vendor-git/clojure-mode
+	url = https://github.com/technomancy/clojure-mode.git
