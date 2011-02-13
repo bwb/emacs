@@ -2,11 +2,11 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("emacs-lisp-introduction"
- (front-context-string . "File: eintr,  No")
- (rear-context-string)
- (position . 211751)
+(("Digression into C"
+ (front-context-string . "\n8.4 Digression ")
+ (rear-context-string . " & Storing Text\n")
+ (position . 1645)
  (filename . "/Applications/Emacs.app/Contents/Resources/info/eintr")
- (info-node . "Optional Arguments")
+ (info-node . "Digression into C")
  (handler . Info-bookmark-jump))
 )
