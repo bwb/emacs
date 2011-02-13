@@ -7,3 +7,6 @@
 [submodule "vendor-git/clojure-mode"]
 	path = vendor-git/clojure-mode
 	url = https://github.com/technomancy/clojure-mode.git
+[submodule "vendor-git/smex"]
+	path = vendor-git/smex
+	url = https://github.com/nonsequitur/smex.git

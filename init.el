@@ -53,9 +53,11 @@
 (add-to-list 'load-path "~/emacs/elisp")
 (add-to-list 'load-path "~/emacs/vendor")
 (add-to-list 'load-path "~/emacs/vendor/ess/lisp")
+;; Use the `vendor-git' subdirectory for Git submodules.
 (add-to-list 'load-path "~/emacs/vendor-git/ac-slime")
 (add-to-list 'load-path "~/emacs/vendor-git/auto-complete")
 (add-to-list 'load-path "~/emacs/vendor-git/clojure-mode")
+(add-to-list 'load-path "~/emacs/vendor-git/smex")
 ;; http://www.enigmacurry.com/ suggests adding a package hierarchy to
 ;; the load-path as follows.
 ;; (progn (cd "~/emacs/vendor")
