@@ -53,6 +53,7 @@
 (add-to-list 'load-path "~/emacs/elisp")
 (add-to-list 'load-path "~/emacs/vendor")
 (add-to-list 'load-path "~/emacs/vendor/ess/lisp")
+(add-to-list 'load-path "~/emacs/vendor-git/ac-slime")
 (add-to-list 'load-path "~/emacs/vendor-git/auto-complete")
 ;; http://www.enigmacurry.com/ suggests adding a package hierarchy to
 ;; the load-path as follows.

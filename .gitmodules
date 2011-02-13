@@ -1,3 +1,6 @@
 [submodule "vendor-git/auto-complete"]
 	path = vendor-git/auto-complete
 	url = https://github.com/m2ym/auto-complete.git
+[submodule "vendor-git/ac-slime"]
+	path = vendor-git/ac-slime
+	url = https://github.com/purcell/ac-slime.git
