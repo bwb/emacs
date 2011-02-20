@@ -1,5 +1,6 @@
 ;;; Configure `python-mode'.
 (require 'bwb)
+(require 'python)
 
 (add-hook 'python-mode-hook
           'bwb-80-column-warning)

@@ -28,6 +28,7 @@
 ;; Brandon Barry's Emacs Lisp libraries (and related files) belong here.
 ;;
 ;; `~/emacs/vendor'
+;; `~/emacs/vendor-git'
 ;; Emacs Lisp libraries (and related files) from third parties belong
 ;; here.  This includes libraries that are not part of GNU Emacs as well as
 ;; alternate versions of GNU Emacs libraries.
@@ -58,6 +59,7 @@
 (add-to-list 'load-path "~/emacs/vendor-git/auto-complete")
 (add-to-list 'load-path "~/emacs/vendor-git/clojure-mode")
 (add-to-list 'load-path "~/emacs/vendor-git/smex")
+(add-to-list 'load-path "~/emacs/vendor-git/fgallina-python")
 ;; http://www.enigmacurry.com/ suggests adding a package hierarchy to
 ;; the load-path as follows.
 ;; (progn (cd "~/emacs/vendor")
