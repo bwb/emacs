@@ -89,6 +89,7 @@
 (require 'bwb-auto-complete)
 (require 'bwb-bookmark)
 (require 'bwb-c)
+(require 'bwb-chromium-browser) ; Run an edit server for Chromium
 (require 'bwb-clojure)
 (require 'bwb-emacs-lisp)
 (require 'bwb-erc)              ; IRC client
