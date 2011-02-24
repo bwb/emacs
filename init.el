@@ -54,12 +54,14 @@
 (add-to-list 'load-path "~/emacs/elisp")
 (add-to-list 'load-path "~/emacs/vendor")
 (add-to-list 'load-path "~/emacs/vendor/ess/lisp")
+(add-to-list 'load-path "~/emacs/vendor/yasnippet")
 ;; Use the `vendor-git' subdirectory for Git submodules.
 (add-to-list 'load-path "~/emacs/vendor-git/ac-slime")
 (add-to-list 'load-path "~/emacs/vendor-git/auto-complete")
 (add-to-list 'load-path "~/emacs/vendor-git/clojure-mode")
 (add-to-list 'load-path "~/emacs/vendor-git/smex")
-(add-to-list 'load-path "~/emacs/vendor-git/fgallina-python")
+;;; Not ready for prime-time.
+;; (add-to-list 'load-path "~/emacs/vendor-git/fgallina-python")
 ;; http://www.enigmacurry.com/ suggests adding a package hierarchy to
 ;; the load-path as follows.
 ;; (progn (cd "~/emacs/vendor")
@@ -109,6 +111,7 @@
 (require 'bwb-tassilo-horn)
 (require 'bwb-woman)            ; Read manual pages without an external program
 (require 'bwb-vc)               ; Interact with version control systems
+(require 'bwb-yasnippet)        ; Expand abbreviations into text templates
 
 ;;; OS-specific Initialization
 
