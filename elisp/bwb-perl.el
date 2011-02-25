@@ -2,5 +2,6 @@
 (require 'bwb)
 
 (add-hook 'perl-mode-hook 'bwb-80-column-warning)
+(add-hook 'perl-mode-hook 'hs-minor-mode)
 
 (provide 'bwb-perl)

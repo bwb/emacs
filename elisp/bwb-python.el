@@ -3,44 +3,39 @@
 (require 'python)
 
 (add-hook 'python-mode-hook
-          'bwb-80-column-warning)
-(add-hook 'python-mode-hook
           (lambda ()
-            (setq fill-column 78)))
+            (setq fill-column 78)
+            (bwb-80-column-warning)))
 (add-hook 'inferior-python-mode-hook
           (lambda ()
             (setq show-trailing-whitespace nil)))
 
-;;; FIXME
-;;; virtualenv, virtualenvwrapper integration
+;; Use virtualenvs.  Based on tecnniques used by David Reid, Jesse
+;; Legg, and Doug Hellmann.
 ;;
-;; Based on tecnniques used by David Reid, Jesse Legg, and Doug
-;; Hellmann.
+;; TODO investigate buffer-local values of `python-command' when using
+;; `python-shell' (C-c C-c in a `python-mode' buffer).
 ;;
-;; More elaborate techniques failed.  This will have to do for now.
-;; run-python seems to work, but python-shell (via C-c C-c) seems to
-;; doesn't respond to changes in python-command (until the source
-;; buffer is closed).
-;;
-;; FIXME python-toggle-shells isn't working.  Explicitly setting
-;; python-command.
-;(defun bwb-virtualenv-postactivate (virtualenv)
-;  (setq python-python-command (concat virtualenv "/bin/python"))
-;  ;; (python-toggle-shells 'cpython)
-;  (setq python-command python-python-command)
-;  )
-;(defun bwb-virtualenv-postdeactivate ()
-;  (setq python-python-command "python")
-;  ;; (python-toggle-shells 'cpython)
-;  (setq python-command python-python-command)
-;  )
-;; Don't forget to add these
+;; Use virtualenv hooks and emacsclient to call these functions.
 ;; ~/.virtualenvs/postactivate:
 ;;   emacsclient -e "(bwb-virtualenv-postactivate \"$VIRTUAL_ENV\")" > /dev/null
 ;; ~/.virtualenvs/postdeactivate:
 ;;   emacsclient -e "(bwb-virtualenv-postdeactivate)" > /dev/null
-;; FIXME kludge until virtualenvwrapper works with aliased "rm -i" command
-;(setq python-python-command "/home/bbarry/.virtualenvs/bw3/bin/python")
-;(setq python-command "/home/bbarry/.virtualenvs/bw3/bin/python")
+(defun bwb-python-update-command (command)
+  "Set `python-command' to `command'.
+The next shell command to run a Python interpreter will use
+`command'."
+  (setq python-python-command command)
+  (setq python-command python-python-command)
+  (python-toggle-shells 'cpython)
+  (python-toggle-shells 'cpython))
+
+(defun bwb-python-virtualenv-postactivate (virtualenv)
+  "Set `python-command' to use the newly activated virtualenv."
+  (bwb-python-update-command (concat virtualenv "/bin/python")))
+
+(defun bwb-python-virtualenv-postdeactivate ()
+  "Set `python-command' to use the default python command."
+  (bwb-python-update-command "python"))
 
 (provide 'bwb-python)

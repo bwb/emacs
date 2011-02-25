@@ -97,6 +97,7 @@
 (require 'bwb-erc)              ; IRC client
 (require 'bwb-ess)              ; Emacs Speaks Statistics
 (require 'bwb-flymake)          ; Check syntax on the fly
+(require 'bwb-hs-minor-mode)    ; Toggle hiding of code and comment blocks
 (require 'bwb-ido)              ; Interactively Do Things
 (require 'bwb-multi-term)
 (require 'bwb-paredit)          ; "Pseudostructural" Lisp code editing
