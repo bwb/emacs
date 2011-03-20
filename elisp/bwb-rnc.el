@@ -17,7 +17,7 @@ Writes a FILENAME (default s/.rnc$/.FORMAT/ on name of BUFFER)."
          (ido-completing-read "schema language: " '("XSD" "DTD" "BOTH") nil t)))
   ;; TODO run Trang.
   (message "Trang %s %s" buffer lang))
-	    
-(define-key rnc-mode-map (kbd "C-c C-c") 'bwb-rnc-trang-current-buffer)	    
+
+(define-key rnc-mode-map (kbd "C-c C-c") 'bwb-rnc-trang-current-buffer)
 
 (provide 'bwb-rnc)

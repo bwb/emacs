@@ -94,7 +94,7 @@
 (require 'bwb-chromium-browser) ; Run an edit server for Chromium
 (require 'bwb-clojure)
 (require 'bwb-emacs-lisp)
-(require 'bwb-erc)              ; IRC client
+;; (require 'bwb-erc)              ; IRC client
 (require 'bwb-ess)              ; Emacs Speaks Statistics
 (require 'bwb-flymake)          ; Check syntax on the fly
 (require 'bwb-hs-minor-mode)    ; Toggle hiding of code and comment blocks

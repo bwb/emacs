@@ -18,16 +18,17 @@
 ;;
 ;; Use virtualenv hooks and emacsclient to call these functions.
 ;; ~/.virtualenvs/postactivate:
-;;   emacsclient -e "(bwb-virtualenv-postactivate \"$VIRTUAL_ENV\")" > /dev/null
+;;   emacsclient \
+;;       -e "(bwb-python-virtualenv-postactivate \"$VIRTUAL_ENV\")" > /dev/null
 ;; ~/.virtualenvs/postdeactivate:
-;;   emacsclient -e "(bwb-virtualenv-postdeactivate)" > /dev/null
+;;   emacsclient \
+;;       -e "(bwb-python-virtualenv-postdeactivate)" > /dev/null
 (defun bwb-python-update-command (command)
   "Set `python-command' to `command'.
 The next shell command to run a Python interpreter will use
 `command'."
   (setq python-python-command command)
   (setq python-command python-python-command)
-  (python-toggle-shells 'cpython)
   (python-toggle-shells 'cpython))
 
 (defun bwb-python-virtualenv-postactivate (virtualenv)
