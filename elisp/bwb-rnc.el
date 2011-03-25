@@ -14,7 +14,8 @@ Writes a FILENAME (default s/.rnc$/.FORMAT/ on name of BUFFER)."
   ;; Use multiple input arguments to interactive.
   (interactive
    (list (read-buffer "Run Trang on buffer: " (current-buffer))
-         (ido-completing-read "schema language: " '("XSD" "DTD" "BOTH") nil t)))
+         (ido-completing-read "schema language: "
+                              '("RNG" "XSD" "DTD" "ALL") nil t)))
   ;; TODO run Trang.
   (message "Trang %s %s" buffer lang))
 

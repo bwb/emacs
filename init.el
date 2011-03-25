@@ -48,6 +48,7 @@
 ;;   well-formed XML.  That rules out `nxml-mode'.  Also consider
 ;;   template syntax, CSS, and JavaScript.  Maybe `mumamo-mode'?
 ;; - Try `hippie-expand'
+;; - Try Desktop, Bookmark+
 
 ;;; Load Path
 
