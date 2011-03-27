@@ -2,7 +2,13 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("forward-paragraph"
+(("rinos-place-restaurant"
+ (time 19854 46737 796057)
+ (visits . 0)
+ (filename . "   - no file -")
+ (location . "http://www.rinosplace.com/menu.html")
+ (handler . bmkp-jump-url-browse))
+("forward-paragraph"
  (buffer-name . "*info*")
  (front-context-string . "\n12.4 `forward-p")
  (rear-context-string . ": Regexp Search\n")
@@ -17,6 +23,8 @@
  (info-node . "forward-paragraph")
  (handler . Info-bookmark-jump))
 ("quora"
+ (time 19854 35176 339379)
+ (visits . 0)
  (filename . "   - no file -")
  (location . "http://www.quora.com/")
  (handler . bmkp-jump-url-browse))
