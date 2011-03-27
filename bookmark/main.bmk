@@ -1,0 +1,37 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("forward-paragraph"
+ (buffer-name . "*info*")
+ (front-context-string . "\n12.4 `forward-p")
+ (rear-context-string . ": Regexp Search\n")
+ (front-context-region-string)
+ (rear-context-region-string)
+ (visits . 0)
+ (time 19854 33675 983440)
+ (created 19854 33675 983440)
+ (position . 115551)
+ (end-position . 115551)
+ (filename . "/Applications/Emacs.app/Contents/Resources/info/eintr")
+ (info-node . "forward-paragraph")
+ (handler . Info-bookmark-jump))
+("quora"
+ (filename . "   - no file -")
+ (location . "http://www.quora.com/")
+ (handler . bmkp-jump-url-browse))
+("pro-git"
+ (filename . "   - no file -")
+ (location . "http://progit.org/book/ch2-3.html")
+ (handler . bmkp-jump-url-browse))
+("mbta-subway-schedule"
+ (filename . "   - no file -")
+ (location . "http://www.mbta.com/uploadedFiles/Documents/Schedules_and_Maps/Subway/frequency-schedule.pdf")
+ (handler . bmkp-jump-url-browse))
+("bookmark-plus"
+ (time 19854 33146 898064)
+ (visits . 0)
+ (filename . "   - no file -")
+ (location . "http://www.emacswiki.org/emacs/BookmarkPlus#toc23")
+ (handler . bmkp-jump-url-browse))
+)

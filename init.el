@@ -48,12 +48,14 @@
 ;;   well-formed XML.  That rules out `nxml-mode'.  Also consider
 ;;   template syntax, CSS, and JavaScript.  Maybe `mumamo-mode'?
 ;; - Try `hippie-expand'
-;; - Try Desktop, Bookmark+
+;; - Try Desktop, then finish del2pin.
+;; - Try p4.el
 
 ;;; Load Path
 
 (add-to-list 'load-path "~/emacs/elisp")
 (add-to-list 'load-path "~/emacs/vendor")
+(add-to-list 'load-path "~/emacs/vendor/bookmark+")
 (add-to-list 'load-path "~/emacs/vendor/ess/lisp")
 (add-to-list 'load-path "~/emacs/vendor/yasnippet")
 ;; Use the `vendor-git' subdirectory for Git submodules.
@@ -90,13 +92,15 @@
 
 (require 'bwb)                  ; All `~/emacs' can use this
 (require 'bwb-auto-complete)
-(require 'bwb-bookmark)
+;; (require 'bwb-bookmark)
+(require 'bwb-bookmark+)
 (require 'bwb-c)
 (require 'bwb-chromium-browser) ; Run an edit server for Chromium
 (require 'bwb-clojure)
 (require 'bwb-emacs-lisp)
 ;; (require 'bwb-erc)              ; IRC client
 (require 'bwb-ess)              ; Emacs Speaks Statistics
+(require 'bwb-find-dired)
 (require 'bwb-flymake)          ; Check syntax on the fly
 (require 'bwb-hs-minor-mode)    ; Toggle hiding of code and comment blocks
 (require 'bwb-ido)              ; Interactively Do Things
@@ -150,8 +154,6 @@
 ;; Don't sleep Emacs accidentally.  Suggested by drhoades in a Hacker
 ;; News .emacs discussion
 (global-set-key (kbd "C-z") nil)
-;; Don't compose-mail accidentally.
-(global-set-key (kbd "C-x m") nil)
 ;; Open the link at point in the url-generic-program.
 (global-set-key (kbd "C-x ;") 'browse-url)
 ;; Complete commands smexily.
@@ -183,3 +185,6 @@
 (save-excursion
   (set-buffer "*terminal<1>*")
   (rename-buffer "*terminal-main*" t))
+;; Open the *Bookmark List*
+;; (bookmark-bmenu-list)
+;; (switch-to-buffer "*Bookmark List*")
