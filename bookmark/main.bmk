@@ -2,7 +2,15 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("rinos-place-restaurant"
+(("fun-with-python-newer-tools"
+ (filename . "   - no file -")
+ (location . "http://pycon.blip.tv/file/4883247?filename=Pycon-PyCon2011FunWithPythonsNewerTools386.mp4mu")
+ (handler . bmkp-jump-url-browse))
+("jwz-2010-music-wrapup"
+ (filename . "   - no file -")
+ (location . "http://www.jwz.org/gruntle/music2010.html")
+ (handler . bmkp-jump-url-browse))
+("rinos-place-restaurant"
  (time 19854 46737 796057)
  (visits . 0)
  (filename . "   - no file -")
