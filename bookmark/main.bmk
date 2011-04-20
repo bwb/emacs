@@ -2,7 +2,37 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("fun-with-python-newer-tools"
+(("socket.io"
+ (filename . "   - no file -")
+ (location . "http://socket.io/")
+ (handler . bmkp-jump-url-browse))
+("backbone.js"
+ (filename . "   - no file -")
+ (location . "http://documentcloud.github.com/backbone/")
+ (handler . bmkp-jump-url-browse))
+("underscore.js"
+ (filename . "   - no file -")
+ (location . "http://documentcloud.github.com/underscore/")
+ (handler . bmkp-jump-url-browse))
+("git-tips-tricks-workflows"
+ (filename . "   - no file -")
+ (location . "http://nuclearsquid.com/writings/git-tricks-tips-workflows.html")
+ (handler . bmkp-jump-url-browse))
+("clever-algorithms"
+ (filename . "   - no file -")
+ (location . "http://cleveralgorithms.com/nature-inspired/index.html")
+ (handler . bmkp-jump-url-browse))
+("jark"
+ (filename . "   - no file -")
+ (location . "http://icylisper.in/clojure/jark.html")
+ (handler . bmkp-jump-url-browse))
+("pro-git-book"
+ (filename . "   - no file -")
+ (location . "http://progit.org/book/ch3-3.html")
+ (handler . bmkp-jump-url-browse))
+("fun-with-python-newer-tools"
+ (time 19863 29436 912668)
+ (visits . 1)
  (filename . "   - no file -")
  (location . "http://pycon.blip.tv/file/4883247?filename=Pycon-PyCon2011FunWithPythonsNewerTools386.mp4mu")
  (handler . bmkp-jump-url-browse))
@@ -22,8 +52,8 @@
  (rear-context-string . ": Regexp Search\n")
  (front-context-region-string)
  (rear-context-region-string)
- (visits . 0)
- (time 19854 33675 983440)
+ (visits . 2)
+ (time 19878 3970 61004)
  (created 19854 33675 983440)
  (position . 115551)
  (end-position . 115551)
@@ -31,14 +61,10 @@
  (info-node . "forward-paragraph")
  (handler . Info-bookmark-jump))
 ("quora"
- (time 19854 35176 339379)
- (visits . 0)
+ (time 19865 64668 234588)
+ (visits . 1)
  (filename . "   - no file -")
  (location . "http://www.quora.com/")
- (handler . bmkp-jump-url-browse))
-("pro-git"
- (filename . "   - no file -")
- (location . "http://progit.org/book/ch2-3.html")
  (handler . bmkp-jump-url-browse))
 ("mbta-subway-schedule"
  (filename . "   - no file -")

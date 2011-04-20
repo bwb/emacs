@@ -11,10 +11,10 @@
 (add-to-list 'term-bind-key-alist
              '("M-d" . term-send-forward-kill-word))
 
-(define-key term-raw-map (kbd "C-c C-j") 'term-line-mode)
-
 (add-hook 'term-mode-hook
           (lambda ()
+            ;; FIXME this doesn't take effect on startup, or in new buffers.
+            (define-key term-raw-map (kbd "C-c C-j") 'term-line-mode)
             (setq show-trailing-whitespace nil)))
 
 (provide 'bwb-multi-term)

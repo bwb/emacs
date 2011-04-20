@@ -7,4 +7,6 @@
             (setq rst-toc-insert-max-level 2)))
 (add-to-list 'auto-mode-alist '("\\.rst$" . rst-mode))
 
+;;; TODO Write a command to generate :ROLE:`INTERPRETED TEXT <BLAH>`
+
 (provide 'bwb-rst)

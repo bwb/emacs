@@ -33,9 +33,6 @@
 ;; here.  This includes libraries that are not part of GNU Emacs as well as
 ;; alternate versions of GNU Emacs libraries.
 ;;
-;; `~/emacs/emacs-23.2.tar.gz'
-;; Source code from http://ftp.gnu.org/pub/gnu/emacs/
-;;
 ;; `~/emacs/feature-fullscreen.patch'
 ;; Adds fullscreen support for Cocoa Emacs.
 
@@ -50,7 +47,7 @@
 ;; - Try `hippie-expand'
 ;; - Try Desktop, then finish del2pin.
 ;; - Try p4.el
-
+
 ;;; Load Path
 
 (add-to-list 'load-path "~/emacs/elisp")
@@ -108,6 +105,7 @@
 (require 'bwb-paredit)          ; "Pseudostructural" Lisp code editing
 (require 'bwb-perl)
 (require 'bwb-python)
+(require 'bwb-re-builder)
 (require 'bwb-rnc)              ; Relax NG compact schema (`nxml-mode')
 (require 'bwb-rst)              ; reStructuredText
 (require 'bwb-sh)
@@ -118,7 +116,7 @@
 (require 'bwb-woman)            ; Read manual pages without an external program
 (require 'bwb-vc)               ; Interact with version control systems
 (require 'bwb-yasnippet)        ; Expand abbreviations into text templates
-
+
 ;;; OS-specific Initialization
 
 (cond
@@ -156,17 +154,7 @@
 (global-set-key (kbd "C-z") nil)
 ;; Open the link at point in the url-generic-program.
 (global-set-key (kbd "C-x ;") 'browse-url)
-;; Complete commands smexily.
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "C-x C-m") 'smex)
-(global-set-key (kbd "C-c C-m") 'smex)
-;; Show "commands that are relevant to the active major mode".
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; Here's the old M-x.
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-(global-set-key (kbd "C-x p") 'bwb-prev-window)
-(global-set-key (kbd "C-c *") 'bwb-earmuff-symbol)
-
+
 ;;; Enable (default disabled) Commands
 
 (put 'narrow-to-region 'disabled nil)
