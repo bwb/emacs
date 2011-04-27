@@ -3,6 +3,8 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("socket.io"
+ (time 19887 25402 599124)
+ (visits . 0)
  (filename . "   - no file -")
  (location . "http://socket.io/")
  (handler . bmkp-jump-url-browse))

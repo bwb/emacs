@@ -37,7 +37,6 @@ Use .XResources:
   (global-set-key (kbd "C-x x x") 'clipboard-kill-region)
   (global-set-key (kbd "C-x x c") 'clipboard-kill-ring-save)
   (global-set-key (kbd "C-x x v") 'clipboard-yank)
-  (add-to-list 'auto-mode-alist '("\\.xml$" . nxml-mode))
   (setq
    browse-url-generic-program (getenv "BROWSER")
    inhibit-splash-screen t))

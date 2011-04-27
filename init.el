@@ -35,6 +35,9 @@
 ;;
 ;; `~/emacs/feature-fullscreen.patch'
 ;; Adds fullscreen support for Cocoa Emacs.
+;;
+;; `~/emacs/snippets'
+;; Store custom YASnippet files.
 
 ;;; TODO
 
@@ -90,10 +93,12 @@
 (require 'bwb)                  ; All `~/emacs' can use this
 (require 'bwb-auto-complete)
 ;; (require 'bwb-bookmark)
-(require 'bwb-bookmark+)
+(require 'bwb-bookmark+)        ; Enhanced bookmark list
+(require 'bwb-buff-menu+)       ; Enhanced *Buffer List*
 (require 'bwb-c)
 (require 'bwb-chromium-browser) ; Run an edit server for Chromium
 (require 'bwb-clojure)
+(require 'bwb-dired-x)          ; Extended directory "editing"
 (require 'bwb-emacs-lisp)
 ;; (require 'bwb-erc)              ; IRC client
 (require 'bwb-ess)              ; Emacs Speaks Statistics

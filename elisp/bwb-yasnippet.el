@@ -2,6 +2,8 @@
 (require 'yasnippet)
 
 (yas/initialize)
-(yas/load-directory "~/emacs/vendor/yasnippet/snippets")
+(setq yas/root-directory '("~/emacs/snippets"
+                           "~/emacs/vendor/yasnippet/snippets"))
+(mapc 'yas/load-directory yas/root-directory)
 
 (provide 'bwb-yasnippet)

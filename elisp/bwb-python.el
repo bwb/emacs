@@ -8,7 +8,8 @@
             (bwb-80-column-warning)))
 (add-hook 'inferior-python-mode-hook
           (lambda ()
-            (setq show-trailing-whitespace nil)))
+            (setq show-trailing-whitespace nil
+                  comint-process-echoes t)))
 
 ;; Use virtualenvs.  Based on tecnniques used by David Reid, Jesse
 ;; Legg, and Doug Hellmann.
