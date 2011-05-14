@@ -49,13 +49,13 @@
 ;;   template syntax, CSS, and JavaScript.  Maybe `mumamo-mode'?
 ;; - Try `hippie-expand'
 ;; - Try Desktop, then finish del2pin.
-;; - Try p4.el
 
 ;;; Load Path
 
 (add-to-list 'load-path "~/emacs/elisp")
 (add-to-list 'load-path "~/emacs/vendor")
 (add-to-list 'load-path "~/emacs/vendor/bookmark+")
+(add-to-list 'load-path "~/emacs/vendor/color-theme")
 (add-to-list 'load-path "~/emacs/vendor/ess/lisp")
 (add-to-list 'load-path "~/emacs/vendor/yasnippet")
 ;; Use the `vendor-git' subdirectory for Git submodules.
@@ -98,8 +98,11 @@
 (require 'bwb-c)
 (require 'bwb-chromium-browser) ; Run an edit server for Chromium
 (require 'bwb-clojure)
+;; Interacts poorly with several modes, including dired and multi-term
+;; (require 'bwb-color-theme)
 (require 'bwb-dired-x)          ; Extended directory "editing"
 (require 'bwb-emacs-lisp)
+;; Seems to load minor modes globally
 ;; (require 'bwb-erc)              ; IRC client
 (require 'bwb-ess)              ; Emacs Speaks Statistics
 (require 'bwb-find-dired)
@@ -107,6 +110,9 @@
 (require 'bwb-hs-minor-mode)    ; Toggle hiding of code and comment blocks
 (require 'bwb-ido)              ; Interactively Do Things
 (require 'bwb-multi-term)
+;;; FIXME problem with P4PORT
+;;; FIXME C-x p prefix already used by bwb-prev-window
+;; (require 'bwb-p4)               ; Perforce integration
 (require 'bwb-paredit)          ; "Pseudostructural" Lisp code editing
 (require 'bwb-perl)
 (require 'bwb-python)
