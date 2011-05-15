@@ -49,6 +49,10 @@
 ;;   template syntax, CSS, and JavaScript.  Maybe `mumamo-mode'?
 ;; - Try `hippie-expand'
 ;; - Try Desktop, then finish del2pin.
+;; - Continue incorporating ideas found in
+;;   http://github.com/technomancy/emacs-starter-kit
+;;     - imenu with ido completion and automatic rescan
+;;     - byte compilation with byte-recompile-directory
 
 ;;; Load Path
 
@@ -62,15 +66,8 @@
 (add-to-list 'load-path "~/emacs/vendor-git/ac-slime")
 (add-to-list 'load-path "~/emacs/vendor-git/auto-complete")
 (add-to-list 'load-path "~/emacs/vendor-git/clojure-mode")
+(add-to-list 'load-path "~/emacs/vendor-git/js2-mode")
 (add-to-list 'load-path "~/emacs/vendor-git/smex")
-;;; Not ready for prime-time.
-;; (add-to-list 'load-path "~/emacs/vendor-git/fgallina-python")
-;; http://www.enigmacurry.com/ suggests adding a package hierarchy to
-;; the load-path as follows.
-;; (progn (cd "~/emacs/vendor")
-;;        (normal-top-level-add-subdirs-to-load-path))
-;; Though convenient, this can create a messy (broken?) load-path.  Use the
-;; technique only if necessary.
 
 ;;; Mode-specific Configuration
 
@@ -84,7 +81,7 @@
 ;;   (provide 'bwb-MODE-FOO)
 ;;
 ;; Do not load one `bwb-MODE-LIBRARY' from another `bwb-MODE-LIBRARY'.
-;; That way madness lies.
+;; That way madness lies.  Use `eval-after-load' if necessary.
 ;;
 ;;   (require 'bwb-MODE-BAR) ; NO
 ;;   ...
@@ -107,8 +104,8 @@
 (require 'bwb-ess)              ; Emacs Speaks Statistics
 (require 'bwb-find-dired)
 (require 'bwb-flymake)          ; Check syntax on the fly
-(require 'bwb-hs-minor-mode)    ; Toggle hiding of code and comment blocks
 (require 'bwb-ido)              ; Interactively Do Things
+(require 'bwb-js2)              ; Edit JavaScript
 (require 'bwb-multi-term)
 ;;; FIXME problem with P4PORT
 ;;; FIXME C-x p prefix already used by bwb-prev-window
@@ -120,6 +117,7 @@
 (require 'bwb-rnc)              ; Relax NG compact schema (`nxml-mode')
 (require 'bwb-rst)              ; reStructuredText
 (require 'bwb-sh)
+(require 'bwb-show-paren)
 (require 'bwb-slime)            ; The Superior Lisp Interaction Mode for Emacs
 (require 'bwb-smex)             ; M-x enhancement
 (require 'bwb-steve-yegge)

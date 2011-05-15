@@ -6,10 +6,7 @@
 (require 'slime)
 (require 'ac-slime)
 
-;;; TODO paredit-open-curly, paredit-close-curly.
-(add-hook 'slime-mode-hook 'enable-paredit-mode)
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
-(add-hook 'slime-repl-mode-hook 'enable-paredit-mode)
 (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
 (add-hook 'slime-repl-mode-hook
           (lambda ()

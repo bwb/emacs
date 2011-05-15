@@ -6,7 +6,6 @@
           (lambda ()
             (setq fill-column 78)
             (bwb-80-column-warning)))
-(add-hook 'python-mode-hook 'hs-minor-mode)
 (add-hook 'inferior-python-mode-hook
           (lambda ()
             (setq show-trailing-whitespace nil

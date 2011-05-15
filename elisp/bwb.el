@@ -94,5 +94,4 @@ SYMBOL becomes *SYMBOL*, with point after the right *.  Otherwise
   "TODO
 Use http://www.emacswiki.org/emacs/TransposeWindows as a starting point.")
 
-
 (provide 'bwb)

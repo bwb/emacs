@@ -4,6 +4,5 @@
 ;; Perl test scripts.
 (add-to-list 'auto-mode-alist '("\\.t$" . perl-mode))
 (add-hook 'perl-mode-hook 'bwb-80-column-warning)
-(add-hook 'perl-mode-hook 'hs-minor-mode)
 
 (provide 'bwb-perl)

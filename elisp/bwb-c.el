@@ -1,5 +1,6 @@
 ;;; Configure `c-mode'.
 (require 'bwb)
+(require 'cc-mode)
 
 (setq c-default-style "linux")
 ;; http://emacsblog.org/2007/02/10/quick-tip-defining-mode-specific-key-bindings/
