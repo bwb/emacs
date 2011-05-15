@@ -104,6 +104,7 @@
 (require 'bwb-ess)              ; Emacs Speaks Statistics
 (require 'bwb-find-dired)
 (require 'bwb-flymake)          ; Check syntax on the fly
+(require 'bwb-hippie-exp)
 (require 'bwb-ido)              ; Interactively Do Things
 (require 'bwb-js2)              ; Edit JavaScript
 (require 'bwb-multi-term)

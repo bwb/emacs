@@ -2,8 +2,10 @@
 (require 'bwb)
 (require 'js2-mode)
 
-;;(autoload 'js2-mode "js2-mode" "A better js-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+;;; TODO pick a mode (js2-mode with warnings and errors disabled or
+;;; js-mode) for use with JSON files.
+;;; TODO use mozrepl, swank-js, or another method of evaluating code.
 (add-hook 'js2-mode-hook
 	  (lambda ()
 	    (setq
