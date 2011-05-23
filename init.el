@@ -98,6 +98,7 @@
 ;; Interacts poorly with several modes, including dired and multi-term
 ;; (require 'bwb-color-theme)
 (require 'bwb-dired-x)          ; Extended directory "editing"
+(require 'bwb-ediff)
 (require 'bwb-emacs-lisp)
 ;; Seems to load minor modes globally
 ;; (require 'bwb-erc)              ; IRC client
@@ -109,8 +110,7 @@
 (require 'bwb-js2)              ; Edit JavaScript
 (require 'bwb-multi-term)
 ;;; FIXME problem with P4PORT
-;;; FIXME C-x p prefix already used by bwb-prev-window
-;; (require 'bwb-p4)               ; Perforce integration
+;;(require 'bwb-p4)               ; Perforce integration
 (require 'bwb-paredit)          ; "Pseudostructural" Lisp code editing
 (require 'bwb-perl)
 (require 'bwb-python)

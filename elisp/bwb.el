@@ -94,4 +94,7 @@ SYMBOL becomes *SYMBOL*, with point after the right *.  Otherwise
   "TODO
 Use http://www.emacswiki.org/emacs/TransposeWindows as a starting point.")
 
+(global-set-key (kbd "C-x O") 'bwb-prev-window)
+(global-set-key (kbd "C-c *") 'bwb-earmuff-symbol)
+
 (provide 'bwb)
