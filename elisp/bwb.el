@@ -25,7 +25,8 @@
            "/Library/Application Support/cocoAspell/aspell6-en-6.0-0")
           nil iso-8859-1))
   (setq ispell-program-name "aspell"
-        ispell-dictionary "english"))
+        ispell-dictionary "english")
+  (setenv "PATH" (concat (getenv "PATH") ":" (getenv "HOME") "/bin")))
 
 (defun bwb-init-linux ()
   "Tune Emacs for Linux.
