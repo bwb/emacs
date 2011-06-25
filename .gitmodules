@@ -15,4 +15,4 @@
 	url = https://github.com/mooz/js2-mode.git
 [submodule "vendor-git/markdown-mode"]
 	path = vendor-git/markdown-mode
-	url = git://jblevins.org/git/markdown-mode.git
+	url = http://jblevins.org/git/markdown-mode.git

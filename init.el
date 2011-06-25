@@ -49,6 +49,8 @@
 
 ;;;; TODO
 
+;;; Find a better way to update submodules to later commits.
+;;;
 ;;; Consider using ELPA.
 ;;;
 ;;; Add more snippets.  Add `bwb-auto-complete-yasnippet' to more mode
