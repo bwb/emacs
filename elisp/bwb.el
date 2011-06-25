@@ -1,4 +1,5 @@
-;;; Brandon Barry's elisp library.
+;;;; Brandon Barry's elisp library.
+
 (require 'ispell)
 (require 'thingatpt)
 
@@ -71,19 +72,6 @@ SYMBOL becomes *SYMBOL*, with point after the right *.  Otherwise
     (progn
       (insert "**")
       (backward-char))))
-
-;;; FIXME does not display text for some tags.
-;; (defun bwb-ido-find-tag ()
-;;   "Use `ido-completing-read' to find tags.
-;; Found at http://www.emacswiki.org/emacs/InteractivelyDoThings"
-;;   (interactive)
-;;   (tags-completion-table)
-;;   (let (tag-names)
-;;     (mapc (lambda (x)
-;;             (unless (integerp x)
-;;               (push (prin1-to-string x t) tag-names)))
-;;           tags-completion-table)
-;;     (find-tag (ido-completing-read "Tag: " tag-names))))
 
 (defun bwb-prev-window ()
   "Use `other-window' to select the previous window in the cycle."

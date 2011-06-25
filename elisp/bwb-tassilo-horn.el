@@ -1,4 +1,4 @@
-;; Configure some code written by Tassilo Horn.
+;;;; Configure some code written by Tassilo Horn.
 
 (add-hook 'dired-mode-hook
           (lambda ()

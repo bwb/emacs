@@ -1,4 +1,4 @@
-;;; Configure `paredit-mode'.
+;;;; Configure `paredit-mode'.
 
 (autoload
   'enable-paredit-mode

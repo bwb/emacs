@@ -1,4 +1,5 @@
-;;; Configure "on-the" `flymake-mode'.
+;;;; Configure "on-the" `flymake-mode'.
+
 (require 'flymake)
 
 (add-hook 'c-mode-hook 'flymake-find-file-hook)

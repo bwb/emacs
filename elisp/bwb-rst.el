@@ -1,4 +1,5 @@
-;;; Configure `rst-mode'.  Edit reStructuredText.
+;;;; Configure `rst-mode'.  Edit reStructuredText.
+
 (require 'rst)
 
 (add-hook 'rst-adjust-hook 'rst-toc-update)
@@ -7,6 +8,7 @@
             (setq rst-toc-insert-max-level 2)))
 (add-to-list 'auto-mode-alist '("\\.rst$" . rst-mode))
 
-;;; TODO Write a command to generate :ROLE:`INTERPRETED TEXT <BLAH>`
+;;; TODO Write a command (or snippet) to generate :ROLE:`INTERPRETED
+;;; TEXT <BLAH>`
 
 (provide 'bwb-rst)

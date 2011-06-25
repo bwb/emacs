@@ -1,8 +1,9 @@
-;;; Configure the Superior Lisp Interaction Mode for Emacs.
-;;;
+;;;; Configure the Superior Lisp Interaction Mode for Emacs.
+
 ;;; The current `slime-repl' comes from the Clojure contributors.  It
 ;;; is supposedly limited (when compared to `slime-fancy'), but seems
 ;;; powerful enough for now.
+
 (require 'slime)
 (require 'ac-slime)
 

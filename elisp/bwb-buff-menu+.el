@@ -1,4 +1,5 @@
-;;; Configure the `buff-menu' enhancement 'buff-menu+'.
+;;;; Configure the `buff-menu' enhancement 'buff-menu+'.
+
 (require 'buff-menu+)
 
 (add-to-list 'same-window-buffer-names "*Buffer List*")

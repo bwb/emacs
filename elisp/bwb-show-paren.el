@@ -1,4 +1,5 @@
-;;; Configure `show-paren-mode'.
+;;;; Configure `show-paren-mode'.
+
 (require 'paren)
 
 (show-paren-mode t)

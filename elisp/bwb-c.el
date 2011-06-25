@@ -1,4 +1,5 @@
-;;; Configure `c-mode'.
+;;;; Configure `c-mode'.
+
 (require 'bwb)
 (require 'cc-mode)
 

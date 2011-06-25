@@ -1,4 +1,5 @@
-;;; Configure `sh-mode'.
+;;;; Configure `sh-mode'.
+
 (require 'bwb)
 
 (add-hook 'sh-mode-hook

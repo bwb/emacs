@@ -1,4 +1,5 @@
-;;; Configure "without man" (WoMan) to view manual pages.
+;;;; Configure "without man" (WoMan) to view manual pages.
+
 (require 'woman)
 
 ;; Work around issues with launchd and MANPATH

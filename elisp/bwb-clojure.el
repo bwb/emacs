@@ -1,4 +1,5 @@
-;;; Configure `clojure-mode'.
+;;;; Configure `clojure-mode'.
+
 (require 'bwb)
 (require 'clojure-mode)
 

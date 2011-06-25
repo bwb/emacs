@@ -1,7 +1,6 @@
-;;; Configure `vc-mode'.
+;;;; Configure `vc-mode'.
 
-;; TODO Read more about vc-mode.  It's support for distributed SCM
-;; (i.e. git, hg) is supposed to have improved.
+;; Prefer explicit version control via each tool's cli.
 (setq vc-handled-backends nil)
 
 (provide 'bwb-vc)

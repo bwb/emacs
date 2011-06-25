@@ -1,4 +1,5 @@
-;;; Configure `perl-mode', and hope not to use it.
+;;;; Configure `perl-mode', and hope not to use it.
+
 (require 'bwb)
 
 ;; Perl test scripts.

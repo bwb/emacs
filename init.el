@@ -1,65 +1,84 @@
-;;; Brandon Barry's Emacs.
-;;
-;; Thanks to all (direct and indirect) Emacs contributors.
-;; If you're new to Emacs, start here:
-;; http://www.gnu.org/software/emacs/tour/
+;;;; Brandon Barry's Emacs.
 
-;;; Layout
+;;; Thanks to all (direct and indirect) Emacs contributors.
+;;; If you're new to Emacs, start here:
+;;; http://www.gnu.org/software/emacs/tour/
 
-;; `~/emacs'
-;; http://www.emacswiki.org/emacs/DotEmacsDotD
-;;
-;; Emacs doesn't need to hide from me.  Make the
-;; `user-emacs-directory', `~/.emacs.d', a link to `~/emacs'.  Note
-;; that some modes store files (e.g. caches, history) in the
-;; `user-emacs-directory'.  Ignore them or customize their location.
-;;
-;; `~/emacs/init.el'
-;; The init file (you are reading).  When text refers to `~/.emacs'
-;; or just `.emacs', use this file instead.
-;;
-;; `~/emacs/backup'
-;; http://www.emacswiki.org/emacs/BackupDirectory
-;;
-;; Store Emacs backup files in a single directory.  Otherwise you'll
-;; someday find yourself running "find mumble '*~' mumble -delete".
-;;
-;; `~/emacs/elisp'
-;; Brandon Barry's Emacs Lisp libraries (and related files) belong here.
-;;
-;; `~/emacs/vendor'
-;; `~/emacs/vendor-git'
-;; Emacs Lisp libraries (and related files) from third parties belong
-;; here.  This includes libraries that are not part of GNU Emacs as well as
-;; alternate versions of GNU Emacs libraries.
-;;
-;; `~/emacs/feature-fullscreen.patch'
-;; Adds fullscreen support for Cocoa Emacs.
-;;
-;; `~/emacs/snippets'
-;; Store custom YASnippet files.
+;;;; Basic Layout
 
-;;; TODO
+;;; `~/emacs'
+;;; http://www.emacswiki.org/emacs/DotEmacsDotD
+;;;
+;;; Make the `user-emacs-directory', `~/.emacs.d', a link to
+;;; `~/emacs'.  Note that some modes store files (e.g. caches,
+;;; history) in the `user-emacs-directory'.  Ignore them or customize
+;;; their location.
 
-;; - Fix `multi-term' word boundaries, forward delete
-;; - Add spell-checking with GNU aspell and `flyspell-mode' (which may
-;;   break some modes, requiring extra work)
-;; - Edit HTML 5.  An HTML 5 document, though parseable, need not be
-;;   well-formed XML.  That rules out `nxml-mode'.  Also consider
-;;   template syntax, CSS, and JavaScript.  Maybe `mumamo-mode'?
-;; - Try `hippie-expand'
-;; - Try Desktop, then finish del2pin.
-;; - Continue incorporating ideas found in
-;;   http://github.com/technomancy/emacs-starter-kit
-;;     - imenu with ido completion and automatic rescan
-;;     - byte compilation with byte-recompile-directory
+;;; `~/emacs/init.el'
+;;; http://www.emacswiki.org/emacs/InitFile
+;;;
+;;; You are reading the init file.  When text refers to `~/.emacs' or
+;;; just `.emacs', use this file instead.
 
-;;; Load Path
+;;; `~/emacs/elisp'
+;;;
+;;; First and second party Emacs Lisp libraries (and related files)
+;;; belong here.
+
+;;; `~/emacs/vendor'
+;;; `~/emacs/vendor-git'
+;;;
+;;; Third party Emacs Lisp libraries (and related files) belong here.
+;;; This includes libraries that are not part of GNU Emacs as well as
+;;; alternate versions of GNU Emacs libraries.
+;;;
+;;; See https://git.wiki.kernel.org/index.php/GitSubmoduleTutorial for
+;;; submodule removal instructions.
+
+;;; `~/emacs/auto-save-list'
+;;;
+;;; Emacs stores the files used to track auto-save files here.
+
+;;; `~/emacs/backup'
+;;; http://www.emacswiki.org/emacs/BackupDirectory
+;;; http://www.emacswiki.org/emacs/AutoSave
+;;;
+;;; Store Emacs backup and auto-save files in a single directory.
+;;; Otherwise you'll someday find yourself running "find mumble mumble
+;;; -delete".  You should probably "chmod go=" this directory.
+
+;;;; TODO
+
+;;; Consider using ELPA.
+;;;
+;;; Add more snippets.  Add `bwb-auto-complete-yasnippet' to more mode
+;;; hooks.
+;;;
+;;; Fix `multi-term': missing word boundaries, broken forward-delete,
+;;; broken C-DEL (see C-backspace), and the lack of support for Bash
+;;; M-. and M-*.
+;;;
+;;; Work on `bwb'.
+;;;
+;;; Work on `bwb-js2-mode'.
+;;;
+;;; Work on `bwb-python-mode'.
+;;;
+;;; Add spell checking with `flyspell-mode' and `flyspell-prog-mode'
+;;; where appropriate.
+;;;
+;;; Perform (periodic?) byte compilation with
+;;; `byte-recompile-directory'.
+;;;
+;;; Enable `imenu' with `ido-completing-read' and automatic rescans.
+;;;
+;;; Finish `bwb-rnc-trang-current-buffer'.
+
+
+;;;; Load Path
 
 (add-to-list 'load-path "~/emacs/elisp")
 (add-to-list 'load-path "~/emacs/vendor")
-(add-to-list 'load-path "~/emacs/vendor/bookmark+")
-(add-to-list 'load-path "~/emacs/vendor/color-theme")
 (add-to-list 'load-path "~/emacs/vendor/ess/lisp")
 (add-to-list 'load-path "~/emacs/vendor/yasnippet")
 ;; Use the `vendor-git' subdirectory for Git submodules.
@@ -67,36 +86,34 @@
 (add-to-list 'load-path "~/emacs/vendor-git/auto-complete")
 (add-to-list 'load-path "~/emacs/vendor-git/clojure-mode")
 (add-to-list 'load-path "~/emacs/vendor-git/js2-mode")
+(add-to-list 'load-path "~/emacs/vendor-git/markdown-mode")
 (add-to-list 'load-path "~/emacs/vendor-git/smex")
 
-;;; Mode-specific Configuration
+;;;; Mode-specific Configuration
 
-;; Emacs will run for a long time once started.  Don't worry about
-;; optimizing load time until it becomes a problem.  Keep
-;; configuration details for each mode in a separate library.  Do not
-;; rely on the order below.  Load the `bwb' library if necessary.
-;;
-;;   (require 'bwb) ; OK
-;;   ...
-;;   (provide 'bwb-MODE-FOO)
-;;
-;; Do not load one `bwb-MODE-LIBRARY' from another `bwb-MODE-LIBRARY'.
-;; That way madness lies.  Use `eval-after-load' if necessary.
-;;
-;;   (require 'bwb-MODE-BAR) ; NO
-;;   ...
-;;   (provide 'bwb-MODE-FOO)
+;;; Emacs will run for a long time once started.  Don't worry about
+;;; optimizing load time until it becomes a problem.  Keep
+;;; configuration details for each mode in a separate library.  Do not
+;;; rely on the order below.  Load the `bwb' library if necessary.
+;;;
+;;;   (require 'bwb) ; OK
+;;;   ...
+;;;   (provide 'bwb-MODE-FOO)
+;;;
+;;; Do not load one `bwb-MODE-LIBRARY' from another
+;;; `bwb-MODE-LIBRARY'.  That way madness lies.  Maybe use
+;;; `eval-after-load', but only if necessary.
+;;;
+;;;   (require 'bwb-MODE-BAR) ; NO
+;;;   ...
+;;;   (provide 'bwb-MODE-FOO)
 
-(require 'bwb)                  ; All `~/emacs' can use this
+(require 'bwb)                  ; All files in `~/emacs/elisp' can use this
 (require 'bwb-auto-complete)
-;; (require 'bwb-bookmark)
-(require 'bwb-bookmark+)        ; Enhanced bookmark list
+(require 'bwb-bookmark)
 (require 'bwb-buff-menu+)       ; Enhanced *Buffer List*
 (require 'bwb-c)
-(require 'bwb-chromium-browser) ; Run an edit server for Chromium
 (require 'bwb-clojure)
-;; Interacts poorly with several modes, including dired and multi-term
-;; (require 'bwb-color-theme)
 (require 'bwb-dired-x)          ; Extended directory "editing"
 (require 'bwb-ediff)
 (require 'bwb-emacs-lisp)
@@ -105,9 +122,9 @@
 (require 'bwb-ess)              ; Emacs Speaks Statistics
 (require 'bwb-find-dired)
 (require 'bwb-flymake)          ; Check syntax on the fly
-(require 'bwb-hippie-exp)
 (require 'bwb-ido)              ; Interactively Do Things
 (require 'bwb-js2)              ; Edit JavaScript
+(require 'bwb-markdown-mode)    ; Simpler than reStructuredText
 (require 'bwb-multi-term)
 ;;; FIXME problem with P4PORT
 ;;(require 'bwb-p4)               ; Perforce integration
@@ -127,7 +144,7 @@
 (require 'bwb-vc)               ; Interact with version control systems
 (require 'bwb-yasnippet)        ; Expand abbreviations into text templates
 
-;;; OS-specific Initialization
+;;;; OS-specific Initialization
 
 (cond
  ((string-match "darwin" system-configuration)
@@ -143,17 +160,28 @@
  indent-tabs-mode nil
  show-trailing-whitespace t)
 
-;;; Global Variables
+;;; Backup Files
 
 (setq
- backup-directory-alist '(("." . "~/emacs/backup")) ; *~ files go here
+ bwb-backup-directory "~/emacs/backup"
+ auto-save-file-name-transforms `((".*" ,bwb-backup-directory t))
+ backup-directory-alist `((".*" . ,bwb-backup-directory))
+ tramp-auto-save-directory bwb-backup-directory)
+
+;;; Miscellaneous Global Variables
+
+(setq
  ;; must set browse-url-generic-program in OS-specific setup
  browse-url-browser-function 'browse-url-generic
  column-number-mode t
  default-directory "~/"
  inhibit-startup-screen t
  require-final-newline "ask"
- transient-mark-mode t
+ ;; Use C-<SPC> C-<SPC> to set the mark at point and enable transient
+ ;; mark until the mark is deactivated.  Use C-u C-x C-x to activate
+ ;; the mark and enable transient mark until the mark is next
+ ;; deactivated.
+ transient-mark-mode nil
  visible-bell 'top-bottom
  )
 
@@ -171,18 +199,15 @@
 
 ;;; Character Encoding
 
-;; Prefer UTF-8.
 (prefer-coding-system 'utf-8)
 
 ;;; Start Programs
 
 ;; Run an Emacs server.
 (server-start)
+
 ;; Start a terminal.
 (multi-term)
 (save-excursion
   (set-buffer "*terminal<1>*")
   (rename-buffer "*terminal-main*" t))
-;; Open the *Bookmark List*
-;; (bookmark-bmenu-list)
-;; (switch-to-buffer "*Bookmark List*")

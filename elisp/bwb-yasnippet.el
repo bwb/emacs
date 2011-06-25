@@ -1,4 +1,5 @@
-;;; Configure `yasnippet'.
+;;;; Configure `yasnippet'.
+
 (require 'yasnippet)
 
 (yas/initialize)

@@ -1,19 +1,37 @@
-;;; Configure `multi-term' mode to manage multiple terminal buffers.
+;;;; Configure `multi-term' mode to manage multiple terminal buffers.
+
 (require 'multi-term)
 
 (setq multi-term-program "/bin/bash")
 
+(setq term-unbind-key-list
+      '("C-z" "C-x" "C-c" "C-h" "C-y" "<ESC>"))
+
 ;; Rebind word kill commands.  Otherwise WYSI*NOT*WYG!
-(add-to-list 'term-bind-key-alist
-             '("M-DEL" . term-send-backward-kill-word))
-(add-to-list 'term-bind-key-alist
-             '("C-DEL" . term-send-backward-kill-word))
-(add-to-list 'term-bind-key-alist
-             '("M-d" . term-send-forward-kill-word))
+(setq term-bind-key-alist
+      '(("M-d" . term-send-forward-kill-word)
+        ("C-DEL" . term-send-backward-kill-word)
+        ("M-DEL" . term-send-backward-kill-word)
+        ("C-c C-c" . term-interrupt-subjob)
+        ("C-p" . previous-line)
+        ("C-n" . next-line)
+        ("C-s" . isearch-forward)
+        ("C-r" . isearch-backward)
+        ("C-m" . term-send-raw)
+        ("M-f" . term-send-forward-word)
+        ("M-b" . term-send-backward-word)
+        ("M-o" . term-send-backspace)
+        ("M-p" . term-send-up)
+        ("M-n" . term-send-down)
+        ("M-M" . term-send-forward-kill-word)
+        ("M-N" . term-send-backward-kill-word)
+        ("M-r" . term-send-reverse-search-history)
+        ("M-," . term-send-input)
+        ;; ("M-." . comint-dynamic-complete)
+        ))
 
 (add-hook 'term-mode-hook
           (lambda ()
-            ;; FIXME this doesn't take effect on startup, or in new buffers.
             (define-key term-raw-map (kbd "C-c C-j") 'term-line-mode)
             (setq show-trailing-whitespace nil)))
 

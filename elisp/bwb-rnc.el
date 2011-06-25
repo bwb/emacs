@@ -1,4 +1,5 @@
-;;; Configure `rnc-mode'.
+;;;; Configure `rnc-mode'.
+
 (require 'rnc-mode)
 
 (add-to-list 'auto-mode-alist '("\\.rnc$" . rnc-mode))
