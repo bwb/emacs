@@ -115,6 +115,7 @@
 (require 'bwb-bookmark)
 (require 'bwb-buff-menu+)       ; Enhanced *Buffer List*
 (require 'bwb-c)
+(require 'bwb-calendar)
 (require 'bwb-clojure)
 (require 'bwb-dired-x)          ; Extended directory "editing"
 (require 'bwb-ediff)
@@ -166,6 +167,7 @@
 
 (setq
  bwb-backup-directory "~/emacs/backup"
+ ;; TODO this doesn't seem to work.
  auto-save-file-name-transforms `((".*" ,bwb-backup-directory t))
  backup-directory-alist `((".*" . ,bwb-backup-directory))
  tramp-auto-save-directory bwb-backup-directory)
