@@ -35,4 +35,9 @@
             (define-key term-raw-map (kbd "C-c C-j") 'term-line-mode)
             (setq show-trailing-whitespace nil)))
 
+;; http://emacs-fu.blogspot.com/2010/06/console-apps-in-emacs-with-multi-term.html
+;; suggests binding these functions.
+(global-set-key (kbd "C-c t") 'multi-term-next)
+(global-set-key (kbd "C-c T") 'multi-term)
+
 (provide 'bwb-multi-term)

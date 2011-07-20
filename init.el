@@ -212,6 +212,4 @@
 
 ;; Start a terminal.
 (multi-term)
-(save-excursion
-  (set-buffer "*terminal<1>*")
-  (rename-buffer "*terminal-main*" t))
+
