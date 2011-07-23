@@ -51,7 +51,9 @@
 
 ;;; Find a better way to update submodules to later commits.
 ;;;
-;;; Consider using ELPA.
+;;; Keep an eye on version 2 of the Emacs Starter Kit.  Maybe use
+;;; package.el, ELPA (Marmelade) and autoloads once Emacs 24 is
+;;; stable.
 ;;;
 ;;; Add more snippets.  Add `bwb-auto-complete-yasnippet' to more mode
 ;;; hooks.
@@ -111,6 +113,7 @@
 ;;;   (provide 'bwb-MODE-FOO)
 
 (require 'bwb)                  ; All files in `~/emacs/elisp' can use this
+(require 'bwb-ace-jump-mode)
 (require 'bwb-auto-complete)
 (require 'bwb-bookmark)
 (require 'bwb-buff-menu+)       ; Enhanced *Buffer List*
@@ -143,6 +146,7 @@
 (require 'bwb-smex)             ; M-x enhancement
 (require 'bwb-steve-yegge)
 (require 'bwb-tassilo-horn)
+(require 'bwb-uniquify)         ; Improve buffer disambiguation.
 (require 'bwb-woman)            ; Read manual pages without an external program
 (require 'bwb-vc)               ; Interact with version control systems
 (require 'bwb-yasnippet)        ; Expand abbreviations into text templates
@@ -180,7 +184,7 @@
  column-number-mode t
  default-directory "~/"
  inhibit-startup-screen t
- require-final-newline "ask"
+ require-final-newline t
  ;; Use C-<SPC> C-<SPC> to set the mark at point and enable transient
  ;; mark until the mark is deactivated.  Use C-u C-x C-x to activate
  ;; the mark and enable transient mark until the mark is next
