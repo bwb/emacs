@@ -1,4 +1,4 @@
-;;;; Configure `uniquify'.
+;;; Configure `uniquify'.
 
 (require 'uniquify)
 

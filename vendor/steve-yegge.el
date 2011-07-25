@@ -1,5 +1,8 @@
-;; Operate on file and buffer at the same time.
+;;; Operate on file and buffer at the same time.
+;;
 ;; Thanks Steve Yegge.
+
+;;;###autoload
 (defun rename-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
   (interactive "sNew name: ")
@@ -14,6 +17,7 @@
                (set-visited-file-name new-name)
                (set-buffer-modified-p nil))))))
 
+;;;###autoload
 (defun move-buffer-file (dir)
   "Moves both current buffer and file it's visiting to DIR."
   (interactive "DNew directory: ")

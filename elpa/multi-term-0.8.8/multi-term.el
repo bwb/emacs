@@ -46,12 +46,12 @@
 ;; 2. By default, the keystrokes of term.el conflict with global-mode keystrokes,
 ;;    which makes it difficult for the user to integrate term.el with Emacs.
 ;;
-;; 3. By default, executing *NIX command “exit” from term-mode,
+;; 3. By default, executing *NIX command exit from term-mode,
 ;;    it will leave an unused buffer.
 ;;
-;; 4. term.el won’t quit running sub-process when you kill terminal buffer forcibly.
+;; 4. term.el wont quit running sub-process when you kill terminal buffer forcibly.
 ;;
-;; 5. Haven’t a dedicated window for debug program.
+;; 5. Havent a dedicated window for debug program.
 ;;
 ;; And multi-term.el is enhanced with those features.
 ;;
@@ -761,6 +761,6 @@ This advice can make `other-window' skip `multi-term' dedicated window."
 ;; time-stamp-end: ">"
 ;; End:
 
-;;; multi-term.el ends here
-
 ;;; LocalWords:  multi el dir sr Hawley eb ef cd
+
+;;; multi-term.el ends here

@@ -1,4 +1,4 @@
-;;;; Configure the `buff-menu' enhancement 'buff-menu+'.
+;;; Configure the `buff-menu' enhancement 'buff-menu+'.
 
 (require 'buff-menu+)
 

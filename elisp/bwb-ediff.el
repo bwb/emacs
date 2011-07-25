@@ -1,4 +1,4 @@
-;;;; Configure `ediff'.
+;;; Configure `ediff'.
 
 (require 'ediff)
 

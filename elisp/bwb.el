@@ -1,12 +1,12 @@
-;;;; Brandon Barry's elisp library.
+;;; Brandon Barry's elisp library.
 
 (require 'ispell)
 (require 'thingatpt)
 
 (defun bwb-init-mac-os-x ()
   "Tune Emacs for Mac OS X."
-  (scroll-bar-mode 0)
-  (tool-bar-mode 0)
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1)
   (global-set-key [(meta return)] 'ns-toggle-fullscreen)
   (add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
   (add-to-list 'exec-path "/usr/local/bin")
@@ -52,6 +52,7 @@ http://groups.google.com/group/carbon-emacs/browse_thread/thread/1945355952b13c5
                                          'fullboth)))
 
 ;; From http://emacs-fu.blogspot.com/2008/12/highlighting-lines-that-are-too-long.html
+;; TODO use whitespace-mode instead.
 (defun bwb-80-column-warning ()
   "Highlight lines that are too long.
 http://emacs-fu.blogspot.com/2008/12/highlighting-lines-that-are-too-long.html"
@@ -80,8 +81,19 @@ SYMBOL becomes *SYMBOL*, with point after the right *.  Otherwise
   (other-window -1))
 
 (defun bwb-transpose-windows ()
-  "TODO
-Use http://www.emacswiki.org/emacs/TransposeWindows as a starting point.")
+  "TODO implement.
+
+Use http://www.emacswiki.org/emacs/TransposeWindows as a
+starting point.  If less than two windows exist do nothing.  If
+exactly two windows exist transpose them.  Otherwise present a
+Fmenu of swaps to choose from.  For example:
+
+    swap with
+    ==== ====
+[1] Foo  bar
+[2] fOo  baz
+[3] Bar  baz
+")
 
 (global-set-key (kbd "C-x O") 'bwb-prev-window)
 (global-set-key (kbd "C-c *") 'bwb-earmuff-symbol)

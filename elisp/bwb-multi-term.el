@@ -1,4 +1,4 @@
-;;;; Configure `multi-term' mode to manage multiple terminal buffers.
+;;; Configure `multi-term' mode to manage multiple terminal buffers.
 
 (require 'multi-term)
 

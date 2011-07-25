@@ -1,7 +1,7 @@
-;;;; Configure "Interactively Do Things" mode.
+;;; Configure "Interactively Do Things" mode.
 
-;;; This site offers good advice:
-;;; http://www.masteringemacs.org/articles/2010/10/10/introduction-to-ido-mode/
+;; This site offers good advice:
+;; http://www.masteringemacs.org/articles/2010/10/10/introduction-to-ido-mode/
 
 (require 'ido)
 
