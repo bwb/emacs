@@ -1,7 +1,7 @@
 *.elc
 *~
 auto-save-list
-autocomplete.history
+.autocomplete.history
 backup
-emacs-23.2.tar.gz
 tramp
+loaddefs.el

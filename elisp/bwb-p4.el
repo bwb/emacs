@@ -1,5 +1,4 @@
-;;;; Configure Perforce integration.
+;;; Configure Perforce integration.
 
+;;;###autoload
 (require 'p4)
-
-(provide 'bwb-p4)

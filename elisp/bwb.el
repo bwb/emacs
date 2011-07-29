@@ -3,6 +3,30 @@
 (require 'ispell)
 (require 'thingatpt)
 
+(defun bwb-dir (path-segments)
+  "Convert a list of strings to a directory path.
+/foo => /foo/
+/foo/ => /foo/
+foo => foo/
+foo bar => foo/bar/
+...and so on"
+  )
+
+(defun bwb-earmuff-symbol ()
+  "Insert earmuffs at `point' or wrap `symbol-at-point' with earmuffs.
+SYMBOL becomes *SYMBOL*, with point after the right *.  Otherwise
+** is inserted, with point in the middle."
+  (interactive)
+  (if (symbol-at-point)
+      (progn
+        (beginning-of-thing 'symbol)
+        (insert "*")
+        (forward-thing 'symbol)
+        (insert "*"))
+    (progn
+      (insert "**")
+      (backward-char))))
+
 (defun bwb-init-mac-os-x ()
   "Tune Emacs for Mac OS X."
   (scroll-bar-mode -1)
@@ -43,6 +67,22 @@ Use .XResources:
    browse-url-generic-program (getenv "BROWSER")
    inhibit-splash-screen t))
 
+(defun bwb-prev-window ()
+  "Use `other-window' to select the previous window in the cycle."
+  (interactive)
+  (other-window -1))
+
+(defun bwb-regen-autoloads (autoload-file dir &optional force)
+  "Use the Emacs Starter Kit's technique for (re)generating the
+`generated-autoload-file'."
+  (when (or force
+            (not (file-exists-p autoload-file))
+            (some (lambda (f) (file-newer-than-file-p f autoload-file))
+                  (directory-files dir t "\\.el$")))
+    (message "Updating autoloads...")
+    (let (emacs-lisp-mode-hook)
+      (update-directory-autoloads dir))))
+
 (defun bwb-toggle-fullscreen ()
   "Switch in and out of fullscreen (e.g. when running Max OS X).
 http://groups.google.com/group/carbon-emacs/browse_thread/thread/1945355952b13c5d"
@@ -50,35 +90,6 @@ http://groups.google.com/group/carbon-emacs/browse_thread/thread/1945355952b13c5
   (set-frame-parameter nil 'fullscreen (if (frame-parameter nil 'fullscreen)
                                            nil
                                          'fullboth)))
-
-;; From http://emacs-fu.blogspot.com/2008/12/highlighting-lines-that-are-too-long.html
-;; TODO use whitespace-mode instead.
-(defun bwb-80-column-warning ()
-  "Highlight lines that are too long.
-http://emacs-fu.blogspot.com/2008/12/highlighting-lines-that-are-too-long.html"
-  (font-lock-add-keywords
-   nil
-   '(("^[^\n]\\{80\\}\\(.*\\)$" 1 font-lock-warning-face t))))
-
-(defun bwb-earmuff-symbol ()
-  "Insert earmuffs at `point' or wrap `symbol-at-point' with earmuffs.
-SYMBOL becomes *SYMBOL*, with point after the right *.  Otherwise
-** is inserted, with point in the middle."
-  (interactive)
-  (if (symbol-at-point)
-      (progn
-        (beginning-of-thing 'symbol)
-        (insert "*")
-        (forward-thing 'symbol)
-        (insert "*"))
-    (progn
-      (insert "**")
-      (backward-char))))
-
-(defun bwb-prev-window ()
-  "Use `other-window' to select the previous window in the cycle."
-  (interactive)
-  (other-window -1))
 
 (defun bwb-transpose-windows ()
   "TODO implement.

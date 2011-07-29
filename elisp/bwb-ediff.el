@@ -1,7 +1,6 @@
 ;;; Configure `ediff'.
 
-(require 'ediff)
-
-(setq ediff-split-window-function 'split-window-horizontally)
-
-(provide 'bwb-ediff)
+;;;###autoload
+(progn
+  (require 'ediff)
+  (setq ediff-split-window-function 'split-window-horizontally))

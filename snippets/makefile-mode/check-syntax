@@ -1,0 +1,8 @@
+# name: Add flymake boilerplate
+# key: check-syntax
+# expand-env: ((yas/indent-line 'fixed))
+# --
+.PHONY: check-syntax
+check-syntax:
+	$(CXX) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
+$0

@@ -1,15 +1,10 @@
-;;;; Configure `c-mode'.
+;;; Configure `c-mode'.
 
-(require 'bwb)
-(require 'cc-mode)
-
-(setq c-default-style "linux")
-;; http://emacsblog.org/2007/02/10/quick-tip-defining-mode-specific-key-bindings/
-;; http://xahlee.org/emacs/keyboard_shortcuts.html
-(add-hook 'c-mode-hook
-          (lambda ()
-            (define-key c-mode-map (kbd "C-c C-c") 'compile)
-            (setq fill-column 78)
-            (bwb-80-column-warning)))
-
-(provide 'bwb-c)
+;;;###autoload
+(eval-after-load 'c-mode
+  (progn
+    (require 'cc-mode)
+    (require 'flymake)
+    (setq c-default-style "linux")
+    (define-key c-mode-map (kbd "C-c C-c") 'compile)
+    (add-hook 'c-mode-hook 'flymake-find-file-hook)))
