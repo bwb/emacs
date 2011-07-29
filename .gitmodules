@@ -1,15 +1,6 @@
-[submodule "vendor-git/auto-complete"]
-	path = vendor-git/auto-complete
-	url = https://github.com/m2ym/auto-complete.git
 [submodule "vendor-git/ac-slime"]
 	path = vendor-git/ac-slime
 	url = https://github.com/purcell/ac-slime.git
-[submodule "vendor-git/clojure-mode"]
-	path = vendor-git/clojure-mode
-	url = https://github.com/technomancy/clojure-mode.git
-[submodule "vendor-git/smex"]
-	path = vendor-git/smex
-	url = https://github.com/nonsequitur/smex.git
 [submodule "vendor-git/js2-mode"]
 	path = vendor-git/js2-mode
 	url = https://github.com/mooz/js2-mode.git
