@@ -53,19 +53,6 @@
 (add-to-list 'load-path (concat  bwb-vendor-dir "/yasnippet"))
 (add-to-list 'load-path (concat  bwb-vendor-dir "/ess/lisp"))
 
-;;; `~/emacs/vendor-git'
-;;
-;; Store cloned third parth Emacs Lisp libraries (and related files)
-;; here (as Git submodules).  Consider adding all of these libraries
-;; to an ELPA repo.
-;;
-;; See https://git.wiki.kernel.org/index.php/GitSubmoduleTutorial for
-;; submodule removal instructions.
-
-(setq bwb-vendor-git-dir (concat user-emacs-directory "vendor-git"))
-(add-to-list 'load-path (concat bwb-vendor-git-dir "/ac-slime"))
-(add-to-list 'load-path (concat bwb-vendor-git-dir "/js2-mode"))
-
 ;;; `~/emacs/elpa'
 ;;
 ;; http://www.emacswiki.org/emacs/ELPA
