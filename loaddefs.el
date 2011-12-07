@@ -3,8 +3,8 @@
 ;;; Code:
 
 
-;;;### (autoloads nil "bwb-ace-jump-mode" "elisp/bwb-ace-jump-mode.el"
-;;;;;;  (20018 54906))
+;;;### (autoloads nil "elisp/bwb-ace-jump-mode" "elisp/bwb-ace-jump-mode.el"
+;;;;;;  (20191 51674))
 ;;; Generated autoloads from elisp/bwb-ace-jump-mode.el
 
 (require 'ace-jump-mode)
@@ -15,8 +15,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "bwb-auto-complete" "elisp/bwb-auto-complete.el"
-;;;;;;  (20018 56548))
+;;;### (autoloads nil "elisp/bwb-auto-complete" "elisp/bwb-auto-complete.el"
+;;;;;;  (20191 51674))
 ;;; Generated autoloads from elisp/bwb-auto-complete.el
 
 (require 'auto-complete-config)
@@ -27,19 +27,19 @@
 
 ;;;***
 
-;;;### (autoloads nil "bwb-c" "elisp/bwb-c.el" (20018 53945))
+;;;### (autoloads nil "elisp/bwb-c" "elisp/bwb-c.el" (20191 51674))
 ;;; Generated autoloads from elisp/bwb-c.el
 
 (eval-after-load 'c-mode (progn (require 'cc-mode) (require 'flymake) (setq c-default-style "linux") (define-key c-mode-map (kbd "C-c C-c") 'compile) (add-hook 'c-mode-hook 'flymake-find-file-hook)))
 
 ;;;***
 
-;;;### (autoloads (bwb-clojure-save-buffers) "bwb-clojure" "elisp/bwb-clojure.el"
-;;;;;;  (20018 11773))
+;;;### (autoloads (bwb-clojure-save-buffers) "elisp/bwb-clojure"
+;;;;;;  "elisp/bwb-clojure.el" (20191 51674))
 ;;; Generated autoloads from elisp/bwb-clojure.el
 
-(autoload 'bwb-clojure-save-buffers "bwb-clojure" "\
-Not documented
+(autoload 'bwb-clojure-save-buffers "elisp/bwb-clojure" "\
+
 
 \(fn)" nil nil)
 
@@ -47,7 +47,8 @@ Not documented
 
 ;;;***
 
-;;;### (autoloads nil "bwb-dired" "elisp/bwb-dired.el" (20018 55044))
+;;;### (autoloads nil "elisp/bwb-dired" "elisp/bwb-dired.el" (20191
+;;;;;;  51674))
 ;;; Generated autoloads from elisp/bwb-dired.el
 
 (require 'dired-x)
@@ -66,7 +67,8 @@ Not documented
 
 ;;;***
 
-;;;### (autoloads nil "bwb-ediff" "elisp/bwb-ediff.el" (20018 55139))
+;;;### (autoloads nil "elisp/bwb-ediff" "elisp/bwb-ediff.el" (20191
+;;;;;;  51674))
 ;;; Generated autoloads from elisp/bwb-ediff.el
 
 (require 'ediff)
@@ -75,7 +77,7 @@ Not documented
 
 ;;;***
 
-;;;### (autoloads nil "bwb-ess" "elisp/bwb-ess.el" (20018 9990))
+;;;### (autoloads nil "elisp/bwb-ess" "elisp/bwb-ess.el" (20191 51674))
 ;;; Generated autoloads from elisp/bwb-ess.el
 
 (autoload 'R "ess-site" "\
@@ -88,7 +90,7 @@ ESS" t)
 
 ;;;***
 
-;;;### (autoloads nil "bwb-ido" "elisp/bwb-ido.el" (20018 55164))
+;;;### (autoloads nil "elisp/bwb-ido" "elisp/bwb-ido.el" (20191 51674))
 ;;; Generated autoloads from elisp/bwb-ido.el
 
 (require 'ido)
@@ -99,15 +101,8 @@ ESS" t)
 
 ;;;***
 
-;;;### (autoloads nil "bwb-js2" "elisp/bwb-js2.el" (20018 54023))
-;;; Generated autoloads from elisp/bwb-js2.el
-
-(eval-after-load 'js2-mode (progn (setq js2-bounce-indent-p t js2-consistent-level-indent-inner-bracket-p t js2-pretty-multiline-decl-indentation-p t)))
-
-;;;***
-
-;;;### (autoloads nil "bwb-multi-term" "elisp/bwb-multi-term.el"
-;;;;;;  (20018 57801))
+;;;### (autoloads nil "elisp/bwb-multi-term" "elisp/bwb-multi-term.el"
+;;;;;;  (20191 51674))
 ;;; Generated autoloads from elisp/bwb-multi-term.el
 
 (require 'multi-term)
@@ -128,61 +123,62 @@ ESS" t)
 
 ;;;***
 
-;;;### (autoloads nil "bwb-p4" "elisp/bwb-p4.el" (20018 55816))
+;;;### (autoloads nil "elisp/bwb-p4" "elisp/bwb-p4.el" (20191 51674))
 ;;; Generated autoloads from elisp/bwb-p4.el
 
 (require 'p4)
 
 ;;;***
+
+;;;***
+
+;;;***
 
-;;;### (autoloads (bwb-paredit-enable) "bwb-paredit" "elisp/bwb-paredit.el"
-;;;;;;  (20018 56124))
+;;;### (autoloads nil "elisp/bwb-paredit" "elisp/bwb-paredit.el"
+;;;;;;  (20191 56121))
 ;;; Generated autoloads from elisp/bwb-paredit.el
 
-(autoload 'bwb-paredit-enable "bwb-paredit" "\
-Not documented
+(autoload 'enable-paredit-mode "paredit")
 
-\(fn)" nil nil)
+(add-hook 'clojure-mode-hook 'enable-paredit-mode)
 
-(add-hook 'clojure-mode-hook 'bwb-paredit-enable)
-
-(add-hook 'emacs-lisp-mode-hook 'bwb-paredit-enable)
+(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 
 ;;;***
 
 ;;;### (autoloads (bwb-python-virtualenv-postdeactivate bwb-python-virtualenv-postactivate
-;;;;;;  bwb-python-update-command) "bwb-python" "elisp/bwb-python.el"
-;;;;;;  (20017 35701))
+;;;;;;  bwb-python-update-command) "elisp/bwb-python" "elisp/bwb-python.el"
+;;;;;;  (20191 51674))
 ;;; Generated autoloads from elisp/bwb-python.el
 
-(autoload 'bwb-python-update-command "bwb-python" "\
+(autoload 'bwb-python-update-command "elisp/bwb-python" "\
 Set `python-command' to `command'.
 The next shell command to run a Python interpreter will use
 `command'.
 
 \(fn COMMAND)" nil nil)
 
-(autoload 'bwb-python-virtualenv-postactivate "bwb-python" "\
+(autoload 'bwb-python-virtualenv-postactivate "elisp/bwb-python" "\
 Set `python-command' to use the newly activated virtualenv.
 
 \(fn VIRTUALENV)" nil nil)
 
-(autoload 'bwb-python-virtualenv-postdeactivate "bwb-python" "\
+(autoload 'bwb-python-virtualenv-postdeactivate "elisp/bwb-python" "\
 Set `python-command' to use the default python command.
 
 \(fn)" nil nil)
 
 ;;;***
 
-;;;### (autoloads nil "bwb-re-builder" "elisp/bwb-re-builder.el"
-;;;;;;  (20018 52578))
+;;;### (autoloads nil "elisp/bwb-re-builder" "elisp/bwb-re-builder.el"
+;;;;;;  (20191 51674))
 ;;; Generated autoloads from elisp/bwb-re-builder.el
 
 (eval-after-load 're-builder (setq reb-re-syntax 'string))
 
 ;;;***
 
-;;;### (autoloads nil "bwb-rnc" "elisp/bwb-rnc.el" (20018 52833))
+;;;### (autoloads nil "elisp/bwb-rnc" "elisp/bwb-rnc.el" (20191 51674))
 ;;; Generated autoloads from elisp/bwb-rnc.el
 
 (autoload 'rnc-mode "rnc-mode")
@@ -193,15 +189,15 @@ Set `python-command' to use the default python command.
 
 ;;;***
 
-;;;### (autoloads nil "bwb-rst" "elisp/bwb-rst.el" (20018 54129))
+;;;### (autoloads nil "elisp/bwb-rst" "elisp/bwb-rst.el" (20191 51674))
 ;;; Generated autoloads from elisp/bwb-rst.el
 
 (eval-after-load 'rst-mode (progn (require 'rst) (add-hook 'rst-adjust-hook 'rst-toc-update) (setq rst-toc-insert-max-level 2) (define-key rst-mode-map (kbd "C-M-a") 'rst-backward-section) (define-key rst-mode-map (kbd "C-M-e") 'rst-forward-section)))
 
 ;;;***
 
-;;;### (autoloads nil "bwb-show-paren" "elisp/bwb-show-paren.el"
-;;;;;;  (20018 55847))
+;;;### (autoloads nil "elisp/bwb-show-paren" "elisp/bwb-show-paren.el"
+;;;;;;  (20191 51674))
 ;;; Generated autoloads from elisp/bwb-show-paren.el
 
 (require 'paren)
@@ -212,14 +208,16 @@ Set `python-command' to use the default python command.
 
 ;;;***
 
-;;;### (autoloads nil "bwb-slime" "elisp/bwb-slime.el" (20018 54653))
+;;;### (autoloads nil "elisp/bwb-slime" "elisp/bwb-slime.el" (20191
+;;;;;;  51674))
 ;;; Generated autoloads from elisp/bwb-slime.el
 
 (eval-after-load 'slime-mode (progn (require 'ac-slime) (add-hook 'slime-mode-hook 'set-up-slime-ac) (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)))
 
 ;;;***
 
-;;;### (autoloads nil "bwb-smex" "elisp/bwb-smex.el" (20018 55890))
+;;;### (autoloads nil "elisp/bwb-smex" "elisp/bwb-smex.el" (20191
+;;;;;;  51674))
 ;;; Generated autoloads from elisp/bwb-smex.el
 
 (require 'smex)
@@ -240,8 +238,8 @@ Set `python-command' to use the default python command.
 
 ;;;***
 
-;;;### (autoloads nil "bwb-uniquify" "elisp/bwb-uniquify.el" (20018
-;;;;;;  55923))
+;;;### (autoloads nil "elisp/bwb-uniquify" "elisp/bwb-uniquify.el"
+;;;;;;  (20191 51674))
 ;;; Generated autoloads from elisp/bwb-uniquify.el
 
 (require 'uniquify)
@@ -250,15 +248,15 @@ Set `python-command' to use the default python command.
 
 ;;;***
 
-;;;### (autoloads nil "bwb-vc" "elisp/bwb-vc.el" (20018 56026))
+;;;### (autoloads nil "elisp/bwb-vc" "elisp/bwb-vc.el" (20191 51674))
 ;;; Generated autoloads from elisp/bwb-vc.el
 
 (setq vc-handled-backends nil)
 
 ;;;***
 
-;;;### (autoloads nil "bwb-whitespace" "elisp/bwb-whitespace.el"
-;;;;;;  (20018 56056))
+;;;### (autoloads nil "elisp/bwb-whitespace" "elisp/bwb-whitespace.el"
+;;;;;;  (20191 51674))
 ;;; Generated autoloads from elisp/bwb-whitespace.el
 
 (require 'whitespace)
@@ -273,7 +271,8 @@ Set `python-command' to use the default python command.
 
 ;;;***
 
-;;;### (autoloads nil "bwb-woman" "elisp/bwb-woman.el" (20018 56286))
+;;;### (autoloads nil "elisp/bwb-woman" "elisp/bwb-woman.el" (20191
+;;;;;;  51674))
 ;;; Generated autoloads from elisp/bwb-woman.el
 
 (require 'woman)
@@ -282,15 +281,15 @@ Set `python-command' to use the default python command.
 
 ;;;***
 
-;;;### (autoloads nil "bwb-yasnippet" "elisp/bwb-yasnippet.el" (20018
-;;;;;;  56086))
+;;;### (autoloads nil "elisp/bwb-yasnippet" "elisp/bwb-yasnippet.el"
+;;;;;;  (20191 56071))
 ;;; Generated autoloads from elisp/bwb-yasnippet.el
 
 (require 'yasnippet)
 
 (yas/initialize)
 
-(setq yas/root-directory (list (concat user-emacs-directory "snippets") (concat user-emacs-directory "vendor/yasnippet/snippets")))
+(setq yas/root-directory (list (concat user-emacs-directory "snippets") (car (file-expand-wildcards (concat user-emacs-directory "elpa/yasnippet*/snippets")))))
 
 (mapc 'yas/load-directory yas/root-directory)
 
@@ -298,58 +297,8 @@ Set `python-command' to use the default python command.
 
 ;;;***
 
-;;;### (autoloads (js2-mode) "js2-mode" "../emacs/vendor-git/js2-mode/js2-mode.el"
-;;;;;;  (19973 25326))
-;;; Generated autoloads from ../emacs/vendor-git/js2-mode/js2-mode.el
- (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-
-(autoload 'js2-mode "js2-mode" "\
-Major mode for editing JavaScript code.
-
-\(fn)" t nil)
-
-;;;***
-
-;;;### (autoloads (rst-minor-mode rst-mode) "rst" "../emacs/vendor/rst.el"
-;;;;;;  (19852 4764))
-;;; Generated autoloads from ../emacs/vendor/rst.el
- (add-to-list 'auto-mode-alist (purecopy '("\\.re?st\\'" . rst-mode)))
-
-(autoload 'rst-mode "rst" "\
-Major mode for editing reStructuredText documents.
-\\<rst-mode-map>
-
-There are a number of convenient keybindings provided by Rst
-mode. The main one is \\[rst-adjust], it updates or rotates the
-section title around point or promotes/demotes the adornments
-within the region (see full details below). Use negative prefix
-arg to rotate in the other direction.
-
-Turning on `rst-mode' calls the normal hooks `text-mode-hook'
-and `rst-mode-hook'.  This mode also supports font-lock
-highlighting.
-
-\\{rst-mode-map}
-
-\(fn)" t nil)
-
-(autoload 'rst-minor-mode "rst" "\
-ReST Minor Mode.
-Toggle ReST minor mode.
-With no argument, this command toggles the mode.
-Non-null prefix argument turns on the mode.
-Null prefix argument turns off the mode.
-
-When ReST minor mode is enabled, the ReST mode keybindings
-are installed on top of the major mode bindings.  Use this
-for modes derived from Text mode, like Mail mode.
-
-\(fn &optional ARG)" t nil)
-
-;;;***
-
-;;;### (autoloads nil nil ("elisp/bwb-flymake.el" "elisp/bwb.el")
-;;;;;;  (20018 59765 950298))
+;;;### (autoloads nil nil ("elisp/bwb-flymake.el" "elisp/bwb-js2.el"
+;;;;;;  "elisp/bwb.el") (20191 56149 434871))
 
 ;;;***
 

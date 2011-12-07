@@ -50,7 +50,6 @@
 
 (setq bwb-vendor-dir (concat user-emacs-directory "vendor"))
 (add-to-list 'load-path bwb-vendor-dir)
-(add-to-list 'load-path (concat  bwb-vendor-dir "/yasnippet"))
 (add-to-list 'load-path (concat  bwb-vendor-dir "/ess/lisp"))
 
 ;;; `~/emacs/elpa'
@@ -64,13 +63,14 @@
 (setq package-user-dir (concat user-emacs-directory "elpa"))
 (require 'package)
 (dolist (source '(("marmalade" . "http://marmalade-repo.org/packages/")
+                  ("gnu" . "http://elpa.gnu.org/packages")
                   ("elpa" . "http://tromey.com/elpa/")))
   (add-to-list 'package-archives source t))
 (package-initialize)
 
 ;;; Require essential libraries.
 
-(require 'cl)
+(eval-when-compile (require 'cl))
 (require 'bwb)
 
 ;;; Autoload additional libraries.
@@ -199,3 +199,6 @@
 
 ;; Use `bwb-dir' and `bwb-path', or find a better path manipulation
 ;; library and use it.
+
+;; See what version two of the Emacs Starter Kit has to offer.  It's
+;; modular and requires Emacs 24.
