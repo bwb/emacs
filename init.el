@@ -69,7 +69,6 @@
 (setq package-user-dir (concat user-emacs-directory "elpa"))
 (require 'package)
 (dolist (source '(("marmalade" . "http://marmalade-repo.org/packages/")
-                  ("gnu" . "http://elpa.gnu.org/packages")
                   ("elpa" . "http://tromey.com/elpa/")))
   (add-to-list 'package-archives source t))
 (package-initialize)
