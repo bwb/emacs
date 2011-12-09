@@ -5,9 +5,10 @@
 
 ;;;###autoload
 (progn
-  (require 'ido)
-  (setq
-   ido-enable-flex-matching t
-   ido-everywhere t
-   ido-create-new-buffer 'always)
-  (ido-mode t))
+  (ido-mode t)
+  (ido-ubiquitous t)
+  (setq ido-enable-flex-matching t
+        ido-everywhere t
+        ido-create-new-buffer 'always
+        ido-use-filename-at-point 'guess
+        ido-use-virtual-buffers t))

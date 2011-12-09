@@ -2,6 +2,9 @@
 *~
 auto-save-list
 .autocomplete.history
+.smex-items
 backup
 tramp
-loaddefs.el
+elpa/archives/*
+elisp/elisp-autoloads.el
+vendor/vendor-autoloads.el

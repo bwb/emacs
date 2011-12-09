@@ -35,8 +35,10 @@
 ;;;***
 
 ;;;### (autoloads (bwb-clojure-save-buffers) "elisp/bwb-clojure"
-;;;;;;  "elisp/bwb-clojure.el" (20191 51674))
+;;;;;;  "elisp/bwb-clojure.el" (20194 19680))
 ;;; Generated autoloads from elisp/bwb-clojure.el
+
+(add-hook 'clojure-mode-hook 'bwb-hack-mode-hook)
 
 (autoload 'bwb-clojure-save-buffers "elisp/bwb-clojure" "\
 
@@ -90,14 +92,14 @@ ESS" t)
 
 ;;;***
 
-;;;### (autoloads nil "elisp/bwb-ido" "elisp/bwb-ido.el" (20191 51674))
+;;;### (autoloads nil "elisp/bwb-ido" "elisp/bwb-ido.el" (20194 19975))
 ;;; Generated autoloads from elisp/bwb-ido.el
 
-(require 'ido)
-
-(setq ido-enable-flex-matching t ido-everywhere t ido-create-new-buffer 'always)
-
 (ido-mode t)
+
+(ido-ubiquitous t)
+
+(setq ido-enable-flex-matching t ido-everywhere t ido-create-new-buffer 'always ido-use-filename-at-point 'guess ido-use-virtual-buffers t)
 
 ;;;***
 
@@ -129,10 +131,6 @@ ESS" t)
 (require 'p4)
 
 ;;;***
-
-;;;***
-
-;;;***
 
 ;;;### (autoloads nil "elisp/bwb-paredit" "elisp/bwb-paredit.el"
 ;;;;;;  (20191 56121))
@@ -148,8 +146,10 @@ ESS" t)
 
 ;;;### (autoloads (bwb-python-virtualenv-postdeactivate bwb-python-virtualenv-postactivate
 ;;;;;;  bwb-python-update-command) "elisp/bwb-python" "elisp/bwb-python.el"
-;;;;;;  (20191 51674))
+;;;;;;  (20194 19743))
 ;;; Generated autoloads from elisp/bwb-python.el
+
+(add-hook 'python-mode-hook 'bwb-hack-mode-hook)
 
 (autoload 'bwb-python-update-command "elisp/bwb-python" "\
 Set `python-command' to `command'.
@@ -216,11 +216,13 @@ Set `python-command' to use the default python command.
 
 ;;;***
 
-;;;### (autoloads nil "elisp/bwb-smex" "elisp/bwb-smex.el" (20191
-;;;;;;  51674))
+;;;### (autoloads nil "elisp/bwb-smex" "elisp/bwb-smex.el" (20194
+;;;;;;  20281))
 ;;; Generated autoloads from elisp/bwb-smex.el
 
 (require 'smex)
+
+(setq smex-save-file (concat user-emacs-directory ".smex-items"))
 
 (smex-initialize)
 
@@ -235,6 +237,16 @@ Set `python-command' to use the default python command.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 (global-set-key (kbd "C-x m") 'smex)
+
+;;;***
+
+;;;### (autoloads nil "elisp/bwb-text" "elisp/bwb-text.el" (20194
+;;;;;;  18255))
+;;; Generated autoloads from elisp/bwb-text.el
+
+(add-hook 'text-mode-hook 'bwb-activate-auto-fill-mode)
+
+(add-hook 'text-mode-hook 'bwb-activate-flyspell-mode)
 
 ;;;***
 
@@ -256,28 +268,18 @@ Set `python-command' to use the default python command.
 ;;;***
 
 ;;;### (autoloads nil "elisp/bwb-whitespace" "elisp/bwb-whitespace.el"
-;;;;;;  (20191 51674))
+;;;;;;  (20194 14627))
 ;;; Generated autoloads from elisp/bwb-whitespace.el
 
 (require 'whitespace)
 
 (setq whitespace-line-column 80)
 
-(setq whitespace-style '(face trailing space-before-tab space-after-tab lines-tail))
+(setq whitespace-style '(face trailing space-before-tab space-after-tab lines-tail tabs))
 
 (setq whitespace-global-modes '(not calendar-mode dired-mode inferior-python-mode term-mode))
 
 (global-whitespace-mode)
-
-;;;***
-
-;;;### (autoloads nil "elisp/bwb-woman" "elisp/bwb-woman.el" (20191
-;;;;;;  51674))
-;;; Generated autoloads from elisp/bwb-woman.el
-
-(require 'woman)
-
-(add-to-list 'woman-manpath "/usr/local/git/share/man")
 
 ;;;***
 
@@ -298,7 +300,7 @@ Set `python-command' to use the default python command.
 ;;;***
 
 ;;;### (autoloads nil nil ("elisp/bwb-flymake.el" "elisp/bwb-js2.el"
-;;;;;;  "elisp/bwb.el") (20191 56149 434871))
+;;;;;;  "elisp/bwb.el" "elisp/foodefs.el") (20194 24942 626701))
 
 ;;;***
 

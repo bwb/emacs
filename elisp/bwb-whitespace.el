@@ -5,7 +5,7 @@
   (require 'whitespace)
   (setq whitespace-line-column 80)
   (setq whitespace-style
-        '(face trailing space-before-tab space-after-tab lines-tail))
+        '(face trailing space-before-tab space-after-tab lines-tail tabs))
   (setq whitespace-global-modes
         '(not calendar-mode
               dired-mode

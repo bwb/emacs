@@ -1,6 +1,9 @@
 ;;; Configure `clojure-mode'.
 
 ;;;###autoload
+(add-hook 'clojure-mode-hook 'bwb-hack-mode-hook)
+
+;;;###autoload
 (defun bwb-clojure-save-buffers ()
   (save-some-buffers t (lambda () (equal major-mode 'clojure-mode))))
 

@@ -20,6 +20,9 @@
 ;;;       -e "(bwb-python-virtualenv-postdeactivate)" > /dev/null
 
 ;;;###autoload
+(add-hook 'python-mode-hook 'bwb-hack-mode-hook)
+
+;;;###autoload
 (defun bwb-python-update-command (command)
   "Set `python-command' to `command'.
 The next shell command to run a Python interpreter will use
@@ -38,5 +41,3 @@ The next shell command to run a Python interpreter will use
 (defun bwb-python-virtualenv-postdeactivate ()
   "Set `python-command' to use the default python command."
   (bwb-python-update-command "python"))
-
-(provide 'bwb-python)
