@@ -21,6 +21,7 @@
   (require 'saveplace)
   (setq save-place t))
 
+;;; TODO use prog-mode-hook instead?
 ;;; Use `hack-mode-hook' to customize programming modes in general.
 
 (add-hook 'hack-mode-hook 'bwb-activate-hl-line-mode)

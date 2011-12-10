@@ -28,9 +28,10 @@
 The next shell command to run a Python interpreter will use
 `command'."
   (require 'python)
-  (setq python-python-command command)
-  (setq python-command python-python-command)
-  (python-toggle-shells 'cpython))
+  (setq python-python-command command
+        python-command python-python-command
+        ;; Broken by Emacs 24
+        ))
 
 ;;;###autoload
 (defun bwb-python-virtualenv-postactivate (virtualenv)
