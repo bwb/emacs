@@ -8,3 +8,5 @@ tramp
 elpa/archives/*
 elisp/elisp-autoloads.el
 vendor/vendor-autoloads.el
+ispell.dict
+swank/*

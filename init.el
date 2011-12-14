@@ -88,10 +88,10 @@
 ;; TODO cleanup
 (setq bwb-elisp-autoload-file (concat bwb-elisp-dir "/elisp-autoloads.el"))
 (bwb-regen-autoloads bwb-elisp-autoload-file bwb-elisp-dir)
-(load "elisp-autoloads")
+(require 'elisp-autoloads)
 (setq bwb-vendor-autoload-file (concat bwb-vendor-dir "/vendor-autoloads.el"))
 (bwb-regen-autoloads bwb-vendor-autoload-file bwb-elisp-dir)
-(load "vendor-autoloads")
+(require 'vendor-autoloads)
 
 ;;; TODO byte-recompile-directory
 ;; (byte-recompile-directory bwb-elisp-dir 0)
