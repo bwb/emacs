@@ -5,7 +5,7 @@
 
 ;;;### (autoloads (ido-ubiquitous-function-exceptions ido-ubiquitous-command-exceptions
 ;;;;;;  ido-ubiquitous-mode ido-ubiquitous) "ido-ubiquitous" "ido-ubiquitous.el"
-;;;;;;  (20194 15199))
+;;;;;;  (20208 56986))
 ;;; Generated autoloads from ido-ubiquitous.el
 
 (let ((loads (get 'ido-ubiquitous 'custom-loads))) (if (member '"ido-ubiquitous" loads) nil (put 'ido-ubiquitous 'custom-loads (cons '"ido-ubiquitous" loads))))
@@ -61,8 +61,8 @@ effectively permanently part of this list already.)")
 
 ;;;***
 
-;;;### (autoloads nil nil ("ido-ubiquitous-pkg.el") (20194 15199
-;;;;;;  626455))
+;;;### (autoloads nil nil ("ido-ubiquitous-pkg.el") (20208 56986
+;;;;;;  312982))
 
 ;;;***
 

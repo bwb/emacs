@@ -3,7 +3,7 @@
 
 ;; Author: Ryan C. Thompson
 ;; URL: https://github.com/DarwinAwardWinner/ido-ubiquitous
-;; Version: 0.8
+;; Version: 0.9
 ;; Created: 2011-09-01
 ;; Keywords: convenience
 ;; EmacsWiki: InteractivelyDoThings
@@ -29,6 +29,10 @@
 ;; this package is to replace `completing-read' everywhere instead of
 ;; just selectively (as ido itself does), compatibility with all the
 ;; quriks of `completing-read' is important here.
+
+;; If you find a case where enabling ido-ubiquitous causes a command
+;; not to work correctly, please report it by creating an issue on
+;; GitHub: https://github.com/DarwinAwardWinner/ido-ubiquitous/issues
 
 ;;; License:
 
@@ -196,6 +200,41 @@ effectively permanently part of this list already.)"
                  (symbol :tag "Function"))
   :set 'ido-ubiquitous-set-function-exceptions)
 
+(defcustom ido-ubiquitous-enable-compatibility t
+  "Emulate a quirk of `completing-read'.
+
+Apparently, long ago `completing-read' did not have a \"default\"
+argument, so functions that used it requested the default item by
+returning an empty string when RET was pressed with an empty
+input. When t, this option forces `ido-completing-read' to mimic
+this behavior by returning an empty string if the user has
+neither entered any text nor cycled choices (instead of ido's
+normal behavior of returning the first choice in the list). This
+improves compatibility with many older functions that use
+`completing-read' in this way, but may also break compatibility
+with others.
+
+You can also disable this behavior just once by pressing \"C-u\"
+right before pressing \"RET\".
+
+This has no effect when ido is completing buffers or files.")
+
+(defvar ido-ubiquitous-initial-item nil
+  "The first item selected when ido starts.")
+
+(defadvice ido-read-internal (before clear-initial-item activate)
+  (setq ido-ubiquitous-initial-item nil))
+
+(defadvice ido-make-choice-list (after set-initial-item activate)
+  (when (and ad-return-value (listp ad-return-value))
+    (setq ido-ubiquitous-initial-item (car ad-return-value))))
+
+(defadvice ido-next-match (after clear-initial-item activate)
+  (setq ido-ubiquitous-initial-item nil))
+
+(defadvice ido-prev-match (after clear-initial-item activate)
+  (setq ido-ubiquitous-initial-item nil))
+
 (defadvice ido-exit-minibuffer (around required-allow-empty-string activate)
   "Emulate a quirk of `completing-read'.
 
@@ -205,11 +244,22 @@ This forces `ido-completing-read' to do the same (instead of returning
 the first choice in the list).
 
 This has no effect when ido is completing buffers or files."
-  (if (and (eq ido-cur-item 'list)
+  (if (and ido-ubiquitous-enable-compatibility
+           (eq ido-cur-item 'list)
            ido-require-match
            (null ido-default-item)
-           (string= ido-text ""))
+           (not current-prefix-arg)
+           (string= ido-text "")
+           (string= (car ido-cur-list)
+                    ido-ubiquitous-initial-item))
       (ido-select-text)
+    ad-do-it))
+
+(defadvice bookmark-completing-read (around disable-ido-compatibility activate)
+  "`bookmark-completing-read' uses `completing-read' in an odd
+  way the conflicts with the compatibilty mode of
+  ido-ubiquitous."
+  (let (ido-ubiquitous-enable-compatibility)
     ad-do-it))
 
 (provide 'ido-ubiquitous) ;;; ido-ubiquitous.el ends here

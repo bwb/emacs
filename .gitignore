@@ -5,7 +5,9 @@ auto-save-list
 .smex-items
 backup
 tramp
-elpa/archives/*
+elpa/archives/elpa/archive-contents
+elpa/archives/gnu/archive-contents
+elpa/archives/marmelade/archive-contents
 elisp/elisp-autoloads.el
 vendor/vendor-autoloads.el
 loaddefs.el
