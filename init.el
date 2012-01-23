@@ -216,3 +216,6 @@
 
 ;; See what version two of the Emacs Starter Kit has to offer.  It's
 ;; modular and requires Emacs 24.
+
+;; Load `writegood-mode'.  Use `writegood-mode' in text-mode and in
+;; `prog-mode' comments and strings.
