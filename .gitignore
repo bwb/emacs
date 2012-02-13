@@ -11,3 +11,4 @@ vendor/vendor-autoloads.el
 loaddefs.el
 ispell.dict
 swank/*
+url/*
