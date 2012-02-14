@@ -9,6 +9,8 @@
   ;; `dired-omit-mode'
   (setq dired-omit-files "^\\..*")
   (define-key dired-mode-map (kbd "^") 'th-dired-up-directory)
+  ;; Hides `dired-tree-up'.
+  (define-key dired-mode-map (kbd "C-M-u") 'th-dired-up-directory)
   (define-key dired-mode-map (kbd "RET") 'th-dired-find-file)
   ;; http://www.masteringemacs.org/articles/2011/03/25/working-multiple-files-dired/
   (setq find-ls-option '("-print0 | xargs -0 ls -ld" . "-ld")))
