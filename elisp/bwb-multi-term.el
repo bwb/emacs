@@ -32,7 +32,7 @@
           ("M-N" . term-send-backward-kill-word)
           ("M-r" . term-send-reverse-search-history)
           ("M-," . term-send-input)
-          ;; ("M-." . comint-dynamic-complete)
+          ("M-." . term-send-raw-meta)
           ))
   ;; http://emacs-fu.blogspot.com/2010/06/console-apps-in-emacs-with-multi-term.html
   ;; suggests binding these functions.
