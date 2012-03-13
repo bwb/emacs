@@ -127,6 +127,7 @@
 (setq browse-url-browser-function 'browse-url-generic
       ;; must set browse-url-generic-program in OS-specific setup
       column-number-mode t
+      enable-recursive-minibuffers t
       indicate-empty-lines t
       inhibit-startup-screen t
       require-final-newline t
