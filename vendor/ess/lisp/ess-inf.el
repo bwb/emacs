@@ -8,7 +8,7 @@
 
 ;; Original Author: David Smith <dsmith@stats.adelaide.edu.au>
 ;; Created: 7 Jan 1994
-;; Maintainers: ESS-core <ESS-core@stat.math.ethz.ch>
+;; Maintainers: ESS-core <ESS-core@r-project.org>
 
 ;; This file is part of ESS
 
@@ -445,25 +445,14 @@ This was rewritten by KH in April 1996."
 
 ;;*;; Requester functions called at startup
 
-;(defun ess-get-directory-ORIG (default)
-;  "Request and return S starting directory."
-;  (let ((the-dir
-;	 (expand-file-name
-;	  (file-name-as-directory
-;	   (read-file-name
-;	    (format "ESS [%s(%s): %s] starting data directory? "
-;		    ess-language ess-dialect inferior-ess-program)
-;	    (file-name-as-directory default)
-;	    (file-name-as-directory default) t nil)))))
-;    (if (file-directory-p the-dir) nil
-;      (error "%s is not a valid directory" the-dir))
-;    the-dir))
-
 (defun ess-get-directory (default)
+  (let ((prog-version (if (string= ess-dialect "R")
+			  inferior-R-version ; notably for the R-X.Y versions
+			inferior-ess-program)))
   (ess-prompt-for-directory
 	default
 	(format "ESS [%s(%s): %s] starting data directory? "
-		ess-language ess-dialect inferior-ess-program)))
+		ess-language ess-dialect prog-version))))
 
 (defun ess-prompt-for-directory (default prompt)
   "`prompt' for a directory, using `default' as the usual."
@@ -642,7 +631,7 @@ Returns the name of the selected process."
 			      'require-match
 			      ;; If in S buffer, don't offer current process
 			      (if (eq major-mode 'inferior-ess-mode)
-				  ess-language
+				  ess-dialect
 				ess-current-process-name
 				;; maybe ess-local-process-name IF exists?
 				)))))
@@ -757,7 +746,7 @@ visible (it may have been iconified).
 3. If buffer is not visible in any frame, simply show it in another window
 in the current frame.
 
-Iff VISIT is non-nil, as well as making BUF visible, we also select it
+If VISIT is non-nil, as well as making BUF visible, we also select it
 as the current buffer."
   (let ( (frame))
     (if (ess-buffer-visible-this-frame buf)
@@ -1162,6 +1151,17 @@ Arg has same meaning as for `ess-eval-region'."
   (interactive "P")
   (ess-eval-region (point-min) (point-max) vis "Eval buffer"))
 
+(defun ess-eval-buffer-from-beg-to-here (vis)
+  (interactive "P")
+  (ess-eval-region (point-min) (point) vis "Eval buffer from the beginning
+of the buffer until here, i.e. 'point'"))
+
+(defun ess-eval-buffer-from-here-to-end (vis)
+  (interactive "P")
+  (ess-eval-region (point) (point-max) vis "Eval buffer from here ('point') until
+the end of the buffer"))
+
+
 (defun ess-eval-function (vis)
   "Send the current function to the inferior ESS process.
 Arg has same meaning as for `ess-eval-region'."
@@ -1218,11 +1218,11 @@ Prefix arg VIS toggles visibility of ess-code as for `ess-eval-region'."
 	  (princ (concat "Loading: " name) t)
 	  (ess-eval-region beg end-fun vis
 			   (concat "Eval function " name))
-	  (goto-char (1+ end-fun)))
+	  (goto-char end-fun)
+	  (ess-next-code-line))
       ;; else: not in a function
-      (ess-eval-paragraph-and-step vis)
-      ))
-)
+      (ess-eval-paragraph-and-step vis))))
+
 
 (defun ess-eval-line (vis)
   "Send the current line to the inferior ESS process.
@@ -1331,7 +1331,8 @@ process buffer. Arg has same meaning as for `ess-eval-region'."
 the next paragraph.  Arg has same meaning as for `ess-eval-region'."
   (interactive "P")
   (let ((beg-end (ess-eval-paragraph vis)))
-    (goto-char (1+ (cadr beg-end))))
+    (goto-char (cadr beg-end))
+    (ess-next-code-line))
 )
 
 ;;; Related to the ess-eval-* commands, there are the ess-load
