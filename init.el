@@ -1,7 +1,13 @@
 ;;; Brandon Barry's Emacs.
 ;;
-;; Thanks to all (direct and indirect) Emacs contributors.  If you're
-;; new to Emacs, start here: http://www.gnu.org/software/emacs/tour/
+;; Thanks to all (direct and indirect) Emacs contributors.
+
+;; If you're new to Emacs, start here:
+;; http://www.gnu.org/software/emacs/tour/
+;; http://batsov.com/articles/2011/11/30/the-ultimate-collection-of-emacs-resources/
+;;
+;; Try the Emacs Starter Kit.
+;; https://github.com/technomancy/emacs-starter-kit
 
 ;;; `user-emacs-directory'
 ;;
@@ -50,21 +56,7 @@
 
 (setq bwb-vendor-dir (concat user-emacs-directory "vendor"))
 (add-to-list 'load-path bwb-vendor-dir)
-(add-to-list 'load-path (concat  bwb-vendor-dir "/yasnippet"))
 (add-to-list 'load-path (concat  bwb-vendor-dir "/ess/lisp"))
-
-;;; `~/emacs/vendor-git'
-;;
-;; Store cloned third parth Emacs Lisp libraries (and related files)
-;; here (as Git submodules).  Consider adding all of these libraries
-;; to an ELPA repo.
-;;
-;; See https://git.wiki.kernel.org/index.php/GitSubmoduleTutorial for
-;; submodule removal instructions.
-
-(setq bwb-vendor-git-dir (concat user-emacs-directory "vendor-git"))
-(add-to-list 'load-path (concat bwb-vendor-git-dir "/ac-slime"))
-(add-to-list 'load-path (concat bwb-vendor-git-dir "/js2-mode"))
 
 ;;; `~/emacs/elpa'
 ;;
@@ -83,7 +75,7 @@
 
 ;;; Require essential libraries.
 
-(require 'cl)
+(eval-when-compile (require 'cl))
 (require 'bwb)
 
 ;;; Autoload additional libraries.
@@ -93,10 +85,17 @@
 ;; ELPA packages provide their own autoload files.
 ;; `package-initialize' loads them.
 
-(setq bwb-autoload-file (concat user-emacs-directory "loaddefs.el"))
-(setq generated-autoload-file bwb-autoload-file)
-(bwb-regen-autoloads bwb-autoload-file bwb-elisp-dir)
-(load bwb-autoload-file)
+;; TODO cleanup
+(setq bwb-elisp-autoload-file (concat bwb-elisp-dir "/elisp-autoloads.el"))
+(bwb-regen-autoloads bwb-elisp-autoload-file bwb-elisp-dir)
+(require 'elisp-autoloads)
+(setq bwb-vendor-autoload-file (concat bwb-vendor-dir "/vendor-autoloads.el"))
+(bwb-regen-autoloads bwb-vendor-autoload-file bwb-elisp-dir)
+(require 'vendor-autoloads)
+
+;;; TODO byte-recompile-directory
+;; (byte-recompile-directory bwb-elisp-dir 0)
+;; (byte-recompile-directory bwb-vendor-dir 0)
 
 ;;; Perform OS-specific initialization.
 
@@ -117,33 +116,31 @@
 ;; Otherwise you'll someday find yourself running "find mumble mumble
 ;; -delete".  You should probably "chmod go=" this directory.
 
-(setq
- bwb-backup-directory (concat user-emacs-directory "backup")
- ;; TODO this doesn't seem to work.
- auto-save-file-name-transforms `((".*" ,bwb-backup-directory t))
- backup-directory-alist `((".*" . ,bwb-backup-directory))
- tramp-auto-save-directory bwb-backup-directory)
+(setq bwb-backup-directory (concat user-emacs-directory "backup")
+      ;; TODO this doesn't seem to work.
+      auto-save-file-name-transforms `((".*" ,bwb-backup-directory t))
+      backup-directory-alist `((".*" . ,bwb-backup-directory))
+      tramp-auto-save-directory bwb-backup-directory)
 
 ;;; Set global variables.
 
-(setq
- ;; must set browse-url-generic-program in OS-specific setup
- browse-url-browser-function 'browse-url-generic
- column-number-mode t
- indicate-empty-lines t
- inhibit-startup-screen t
- require-final-newline t
- ;; Use C-<SPC> C-<SPC> to set the mark at point and enable transient
- ;; mark until the mark is deactivated.  Use C-u C-x C-x to activate
- ;; the mark and enable transient mark until the mark is next
- ;; deactivated.
- transient-mark-mode nil
- visible-bell 'top-bottom)
+(setq browse-url-browser-function 'browse-url-generic
+      ;; must set browse-url-generic-program in OS-specific setup
+      column-number-mode t
+      enable-recursive-minibuffers t
+      indicate-empty-lines t
+      inhibit-startup-screen t
+      require-final-newline t
+      ;; Use C-<SPC> C-<SPC> to set the mark at point and enable
+      ;; transient mark until the mark is deactivated.  Use C-u C-x
+      ;; C-x to activate the mark and enable transient mark until the
+      ;; mark is next deactivated.
+      visible-bell t)
 
 ;;; Set buffer-local defaults.
 
-(setq-default
- indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil
+              imenu-auto-rescan t)
 
 ;;; Bind keys globally (some modes add their own global bindings).
 
@@ -160,6 +157,9 @@
 (global-set-key (kbd "C-z") nil)
 ;; Open the link at point in the url-generic-program.
 (global-set-key (kbd "C-x ;") 'browse-url)
+(global-set-key (kbd "C-x C-i") 'imenu)
+;;; Don't `insert-file' accidentally.
+(global-set-key (kbd "C-x i") 'imenu)
 
 ;;; Miscellaneous settings.
 
@@ -167,6 +167,8 @@
 (put 'narrow-to-region 'disabled nil)
 ;; Set character encoding.
 (prefer-coding-system 'utf-8)
+(defalias 'yes-or-no-p 'y-or-n-p)
+(defalias 'auto-tail-revert-mode 'tail-mode)
 
 ;;; Start processes.
 
@@ -212,3 +214,9 @@
 
 ;; Use `bwb-dir' and `bwb-path', or find a better path manipulation
 ;; library and use it.
+
+;; See what version two of the Emacs Starter Kit has to offer.  It's
+;; modular and requires Emacs 24.
+
+;; Load `writegood-mode'.  Use `writegood-mode' in text-mode and in
+;; `prog-mode' comments and strings.

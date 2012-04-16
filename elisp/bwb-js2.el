@@ -4,7 +4,6 @@
 ;; js-mode) for use with JSON files.
 ;; TODO use mozrepl, swank-js, or another method of evaluating code.
 
-;;;###autoload
 (eval-after-load 'js2-mode
   (progn
     (setq js2-bounce-indent-p t

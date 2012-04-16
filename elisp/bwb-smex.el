@@ -3,6 +3,7 @@
 ;;;###autoload
 (progn
   (require 'smex)
+  (setq smex-save-file (concat user-emacs-directory ".smex-items"))
   (smex-initialize)
   ;; Complete commands smexily.
   (global-set-key (kbd "M-x") 'smex)

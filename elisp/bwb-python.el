@@ -20,14 +20,18 @@
 ;;;       -e "(bwb-python-virtualenv-postdeactivate)" > /dev/null
 
 ;;;###autoload
+(add-hook 'python-mode-hook 'bwb-hack-mode-hook)
+
+;;;###autoload
 (defun bwb-python-update-command (command)
   "Set `python-command' to `command'.
 The next shell command to run a Python interpreter will use
 `command'."
   (require 'python)
-  (setq python-python-command command)
-  (setq python-command python-python-command)
-  (python-toggle-shells 'cpython))
+  (setq python-python-command command
+        python-command python-python-command
+        ;; Broken by Emacs 24
+        ))
 
 ;;;###autoload
 (defun bwb-python-virtualenv-postactivate (virtualenv)
@@ -38,5 +42,3 @@ The next shell command to run a Python interpreter will use
 (defun bwb-python-virtualenv-postdeactivate ()
   "Set `python-command' to use the default python command."
   (bwb-python-update-command "python"))
-
-(provide 'bwb-python)

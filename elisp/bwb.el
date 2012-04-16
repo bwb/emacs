@@ -3,14 +3,47 @@
 (require 'ispell)
 (require 'thingatpt)
 
-(defun bwb-dir (path-segments)
-  "Convert a list of strings to a directory path.
-/foo => /foo/
-/foo/ => /foo/
-foo => foo/
-foo bar => foo/bar/
-...and so on"
-  )
+;;; Add named functions, rather than lambda functions, to hooks.
+
+(defun bwb-activate-auto-fill-mode ()
+  (auto-fill-mode))
+
+(defun bwb-activate-flyspell-mode ()
+  (flyspell-mode))
+
+(defun bwb-activate-hl-line-mode ()
+  (hl-line-mode t))
+
+(defun bwb-activate-idle-highlight-mode ()
+  (idle-highlight-mode))
+
+(defun bwb-activate-save-place-mode ()
+  (require 'saveplace)
+  (setq save-place t))
+
+;;; TODO use prog-mode-hook instead?
+;;; Use `hack-mode-hook' to customize programming modes in general.
+
+(add-hook 'hack-mode-hook 'bwb-activate-hl-line-mode)
+(add-hook 'hack-mode-hook 'bwb-activate-idle-highlight-mode)
+(add-hook 'hack-mode-hook 'bwb-activate-save-place-mode)
+
+(defun bwb-hack-mode-hook ()
+  (run-hooks 'hack-mode-hook))
+
+(defun bwb-indent-buffer ()
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+(defun bwb-untabify-buffer ()
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+(defun bwb-reformat-buffer ()
+  (interactive)
+  (bwb-indent-buffer)
+  (bwb-untabify-buffer)
+  (delete-trailing-whitespace))
 
 (defun bwb-earmuff-symbol ()
   "Insert earmuffs at `point' or wrap `symbol-at-point' with earmuffs.
@@ -80,7 +113,7 @@ Use .XResources:
             (some (lambda (f) (file-newer-than-file-p f autoload-file))
                   (directory-files dir t "\\.el$")))
     (message "Updating autoloads...")
-    (let (emacs-lisp-mode-hook)
+    (let ((generated-autoload-file autoload-file))
       (update-directory-autoloads dir))))
 
 (defun bwb-toggle-fullscreen ()
@@ -91,22 +124,8 @@ http://groups.google.com/group/carbon-emacs/browse_thread/thread/1945355952b13c5
                                            nil
                                          'fullboth)))
 
-(defun bwb-transpose-windows ()
-  "TODO implement.
-
-Use http://www.emacswiki.org/emacs/TransposeWindows as a
-starting point.  If less than two windows exist do nothing.  If
-exactly two windows exist transpose them.  Otherwise present a
-Fmenu of swaps to choose from.  For example:
-
-    swap with
-    ==== ====
-[1] Foo  bar
-[2] fOo  baz
-[3] Bar  baz
-")
-
 (global-set-key (kbd "C-x O") 'bwb-prev-window)
 (global-set-key (kbd "C-c *") 'bwb-earmuff-symbol)
+(global-set-key (kbd "C-c r") 'bwb-reformat-buffer)
 
 (provide 'bwb)

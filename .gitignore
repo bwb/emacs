@@ -2,9 +2,12 @@
 *~
 auto-save-list
 .autocomplete.history
+.smex-items
 backup
 tramp
+elpa/archives/*
+elisp/elisp-autoloads.el
+vendor/vendor-autoloads.el
 loaddefs.el
 swank/*
 url/*
-

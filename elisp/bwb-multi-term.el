@@ -10,6 +10,10 @@
     (define-key term-raw-map (kbd "C-c C-j") 'term-line-mode))
   (add-hook 'term-mode-hook 'bwb-multi-term-fix-line-mode-binding)
 
+  (defun bwb-multi-term-coding-system ()
+    (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
+  (add-hook 'term-exec-hook 'bwb-multi-term-coding-system)
+
   (setq term-unbind-key-list
         '("C-z" "C-x" "C-c" "C-h" "C-y" "<ESC>"))
   ;; Rebind word kill commands.  Otherwise WYSI*NOT*WYG!
@@ -32,7 +36,7 @@
           ("M-N" . term-send-backward-kill-word)
           ("M-r" . term-send-reverse-search-history)
           ("M-," . term-send-input)
-          ;; ("M-." . comint-dynamic-complete)
+          ("M-." . term-send-raw-meta)
           ))
   ;; http://emacs-fu.blogspot.com/2010/06/console-apps-in-emacs-with-multi-term.html
   ;; suggests binding these functions.
