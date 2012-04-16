@@ -5,3 +5,6 @@ auto-save-list
 backup
 tramp
 loaddefs.el
+swank/*
+url/*
+
