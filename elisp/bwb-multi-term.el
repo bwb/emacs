@@ -38,7 +38,5 @@
           ("M-," . term-send-input)
           ("M-." . term-send-raw-meta)
           ))
-  ;; http://emacs-fu.blogspot.com/2010/06/console-apps-in-emacs-with-multi-term.html
-  ;; suggests binding these functions.
-  (global-set-key (kbd "C-c t") 'multi-term-next)
-  (global-set-key (kbd "C-c T") 'multi-term))
+  (global-set-key (kbd "C-x t") 'multi-term-next)
+  (global-set-key (kbd "C-x T") 'multi-term))

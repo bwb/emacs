@@ -90,7 +90,7 @@
 (bwb-regen-autoloads bwb-elisp-autoload-file bwb-elisp-dir)
 (require 'elisp-autoloads)
 (setq bwb-vendor-autoload-file (concat bwb-vendor-dir "/vendor-autoloads.el"))
-(bwb-regen-autoloads bwb-vendor-autoload-file bwb-elisp-dir)
+(bwb-regen-autoloads bwb-vendor-autoload-file bwb-vendor-dir)
 (require 'vendor-autoloads)
 
 ;;; TODO byte-recompile-directory
