@@ -40,8 +40,7 @@
 ;;
 ;;   ;;;###autoload
 ;;   (progn
-;;     (global-set-key (kbd "C-M-S-SPC-RET") 'btrfly-flap-wings)
-;;     (global-set-key))
+;;     (global-set-key (kbd "C-M-S-SPC-RET") 'btrfly-flap-wings))
 ;;
 ;; Thanks to the autoload setup below no other changes are required.
 
