@@ -4,7 +4,7 @@
 
 
 ;;;### (autoloads (godoc gofmt-before-save gofmt go-mode) "go-mode"
-;;;;;;  "go-mode.el" (20347 45839))
+;;;;;;  "go-mode.el" (20432 58742))
 ;;; Generated autoloads from go-mode.el
 
 (autoload 'go-mode "go-mode" "\
@@ -37,8 +37,8 @@ Show go documentation for a query, much like M-x man.
 
 ;;;***
 
-;;;### (autoloads nil nil ("go-mode-load.el" "go-mode-pkg.el") (20347
-;;;;;;  45839 378029))
+;;;### (autoloads nil nil ("go-mode-load.el" "go-mode-pkg.el") (20432
+;;;;;;  58742 560018))
 
 ;;;***
 

@@ -1,8 +1,9 @@
+
 ;;; ac-slime.el --- An auto-complete source using slime completions
 ;;
 ;;; Author: Steve Purcell <steve@sanityinc.com>
 ;;; URL: https://github.com/purcell/ac-slime
-;;; Version: 0.1
+;;; Version: 0.2
 ;;
 ;;; Commentary:
 ;; Usage:
@@ -75,10 +76,10 @@
   "Add an optionally-fuzzy slime completion source to the
 front of `ac-sources' for the current buffer."
   (interactive)
-  (setq ac-sources (add-to-list 'ac-sources
-                                (if fuzzy
-                                    'ac-source-slime-fuzzy
-                                  'ac-source-slime-simple))))
+  (add-to-list 'ac-sources
+               (if fuzzy
+                   'ac-source-slime-fuzzy
+                 'ac-source-slime-simple)))
 
 
 (provide 'ac-slime)

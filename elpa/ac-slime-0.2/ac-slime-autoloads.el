@@ -3,8 +3,8 @@
 ;;; Code:
 
 
-;;;### (autoloads (set-up-slime-ac) "ac-slime" "ac-slime.el" (20191
-;;;;;;  53574))
+;;;### (autoloads (set-up-slime-ac) "ac-slime" "ac-slime.el" (20432
+;;;;;;  58743))
 ;;; Generated autoloads from ac-slime.el
 
 (defface ac-slime-menu-face '((t (:inherit 'ac-candidate-face))) "\
@@ -27,7 +27,7 @@ front of `ac-sources' for the current buffer.
 
 ;;;***
 
-;;;### (autoloads nil nil ("ac-slime-pkg.el") (20191 53574 710081))
+;;;### (autoloads nil nil ("ac-slime-pkg.el") (20432 58743 964522))
 
 ;;;***
 
