@@ -179,16 +179,10 @@
 ;; Use *-init funcs with add-hook rather than lambdas (lambdas could be
 ;; added repeatedly).
 
-;; Use autoloads in bwb-vendor-dir and bwb-vendor-git-dir.
-
-;; Find a better way to update submodules to later commits.
-
 ;; Add more snippets.  Append `ac-source-yasnippet' to `ac-sources' for
 ;; more modes.
 
-;; Fix `multi-term': missing word boundaries, broken forward-delete,
-;; broken C-DEL (see C-backspace), and the lack of support for Bash
-;; M-. and M-*.
+;; Fix `multi-term' bindings.
 
 ;; Add spell checking with `flyspell-mode' and `flyspell-prog-mode'
 ;; where appropriate.
@@ -206,16 +200,8 @@
 ;; (re)generation, `global-font-lock-mode-check-buffers', and the use of
 ;; `post-command-hook' in `bwb-flymake-mode'
 
-;; Remove unused Git submodules.
-
-;; Browse emacswiki.org, github.com (especially the ESK) for good
-;; ideas.
-
 ;; Use `bwb-dir' and `bwb-path', or find a better path manipulation
 ;; library and use it.
-
-;; See what version two of the Emacs Starter Kit has to offer.  It's
-;; modular and requires Emacs 24.
 
 ;; Load `writegood-mode'.  Use `writegood-mode' in text-mode and in
 ;; `prog-mode' comments and strings.
