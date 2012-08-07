@@ -93,6 +93,29 @@ Use .XResources:
   (interactive)
   (other-window -1))
 
+(defun bwb-rotate-windows ()
+  "Rotate your windows.
+From http://emacswiki.org/emacs/TransposeWindows"
+  (interactive)
+  (cond
+   ((not (> (count-windows) 1))
+    (message "You can't rotate a single window!"))
+   (t
+    (let ((i 1)
+          (num-windows (count-windows)))
+      (while  (< i num-windows)
+        (let* ((w1 (elt (window-list) i))
+               (w2 (elt (window-list) (+ (% i num-windows) 1)))
+               (b1 (window-buffer w1))
+               (b2 (window-buffer w2))
+               (s1 (window-start w1))
+               (s2 (window-start w2)))
+          (set-window-buffer w1 b2)
+          (set-window-buffer w2 b1)
+          (set-window-start w1 s2)
+          (set-window-start w2 s1)
+          (setq i (1+ i))))))))
+
 (defun bwb-regen-autoloads (autoload-file dir &optional force)
   "Use the Emacs Starter Kit's technique for (re)generating the
 `generated-autoload-file'."
@@ -113,6 +136,7 @@ http://groups.google.com/group/carbon-emacs/browse_thread/thread/1945355952b13c5
                                          'fullboth)))
 
 (global-set-key (kbd "C-x O") 'bwb-prev-window)
+(global-set-key (kbd "C-x r") 'bwb-rotate-windows)
 (global-set-key (kbd "C-c *") 'bwb-earmuff-symbol)
 (global-set-key (kbd "C-c r") 'bwb-reformat-buffer)
 
