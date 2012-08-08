@@ -136,7 +136,7 @@ http://groups.google.com/group/carbon-emacs/browse_thread/thread/1945355952b13c5
                                          'fullboth)))
 
 (global-set-key (kbd "C-x O") 'bwb-prev-window)
-(global-set-key (kbd "C-x r") 'bwb-rotate-windows)
+(global-set-key (kbd "C-x w") 'bwb-rotate-windows)
 (global-set-key (kbd "C-c *") 'bwb-earmuff-symbol)
 (global-set-key (kbd "C-c r") 'bwb-reformat-buffer)
 

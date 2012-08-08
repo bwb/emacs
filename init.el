@@ -176,6 +176,14 @@
 
 ;; TODO
 
+;; Use prefix keys to make common, related commands more accessible.
+;; Use command-remapping and buffer-local bindings.
+;; http://www.emacswiki.org/emacs/PrefixKey
+;; http://www.gnu.org/software/emacs/manual/html_node/elisp/Prefix-Keys.html
+;;
+;; For example, bind "C-t s" to `transpose-sexps', "C-t w" to
+;; `rotate-windows', "C-t p" to `transpose-paragraphs', ...
+
 ;; Use *-init funcs with add-hook rather than lambdas (lambdas could be
 ;; added repeatedly).
 
