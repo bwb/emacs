@@ -21,15 +21,11 @@
   (require 'saveplace)
   (setq save-place t))
 
-;;; TODO use prog-mode-hook instead?
-;;; Use `hack-mode-hook' to customize programming modes in general.
+;;; Use `prog-mode-hook' to customize programming modes in general.
 
-(add-hook 'hack-mode-hook 'bwb-activate-hl-line-mode)
-(add-hook 'hack-mode-hook 'bwb-activate-idle-highlight-mode)
-(add-hook 'hack-mode-hook 'bwb-activate-save-place-mode)
-
-(defun bwb-hack-mode-hook ()
-  (run-hooks 'hack-mode-hook))
+(add-hook 'prog-mode-hook 'bwb-activate-hl-line-mode)
+(add-hook 'prog-mode-hook 'bwb-activate-idle-highlight-mode)
+(add-hook 'prog-mode-hook 'bwb-activate-save-place-mode)
 
 (defun bwb-indent-buffer ()
   (interactive)

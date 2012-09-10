@@ -8,7 +8,7 @@
 ;; TODO Write many more snippets.
 
 ;;;###autoload
-(add-hook 'python-mode-hook 'bwb-hack-mode-hook)
+(add-hook 'python-mode-hook 'prog-mode-hook)
 
 ;;;###autoload
 (defun bwb-python-update-command (command)

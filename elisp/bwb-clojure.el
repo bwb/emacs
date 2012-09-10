@@ -2,7 +2,6 @@
 
 ;;;###autoload
 (progn
-  (add-hook 'clojure-mode-hook 'bwb-hack-mode-hook)
   (defun bwb-clojure-save-buffers ()
     (save-some-buffers t (lambda () (equal major-mode 'clojure-mode))))
   (defadvice clojure-test-run-test (before bwb-clojure-test-run-test-advice)
