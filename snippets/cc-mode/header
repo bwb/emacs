@@ -1,5 +1,5 @@
-# name: Project Euler problem template
-# key: euler
+# name: C++ header, based on the built-in cc-mode "once" snippet
+# key: header
 # --
 // Copyright 2012 Brandon W. Barry
 //
@@ -16,17 +16,9 @@
 //    limitations under the License.
 //
 
-// http://projecteuler.net/
-//
-// Problem $1.
-//
-// $2
+#ifndef ${2:$$(upcase yas/text)}${1:_`(upcase (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))`_H_}
+#define $2$1
 
-#include <stdio.h>
-#include "util.h"
+$0
 
-int main(int argc, char** argv) {
-  $0
-
-  return 0;
-}
+#endif // $2$1
