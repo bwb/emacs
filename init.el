@@ -166,6 +166,10 @@
 (put 'narrow-to-region 'disabled nil)
 ;; Set character encoding.
 (prefer-coding-system 'utf-8)
+;; Consider forcing UTF-8 in most cases.
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
 (defalias 'yes-or-no-p 'y-or-n-p)
 (defalias 'auto-tail-revert-mode 'tail-mode)
 
