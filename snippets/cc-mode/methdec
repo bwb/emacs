@@ -1,0 +1,4 @@
+# name: C++ method declaration
+# key: methdec
+# --
+$4$1($2)$3;$0

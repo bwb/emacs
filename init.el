@@ -67,6 +67,7 @@
 
 (setq package-user-dir (concat user-emacs-directory "elpa"))
 (require 'package)
+;;; TODO use MELPA?
 (dolist (source '(("marmalade" . "http://marmalade-repo.org/packages/")
                   ("elpa" . "http://tromey.com/elpa/")))
   (add-to-list 'package-archives source t))

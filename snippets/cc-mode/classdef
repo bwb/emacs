@@ -1,0 +1,13 @@
+# name: C++ class definition (within header)
+# key: classdef
+# --
+class $1 {
+ public:
+  $1();
+ ~$1();
+
+ private:
+  $0
+
+  DISALLOW_COPY_AND_ASSIGN($1);
+};

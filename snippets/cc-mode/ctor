@@ -1,0 +1,5 @@
+# name: C++ constructor with initialization list
+# key: ctor
+# --
+$1::$1($2) :
+    $3 {$0}

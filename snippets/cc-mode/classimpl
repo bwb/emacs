@@ -1,5 +1,5 @@
-# name: C++ header, based on the built-in cc-mode "once" snippet
-# key: header
+# name: C++ class implementation
+# key: classimpl
 # --
 // Copyright 2012 Brandon W. Barry
 //
@@ -16,13 +16,10 @@
 //    limitations under the License.
 //
 
-#ifndef ${2:$$(upcase yas/text)}${1:_`(upcase (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))`_H_}
-#define $2$1
+#include "$2${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}.h"
 
 namespace $3 {
 
 $0
 
 }  // namespace $3
-
-#endif  // $2$1

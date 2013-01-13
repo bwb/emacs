@@ -1,0 +1,6 @@
+# name: C++ method implementation
+# key: methimpl
+# --
+$5$1::$2($3) $4{
+$0
+}

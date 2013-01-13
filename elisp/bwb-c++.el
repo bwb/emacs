@@ -1,12 +1,18 @@
 ;;; Configure `c++-mode'.
 
 ;;;###autoload
+(defun bwb-c++-activate-gtags ()
+  (gtags-mode t))
+
+;;; TODO maybe move some of this to `c-mode-common-hook'
+;;;###autoload
 (defun bwb-c++-customize ()
-  (require 'google-c-style)
   (require 'flymake)
+  (require 'google-c-style)
+  (add-hook 'c++-mode-hook 'bwb-c++-activate-gtags)
+  (add-hook 'c++-mode-hook 'flymake-find-file-hook)
   (add-hook 'c++-mode-hook 'google-set-c-style)
   (add-hook 'c++-mode-hook 'google-make-newline-indent)
-  (add-hook 'c++-mode-hook 'flymake-find-file-hook)
   (define-key c++-mode-map (kbd "C-c C-c") 'compile))
 
 ;;;###autoload

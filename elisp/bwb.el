@@ -5,9 +5,6 @@
 
 ;;; Add named functions, rather than lambda functions, to hooks.
 
-(defun bwb-activate-auto-fill-mode ()
-  (auto-fill-mode))
-
 (defun bwb-activate-flyspell-mode ()
   (flyspell-mode))
 
