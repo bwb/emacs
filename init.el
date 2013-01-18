@@ -130,7 +130,7 @@
       enable-recursive-minibuffers t
       indicate-empty-lines t
       inhibit-startup-screen t
-      require-final-newline t
+      require-final-newline "ask"
       ;; Use C-<SPC> C-<SPC> to set the mark at point and enable
       ;; transient mark until the mark is deactivated.  Use C-u C-x
       ;; C-x to activate the mark and enable transient mark until the
