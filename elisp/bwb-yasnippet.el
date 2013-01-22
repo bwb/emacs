@@ -3,7 +3,7 @@
 ;;;###autoload
 (progn
   (require 'yasnippet)
-  (yas/initialize)
+  (yas--initialize)
   (setq yas/root-directory
         (list (concat user-emacs-directory "snippets")
               (car (file-expand-wildcards
