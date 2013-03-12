@@ -59,12 +59,11 @@ SYMBOL becomes *SYMBOL*, with point after the right *.  Otherwise
   (tool-bar-mode -1)
   (global-set-key [(meta return)] 'ns-toggle-fullscreen)
   (add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
-  (add-to-list 'exec-path "/usr/local/bin")
   (setq
    mac-command-modifier 'meta
    browse-url-generic-program "open"
    ispell-program-name "aspell")
-  (setenv "PATH" (concat (getenv "PATH") ":" (getenv "HOME") "/bin")))
+  (exec-path-from-shell-initialize))
 
 (defun bwb-init-linux ()
   "Tune Emacs for Linux.
