@@ -14,6 +14,7 @@ import argparse
 def _argparser():
     ap = argparse.ArgumentParser()
     arg = ap.add_argument
+    ap.set_defaults()
     return ap
 
 
