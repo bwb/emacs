@@ -486,6 +486,8 @@ recommended that you look at goflymake
 (add-to-list 'auto-mode-alist (cons "\\.go\\'" 'go-mode))
 
 (defun go--apply-rcs-patch (patch-buffer)
+  "Apply an RCS-formatted diff from PATCH-BUFFER to the current
+buffer."
   (let ((target-buffer (current-buffer))
         ;; Relative offset between buffer line numbers and line numbers
         ;; in patch.
@@ -550,7 +552,9 @@ recommended that you look at goflymake
     ;; output in case of success.
     (if (zerop (call-process "gofmt" nil errbuf nil "-w" tmpfile))
         (if (zerop (call-process-region (point-min) (point-max) "diff" nil patchbuf nil "-n" "-" tmpfile))
-            (message "Buffer is already gofmted")
+            (progn
+              (kill-buffer errbuf)
+              (message "Buffer is already gofmted"))
           (go--apply-rcs-patch patchbuf)
           (kill-buffer errbuf)
           (message "Applied gofmt"))
