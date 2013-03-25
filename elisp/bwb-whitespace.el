@@ -9,6 +9,7 @@
   (setq whitespace-global-modes
         '(not calendar-mode
               dired-mode
+              go-mode
               inferior-python-mode
               term-mode))
   (global-whitespace-mode))
