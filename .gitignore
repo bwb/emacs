@@ -11,3 +11,4 @@ vendor/vendor-autoloads.el
 loaddefs.el
 swank/*
 url/*
+saved-places

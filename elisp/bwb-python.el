@@ -8,9 +8,6 @@
 ;; TODO Write many more snippets.
 
 ;;;###autoload
-(add-hook 'python-mode-hook 'prog-mode-hook)
-
-;;;###autoload
 (defun bwb-python-update-command (command)
   "Set `python-command' to `command'.
 The next shell command to run a Python interpreter will use

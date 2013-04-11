@@ -16,6 +16,7 @@
 
 (defun bwb-activate-save-place-mode ()
   (require 'saveplace)
+  (setq save-place-file (concat user-emacs-directory "saved-places"))
   (setq save-place t))
 
 ;;; Use `prog-mode-hook' to customize programming modes in general.
