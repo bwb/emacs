@@ -4,11 +4,13 @@
 
 
 ;;;### (autoloads (clojure-test-mode) "clojure-test-mode" "clojure-test-mode.el"
-;;;;;;  (20732 53153))
+;;;;;;  (20862 62032 0 0))
 ;;; Generated autoloads from clojure-test-mode.el
 
 (autoload 'clojure-test-mode "clojure-test-mode" "\
 A minor mode for running Clojure tests.
+
+\\{clojure-test-mode-map}
 
 \(fn &optional ARG)" t nil)
 
@@ -20,8 +22,8 @@ with a \"test.\" bit on it." (let ((ns (clojure-find-package))) (when (and ns (s
 
 ;;;***
 
-;;;### (autoloads nil nil ("clojure-test-mode-pkg.el") (20732 53153
-;;;;;;  715392))
+;;;### (autoloads nil nil ("clojure-test-mode-pkg.el") (20862 62033
+;;;;;;  39844 866000))
 
 ;;;***
 
