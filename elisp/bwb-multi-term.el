@@ -8,10 +8,16 @@
 
   (defun bwb-multi-term-fix-line-mode-binding ()
     (define-key term-raw-map (kbd "C-c C-j") 'term-line-mode))
+
+  (defun bwb-multi-term-disable-yas-minor-mode ()
+    (yas-minor-mode -1))
+
   (add-hook 'term-mode-hook 'bwb-multi-term-fix-line-mode-binding)
+  (add-hook 'term-mode-hook 'bwb-multi-term-disable-yas-minor-mode)
 
   (defun bwb-multi-term-coding-system ()
     (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
+
   (add-hook 'term-exec-hook 'bwb-multi-term-coding-system)
 
   (setq term-unbind-key-list

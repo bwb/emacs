@@ -3,9 +3,8 @@
 ;;;###autoload
 (progn
   (require 'whitespace)
-  (setq whitespace-line-column 80)
   (setq whitespace-style
-        '(face trailing space-before-tab space-after-tab lines-tail tabs))
+        '(face trailing space-before-tab space-after-tab tabs))
   (setq whitespace-global-modes
         '(not calendar-mode
               dired-mode

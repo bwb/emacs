@@ -2,19 +2,12 @@
 ;;
 ;; Thanks to all (direct and indirect) Emacs contributors.
 
-;; If you're new to Emacs, start here:
-;; http://www.gnu.org/software/emacs/tour/
-;; http://batsov.com/articles/2011/11/30/the-ultimate-collection-of-emacs-resources/
-;;
-;; Try the Emacs Starter Kit.
-;; https://github.com/technomancy/emacs-starter-kit
-
 ;;; `user-emacs-directory'
 ;;
 ;; http://www.emacswiki.org/emacs/DotEmacsDotD
 ;;
 ;; Keep all Emacs cusomization in the `user-emacs-directory',
-;; `~/.emacs.d'.
+;; `~/.emacs.d/'.
 ;;
 ;; I make `~/.emacs.d' a link to `~/emacs', and manage `~/emacs' with
 ;; Git.  Note that the `user-emacs-directory' may fill with caches,
@@ -27,6 +20,18 @@
 ;;
 ;; You are reading the init file.  When text refers to `~/.emacs' or
 ;; just `.emacs', use this file instead.
+
+;;; `~/emacs/packages'
+;;
+;; http://www.emacswiki.org/emacs/ELPA
+;;
+;; Emacs 24+ has built-in package management.
+
+(setq package-user-dir (concat user-emacs-directory "packages"))
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
 
 ;;; `~/emacs/elisp'
 ;;
@@ -47,55 +52,10 @@
 (setq bwb-elisp-dir (concat user-emacs-directory "elisp"))
 (add-to-list 'load-path bwb-elisp-dir)
 
-;;; `~/emacs/vendor'
-;;
-;; Store downloaded third party Emacs Lisp libraries (and related
-;; files) here.  Consider adding all of these libraries to an ELPA
-;; repo.  Some libraries are in subdirectories.
-
-(setq bwb-vendor-dir (concat user-emacs-directory "vendor"))
-(add-to-list 'load-path bwb-vendor-dir)
-(add-to-list 'load-path (concat  bwb-vendor-dir "/ess/lisp"))
-
-;;; `~/emacs/elpa'
-;;
-;; http://www.emacswiki.org/emacs/ELPA
-;;
-;; Use Emacs' new package manager when possible, despite its flaws.
-;;
-;; https://github.com/technomancy/emacs-starter-kit
-
-(setq package-user-dir (concat user-emacs-directory "elpa"))
-(require 'package)
-;;; TODO use MELPA?
-(dolist (source '(("marmalade" . "http://marmalade-repo.org/packages/")
-                  ("elpa" . "http://tromey.com/elpa/")))
-  (add-to-list 'package-archives source t))
-(package-initialize)
-
 ;;; Require essential libraries.
 
 (eval-when-compile (require 'cl))
 (require 'bwb)
-
-;;; Autoload additional libraries.
-;;
-;; http://www.gnu.org/software/emacs/elisp/html_node/Autoload.html
-;;
-;; ELPA packages provide their own autoload files.
-;; `package-initialize' loads them.
-
-;; TODO cleanup
-(setq bwb-elisp-autoload-file (concat bwb-elisp-dir "/elisp-autoloads.el"))
-(bwb-regen-autoloads bwb-elisp-autoload-file bwb-elisp-dir)
-(require 'elisp-autoloads)
-(setq bwb-vendor-autoload-file (concat bwb-vendor-dir "/vendor-autoloads.el"))
-(bwb-regen-autoloads bwb-vendor-autoload-file bwb-vendor-dir)
-(require 'vendor-autoloads)
-
-;;; TODO byte-recompile-directory
-;; (byte-recompile-directory bwb-elisp-dir 0)
-;; (byte-recompile-directory bwb-vendor-dir 0)
 
 ;;; Perform OS-specific initialization.
 
@@ -105,7 +65,18 @@
  ((string-match "linux" system-configuration)
   (bwb-init-linux))
  (t
-  (message "unknown system - no system-specific settings applied")))
+  (message "no `system-configuration' specific settings applied")))
+
+;;; Autoload additional libraries.
+;;
+;; http://www.gnu.org/software/emacs/elisp/html_node/Autoload.html
+;;
+;; ELPA packages provide their own autoload files.
+;; `package-initialize' loads them.
+
+(setq bwb-elisp-autoload-file (concat bwb-elisp-dir "/elisp-autoloads.el"))
+(bwb-regen-autoloads bwb-elisp-autoload-file bwb-elisp-dir)
+(require 'elisp-autoloads)
 
 ;;; `~/emacs/backup'
 ;;
@@ -117,10 +88,12 @@
 ;; -delete".  You should probably "chmod go=" this directory.
 
 (setq bwb-backup-directory (concat user-emacs-directory "backup")
-      ;; TODO this doesn't seem to work.
-      auto-save-file-name-transforms `((".*" ,bwb-backup-directory t))
       backup-directory-alist `((".*" . ,bwb-backup-directory))
-      tramp-auto-save-directory bwb-backup-directory)
+      auto-save-file-name-transforms `((".*" ,bwb-backup-directory t)))
+
+;; Disable backups when using tramp to avoid leaking secrets.
+(add-to-list 'backup-directory-alist
+             '(tramp-file-name-regexp . nil) t)
 
 ;;; Set global variables.
 
@@ -131,10 +104,6 @@
       indicate-empty-lines t
       inhibit-startup-screen t
       require-final-newline "ask"
-      ;; Use C-<SPC> C-<SPC> to set the mark at point and enable
-      ;; transient mark until the mark is deactivated.  Use C-u C-x
-      ;; C-x to activate the mark and enable transient mark until the
-      ;; mark is next deactivated.
       visible-bell t)
 
 ;;; Set buffer-local defaults.
@@ -181,6 +150,8 @@
 
 ;; TODO
 
+;; (byte-recompile-directory bwb-elisp-dir 0)
+
 ;; Use prefix keys to make common, related commands more accessible.
 ;; Use command-remapping and buffer-local bindings.
 ;; http://www.emacswiki.org/emacs/PrefixKey
@@ -198,23 +169,22 @@
 ;; Fix `multi-term' bindings.
 
 ;; Add spell checking with `flyspell-mode' and `flyspell-prog-mode'
-;; where appropriate.
-
-;; Perform (periodic?) byte compilation with
-;; `byte-recompile-directory'.
+;; where appropriate (e.g. in strings and comments when prog-mode is
+;; enabled).
 
 ;; Enable `imenu' with `ido-completing-read' and automatic rescans.
-
-;; Finish `bwb-rnc-trang-current-buffer'.
-
-;; Use `file-name-as-directory' where appropriate.
-
-;; Investigate startup errors related to `bwb-autoload-file'
-;; (re)generation, `global-font-lock-mode-check-buffers', and the use of
-;; `post-command-hook' in `bwb-flymake-mode'
-
-;; Use `bwb-dir' and `bwb-path', or find a better path manipulation
-;; library and use it.
+;; try `ido-hacks'
 
 ;; Load `writegood-mode'.  Use `writegood-mode' in text-mode and in
 ;; `prog-mode' comments and strings.
+
+;; Consider `paredit-everywhere'
+;; Try `magit'
+
+;;; Consider virtualenvwrapper.el:
+;;; https://github.com/porterjamesj/virtualenvwrapper.el
+
+;;; Experiment with various themes.
+;;
+;; Candidates: `dorsey', `phoenix-dark-mono', `hickey', sevreal others
+;; I haven't tried.

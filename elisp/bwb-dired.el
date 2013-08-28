@@ -4,7 +4,6 @@
 (progn
   (require 'dired-x)
   (require 'find-dired)
-  (require 'tassilo-horn)
   ;; Omit dotfiles when in `dired-omit-mode'.  Use M-o to toggle
   ;; `dired-omit-mode'
   (setq dired-omit-files "^\\..*")
