@@ -1,4 +1,6 @@
 ;;; Configure `python-mode'.
 
 ;;;###autoload
-(add-hook 'python-mode-hook 'jedi:setup)
+(progn
+  (setq jedi:complete-on-dot t)
+  (add-hook 'python-mode-hook 'jedi:setup))
