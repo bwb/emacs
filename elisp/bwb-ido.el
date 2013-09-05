@@ -5,11 +5,13 @@
 
 ;;;###autoload
 (progn
-  (ido-mode t)
-  (ido-ubiquitous t)
+  (require 'ido)
+  (require 'ido-ubiquitous)
   (setq ido-enable-flex-matching t
-        ido-everywhere t
+	ido-everywhere t
+        ido-use-filename-at-point 'guess
         ido-create-new-buffer 'always
         ido-max-directory-size 100000
-        ido-use-filename-at-point 'guess
-        ido-use-virtual-buffers t))
+        ido-use-virtual-buffers t)
+  (ido-mode t)
+  (ido-ubiquitous-mode t))
