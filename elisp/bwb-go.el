@@ -6,7 +6,8 @@
 
 ;;;###autoload
 (defun bwb-go-bind-keys ()
-    (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports))
+  (local-set-key (kbd "M-.") 'godef-jump)
+  (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports))
 
 ;;;###autoload
 (progn
