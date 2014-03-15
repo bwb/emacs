@@ -5,6 +5,6 @@
 auto-save-list
 backup
 elisp/elisp-autoloads.el
-packages/archives
+packages
 saved-places
 tramp

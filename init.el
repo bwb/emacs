@@ -34,6 +34,31 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
+;;; Current packages:
+;;
+;; `ace-jump-mode'
+;; `auto-complete'
+;; `epc'
+;; `exec-path-from-shell'
+;; `go-autocomplete'
+;; `go-mode'
+;; `go-snippets'
+;; `idle-highlight-mode'
+;; `ido-ubiquitous'
+;; `jedi'
+;; `js2-mode'
+;; `markdown-mode'
+;; `multi-term'
+;; `paredit'
+;; `paredit-everywhere'
+;; `python-environment'
+;; `rnc-mode'
+;; `smex'
+;; `typing'
+;; `writegood-mode'
+;; `yaml-mode'
+;; `yasnippet'
+
 ;;; `~/emacs/elisp'
 ;;
 ;; First and second party Emacs Lisp libraries (and related files)
@@ -61,22 +86,22 @@
 ;;; Perform OS-specific initialization.
 
 (cond
- ((string-match "linux" system-configuration)
-  (bwb-init-linux))
- ((string-match "darwin" system-configuration)
-  (bwb-init-mac-os-x))
- (t
-  (message "no `system-configuration' specific settings found")))
+((string-match "linux" system-configuration)
+ (bwb-init-linux))
+((string-match "darwin" system-configuration)
+ (bwb-init-mac-os-x))
+(t
+ (message "no `system-configuration' specific settings found")))
 
 ;;; Perform hostname-specific initialization.
 
 (cond
- ((string= system-name "bos-mpndw")
-  (bwb-init-bos-mpndw))
- ((string= system-name "work")
-  (bwb-init-work))
- t
- (message "no `system-name' specific settings found"))
+((string= system-name "bos-mpndw")
+ (bwb-init-bos-mpndw))
+((string= system-name "work")
+ (bwb-init-work))
+t
+(message "no `system-name' specific settings found"))
 
 ;;; Autoload additional libraries.
 ;;
@@ -184,7 +209,6 @@
 
 ;; Try `magit'
 
-;;; Experiment with color themes.
-;;
-;; Candidates: `dorsey', `phoenix-dark-mono', `hickey', sevreal others
-;; I haven't tried.
+;; Experiment with color themes.
+
+;; Automate ELPA package install and upgrade. Maybe via `use-package'?
