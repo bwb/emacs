@@ -50,39 +50,6 @@ SYMBOL becomes *SYMBOL*, with point after the right *.  Otherwise
       (insert "**")
       (backward-char))))
 
-(defun bwb-fix-mac-env ()
-  (require 'exec-path-from-shell)
-  (add-to-list 'exec-path-from-shell-variables "VIRTUAL_ENV")
-  (add-to-list 'exec-path-from-shell-variables "GOROOT")
-  (add-to-list 'exec-path-from-shell-variables "GOPATH")
-  (exec-path-from-shell-initialize))
-
-(defun bwb-init-mac-os-x ()
-  "Tune Emacs for Mac OS X."
-  (scroll-bar-mode -1)
-  (tool-bar-mode -1)
-  (add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
-  (setq
-   mac-command-modifier 'meta
-   browse-url-generic-program "open"
-   ispell-program-name "aspell")
-  (bwb-fix-mac-env))
-
-(defun bwb-init-linux ()
-  "Tune Emacs for Linux.
-Fix copy and paste: http://www.emacswiki.org/emacs/CopyAndPaste
-Use .XResources:
-  Emacs.font: Inconsolata-12
-  Emacs.menuBar: off
-  Emacs.toolBar: off
-  Emacs.verticalScrollBars: off"
-  (global-set-key (kbd "C-x x x") 'clipboard-kill-region)
-  (global-set-key (kbd "C-x x c") 'clipboard-kill-ring-save)
-  (global-set-key (kbd "C-x x v") 'clipboard-yank)
-  (setq
-   browse-url-generic-program (getenv "BROWSER")
-   inhibit-splash-screen t))
-
 (defun bwb-prev-window ()
   "Use `other-window' to select the previous window in the cycle."
   (interactive)
@@ -99,24 +66,41 @@ Use .XResources:
     (let ((generated-autoload-file autoload-file))
       (update-directory-autoloads dir))))
 
-;;; Functions from Tassilo Horn
-
-(defun th-dired-up-directory ()
-  "Display the parent directory in this dired buffer."
-  (interactive)
-  (find-alternate-file ".."))
-
-(defun th-dired-find-file ()
-  "Find directories using this dired buffer; use a new buffer for files."
-  (interactive)
-  (if (file-directory-p (dired-get-file-for-visit))
-      (dired-find-alternate-file)
-    (dired-find-file)))
-
 ;;; Bind keys
 
 (global-set-key (kbd "C-x O") 'bwb-prev-window)
 (global-set-key (kbd "C-c *") 'bwb-earmuff-symbol)
 (global-set-key (kbd "C-c r") 'bwb-reformat-buffer)
+
+;;; Conditional configuration
+
+(defun bwb-init-linux ()
+  "Tune Emacs for Linux."
+  (setq
+   browse-url-generic-program (getenv "BROWSER")))
+
+(defun bwb-fix-mac-os-x-env ()
+  (require 'exec-path-from-shell)
+  (add-to-list 'exec-path-from-shell-variables "VIRTUAL_ENV")
+  (add-to-list 'exec-path-from-shell-variables "GOROOT")
+  (add-to-list 'exec-path-from-shell-variables "GOPATH")
+  (exec-path-from-shell-initialize))
+
+(defun bwb-init-mac-os-x ()
+  "Tune Emacs for Mac OS X."
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1)
+  (add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
+  (setq
+   mac-command-modifier 'meta
+   browse-url-generic-program "open"
+   ispell-program-name "aspell")
+  (bwb-fix-mac-os-x-env))
+
+(defun bwb-init-work ()
+  "Tune Emacs for work (personal workstation)")
+
+(defun bwb-init-bos-mpndw ()
+  "Tune Emacs for bos-mpndw (business notebook)")
 
 (provide 'bwb)

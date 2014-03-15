@@ -24,6 +24,7 @@
 ;;; `~/emacs/packages'
 ;;
 ;; http://www.emacswiki.org/emacs/ELPA
+;; http://melpa.milkbox.net/packages/
 ;;
 ;; Emacs 24+ has built-in package management.
 
@@ -60,12 +61,22 @@
 ;;; Perform OS-specific initialization.
 
 (cond
- ((string-match "darwin" system-configuration)
-  (bwb-init-mac-os-x))
  ((string-match "linux" system-configuration)
   (bwb-init-linux))
+ ((string-match "darwin" system-configuration)
+  (bwb-init-mac-os-x))
  (t
-  (message "no `system-configuration' specific settings applied")))
+  (message "no `system-configuration' specific settings found")))
+
+;;; Perform hostname-specific initialization.
+
+(cond
+ ((string= system-name "bos-mpndw")
+  (bwb-init-bos-mpndw))
+ ((string= system-name "work")
+  (bwb-init-work))
+ t
+ (message "no `system-name' specific settings found"))
 
 ;;; Autoload additional libraries.
 ;;
@@ -136,7 +147,6 @@
 (put 'narrow-to-region 'disabled nil)
 ;; Set character encoding.
 (prefer-coding-system 'utf-8)
-;; Consider forcing UTF-8 in most cases.
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -150,6 +160,8 @@
 
 ;; TODO
 
+;; Consider forcing UTF-8 in most cases.
+
 ;; (byte-recompile-directory bwb-elisp-dir 0)
 
 ;; Use prefix keys to make common, related commands more accessible.
@@ -160,13 +172,8 @@
 ;; For example, bind "C-t s" to `transpose-sexps', "C-t w" to
 ;; `rotate-windows', "C-t p" to `transpose-paragraphs', ...
 
-;; Use *-init funcs with add-hook rather than lambdas (lambdas could be
-;; added repeatedly).
-
 ;; Add more snippets.  Append `ac-source-yasnippet' to `ac-sources' for
 ;; more modes.
-
-;; Fix `multi-term' bindings.
 
 ;; Add spell checking with `flyspell-mode' and `flyspell-prog-mode'
 ;; where appropriate (e.g. in strings and comments when prog-mode is
@@ -175,16 +182,9 @@
 ;; Enable `imenu' with `ido-completing-read' and automatic rescans.
 ;; try `ido-hacks'
 
-;; Load `writegood-mode'.  Use `writegood-mode' in text-mode and in
-;; `prog-mode' comments and strings.
-
-;; Consider `paredit-everywhere'
 ;; Try `magit'
 
-;;; Consider virtualenvwrapper.el:
-;;; https://github.com/porterjamesj/virtualenvwrapper.el
-
-;;; Experiment with various themes.
+;;; Experiment with color themes.
 ;;
 ;; Candidates: `dorsey', `phoenix-dark-mono', `hickey', sevreal others
 ;; I haven't tried.
