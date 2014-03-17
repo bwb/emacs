@@ -100,8 +100,8 @@
  (bwb-init-bos-mpndw))
 ((string= system-name "work")
  (bwb-init-work))
-t
-(message "no `system-name' specific settings found"))
+(t
+(message "no `system-name' specific settings found")))
 
 ;;; Autoload additional libraries.
 ;;
