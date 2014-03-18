@@ -1,6 +1,6 @@
 ;;; Configure `dired' and related functions.
 
-;;; Functions from Tassilo Horn
+;;; Functions from Tassilo Horn (maybe `dired-single' can do this?)
 ;;;###autoload
 (defun th-dired-up-directory ()
   "Display the parent directory in this dired buffer."
