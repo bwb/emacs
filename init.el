@@ -46,6 +46,7 @@
 ;; `idle-highlight-mode'
 ;; `ido-ubiquitous'
 ;; `jedi'
+;; `json-reformat'
 ;; `js2-mode'
 ;; `markdown-mode'
 ;; `multi-term'
