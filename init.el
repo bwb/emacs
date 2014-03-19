@@ -52,6 +52,7 @@
  'markdown-mode
  'multi-term
  'occur-x
+ ;; Without this entry `package+' deletes itself.
  'package+
  'paredit
  'paredit-everywhere
@@ -188,10 +189,6 @@
 
 ;; TODO
 
-;; Consider forcing UTF-8 in most cases.
-
-;; (byte-recompile-directory bwb-elisp-dir 0)
-
 ;; Use prefix keys to make common, related commands more accessible.
 ;; Use command-remapping and buffer-local bindings.
 ;; http://www.emacswiki.org/emacs/PrefixKey
@@ -213,5 +210,3 @@
 ;; Try `magit'
 
 ;; Experiment with color themes.
-
-;; Automate ELPA package install and upgrade. Maybe via `use-package'?
