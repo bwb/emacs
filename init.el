@@ -33,34 +33,34 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
-
-;;; Current packages:
-;;
-;; `ace-jump-mode'
-;; `auto-complete'
-;; `epc'
-;; `exec-path-from-shell'
-;; `go-autocomplete'
-;; `go-mode'
-;; `go-snippets'
-;; `idle-highlight-mode'
-;; `ido-ubiquitous'
-;; `jedi'
-;; `json-reformat'
-;; `js2-mode'
-;; `keyfreq'
-;; `markdown-mode'
-;; `multi-term'
-;; `occur-x'
-;; `paredit'
-;; `paredit-everywhere'
-;; `python-environment'
-;; `rnc-mode'
-;; `smex'
-;; `typing'
-;; `writegood-mode'
-;; `yaml-mode'
-;; `yasnippet'
+(unless (package-installed-p 'package+)
+  (package-install 'package+))
+(package-manifest
+ 'ace-jump-mode
+ 'auto-complete
+ 'epc
+ 'exec-path-from-shell
+ 'go-autocomplete
+ 'go-mode
+ 'go-snippets
+ 'idle-highlight-mode
+ 'ido-ubiquitous
+ 'jedi
+ 'json-reformat
+ 'js2-mode
+ 'keyfreq
+ 'markdown-mode
+ 'multi-term
+ 'occur-x
+ 'package+
+ 'paredit
+ 'paredit-everywhere
+ 'rnc-mode
+ 'smex
+ 'typing
+ 'writegood-mode
+ 'yaml-mode
+ 'yasnippet)
 
 ;;; `~/emacs/elisp'
 ;;
