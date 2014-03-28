@@ -36,7 +36,9 @@
 (unless (package-installed-p 'package+)
   (package-install 'package+))
 (package-manifest
+ 'ace-jump-buffer
  'ace-jump-mode
+ 'ace-window
  'auto-complete
  'epc
  'exec-path-from-shell
