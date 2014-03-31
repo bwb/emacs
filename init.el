@@ -35,6 +35,8 @@
 (package-initialize)
 (unless (package-installed-p 'package+)
   (package-install 'package+))
+;;; TODO investigate startup error:
+;; "Couldn't install package: (error Error during download request: Not Found)"
 (package-manifest
  'ace-jump-buffer
  'ace-jump-mode
