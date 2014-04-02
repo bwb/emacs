@@ -40,6 +40,7 @@
 (package-manifest
  'ace-jump-buffer
  'ace-jump-mode
+ 'ace-link
  'ace-window
  'auto-complete
  'epc
