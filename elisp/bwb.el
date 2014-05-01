@@ -8,9 +8,6 @@
 (defun bwb-activate-hl-line-mode ()
   (hl-line-mode t))
 
-(defun bwb-activate-idle-highlight-mode ()
-  (idle-highlight-mode))
-
 (defun bwb-activate-save-place-mode ()
   (require 'saveplace)
   (setq save-place-file (concat user-emacs-directory "saved-places"))
@@ -18,7 +15,6 @@
 
 ;;; Use `prog-mode-hook' to customize programming modes in general.
 (add-hook 'prog-mode-hook 'bwb-activate-hl-line-mode)
-(add-hook 'prog-mode-hook 'bwb-activate-idle-highlight-mode)
 (add-hook 'prog-mode-hook 'bwb-activate-save-place-mode)
 
 (defun bwb-indent-buffer ()
