@@ -5,7 +5,8 @@
   ;; https://github.com/tkf/emacs-jedi/issues/120
   (set (make-local-variable 'ac-max-width) 0.5)
   (setq jedi:complete-on-dot t
-        jedi:get-in-function-call-delay 100))
+        jedi:get-in-function-call-delay 100
+        python-fill-docstring-style 'pep-257-nn))
 
 ;;;###autoload
 (defun bwb-set-virtualenv (new-venv)
