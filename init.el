@@ -48,11 +48,10 @@
  'go-autocomplete
  'go-mode
  'go-snippets
- 'idle-highlight-mode
  'ido-ubiquitous
  'jedi
- 'json-reformat
  'js2-mode
+ 'json-reformat
  'keyfreq
  'markdown-mode
  'multi-term
