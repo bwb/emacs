@@ -10,5 +10,6 @@
               dired-mode
               go-mode
               inferior-python-mode
+              markdown-mode
               term-mode))
   (global-whitespace-mode))

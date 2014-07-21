@@ -8,7 +8,6 @@
 
 ;;;###autoload
 (progn
-  (require 'go-mode-load)
   (require 'go-autocomplete)
   (add-hook 'go-mode-hook 'bwb-go-bind-keys)
   (add-hook 'go-mode-hook 'electric-pair-mode)
