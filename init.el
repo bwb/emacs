@@ -53,6 +53,7 @@
  'js2-mode
  'json-reformat
  'keyfreq
+ 'lua-mode
  'markdown-mode
  'multi-term
  'occur-x
