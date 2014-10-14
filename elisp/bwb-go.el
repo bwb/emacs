@@ -2,9 +2,18 @@
 ;;; http://dominik.honnef.co/posts/2013/03/writing_go_in_emacs/
 
 ;;;###autoload
+(defun bwb-go-open-braces ()
+  (interactive)
+  (newline-and-indent)
+  (previous-line)
+  (end-of-line)
+  (newline-and-indent))
+
+;;;###autoload
 (defun bwb-go-bind-keys ()
   (local-set-key (kbd "M-.") 'godef-jump)
-  (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports))
+  (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)
+  (local-set-key (kbd "C-S-<return>") 'bwb-go-open-braces))
 
 ;;;###autoload
 (progn
