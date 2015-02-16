@@ -22,6 +22,7 @@
   ;; `dired-omit-mode'
   (setq dired-omit-files "^\\..*")
   (define-key dired-mode-map (kbd "^") 'th-dired-up-directory)
+  (define-key dired-mode-map (kbd "C-M-o") 'dired-omit-mode)
   ;; Hides `dired-tree-up'.
   (define-key dired-mode-map (kbd "C-M-u") 'th-dired-up-directory)
   (define-key dired-mode-map (kbd "RET") 'th-dired-find-file)
