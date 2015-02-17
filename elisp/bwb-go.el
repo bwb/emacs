@@ -8,9 +8,18 @@
   (newline-and-indent))
 
 ;;;###autoload
+(defun bwb-go-insert-expanded-braces ()
+  (interactive)
+  (end-of-line)
+  (insert " {}")
+  (backward-char)
+  (newline-and-indent))
+
+;;;###autoload
 (defun bwb-go-bind-keys ()
   (local-set-key (kbd "M-.") 'godef-jump)
   (local-set-key (kbd "C-<return>") 'bwb-go-end-of-line-newline-and-indent)
+  (local-set-key (kbd "C-S-<return>") 'bwb-go-insert-expanded-braces)
   (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports))
 
 ;;;###autoload
