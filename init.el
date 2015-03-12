@@ -43,6 +43,7 @@
  'ace-link
  'ace-window
  'auto-complete
+ 'dockerfile-mode
  'epc
  'exec-path-from-shell
  'geiser
