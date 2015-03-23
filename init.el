@@ -63,6 +63,7 @@
  'package+
  'paredit
  'paredit-everywhere
+ 'protobuf-mode
  'rnc-mode
  'smex
  'typing
