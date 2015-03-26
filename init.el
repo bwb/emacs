@@ -48,6 +48,7 @@
  'exec-path-from-shell
  'geiser
  'go-autocomplete
+ 'go-eldoc
  'go-mode
  'go-snippets
  'ido-ubiquitous

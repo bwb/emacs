@@ -42,4 +42,5 @@
   (require 'go-autocomplete)
   (add-hook 'go-mode-hook 'bwb-go-bind-keys)
   (add-hook 'go-mode-hook 'electric-pair-mode)
+  (add-hook 'go-mode-hook 'go-eldoc-setup)
   (add-hook 'before-save-hook 'gofmt-before-save))
