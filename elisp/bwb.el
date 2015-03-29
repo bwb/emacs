@@ -99,4 +99,8 @@ SYMBOL becomes *SYMBOL*, with point after the right *.  Otherwise
 (defun bwb-init-bos-mpndw ()
   "Tune Emacs for bos-mpndw (business notebook)")
 
+(defun bwb-strip-trailing-newlines (s)
+  "Remove the trailing newlines (if any) from string s."
+  (replace-regexp-in-string (rx (one-or-more "\n") line-end) "" s))
+
 (provide 'bwb)

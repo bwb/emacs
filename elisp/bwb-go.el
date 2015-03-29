@@ -38,6 +38,15 @@
   (local-set-key (kbd "C-<") 'bwb-go-insert-channel-operator))
 
 ;;;###autoload
+(defun bwb-go-env-from (gocmd)
+  "Set GOROOT and GOTOOLDIR to the values given by \"GOCMD env VAR\"."
+  (interactive "sgo command: ")
+  (let ((goroot (shell-command-to-string (concat gocmd " env GOROOT")))
+        (gotooldir (shell-command-to-string (concat gocmd " env GOTOOLDIR"))))
+    (setenv "GOROOT" (bwb-strip-trailing-newlines goroot))
+    (setenv "GOTOOLDIR" (bwb-strip-trailing-newlines gotooldir))))
+
+;;;###autoload
 (progn
   (require 'go-autocomplete)
   (add-hook 'go-mode-hook 'bwb-go-bind-keys)
