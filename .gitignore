@@ -9,3 +9,6 @@ packages
 saved-places
 tramp
 .keyfreq*
+.ido.last
+.recentf
+

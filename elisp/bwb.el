@@ -78,7 +78,6 @@ SYMBOL becomes *SYMBOL*, with point after the right *.  Otherwise
 (defun bwb-fix-mac-os-x-env ()
   (require 'exec-path-from-shell)
   (add-to-list 'exec-path-from-shell-variables "VIRTUAL_ENV")
-  (add-to-list 'exec-path-from-shell-variables "GOROOT")
   (add-to-list 'exec-path-from-shell-variables "GOPATH")
   (exec-path-from-shell-initialize))
 
