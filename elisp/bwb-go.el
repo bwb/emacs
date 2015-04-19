@@ -46,10 +46,17 @@
     (setenv "GOROOT" (bwb-strip-trailing-newlines goroot))
     (setenv "GOTOOLDIR" (bwb-strip-trailing-newlines gotooldir))))
 
+(defun bwb-go-company-backends ()
+  (set (make-local-variable 'company-backends) '(company-go)))
+
+;;;###autoload
+(defun bwb-go-conf ()
+  (bwb-go-bind-keys)
+  (bwb-go-company-backends)
+  (electric-pair-mode)
+  (go-eldoc-setup))
+
 ;;;###autoload
 (progn
-  (require 'go-autocomplete)
-  (add-hook 'go-mode-hook 'bwb-go-bind-keys)
-  (add-hook 'go-mode-hook 'electric-pair-mode)
-  (add-hook 'go-mode-hook 'go-eldoc-setup)
+  (add-hook 'go-mode-hook 'bwb-go-conf)
   (add-hook 'before-save-hook 'gofmt-before-save))

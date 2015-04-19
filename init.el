@@ -42,17 +42,15 @@
  'ace-jump-mode
  'ace-link
  'ace-window
- 'auto-complete
+ 'company
+ 'company-go
  'dockerfile-mode
  'epc
  'exec-path-from-shell
- 'geiser
- 'go-autocomplete
  'go-eldoc
  'go-mode
  'go-snippets
  'ido-ubiquitous
- 'jedi
  'js2-mode
  'json-reformat
  'keyfreq
