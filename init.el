@@ -193,27 +193,3 @@
 
 (server-start)
 (multi-term)
-
-;; TODO
-
-;; Use prefix keys to make common, related commands more accessible.
-;; Use command-remapping and buffer-local bindings.
-;; http://www.emacswiki.org/emacs/PrefixKey
-;; http://www.gnu.org/software/emacs/manual/html_node/elisp/Prefix-Keys.html
-;;
-;; For example, bind "C-t s" to `transpose-sexps', "C-t w" to
-;; `rotate-windows', "C-t p" to `transpose-paragraphs', ...
-
-;; Add more snippets.  Append `ac-source-yasnippet' to `ac-sources' for
-;; more modes.
-
-;; Add spell checking with `flyspell-mode' and `flyspell-prog-mode'
-;; where appropriate (e.g. in strings and comments when prog-mode is
-;; enabled).
-
-;; Enable `imenu' with `ido-completing-read' and automatic rescans.
-;; try `ido-hacks'
-
-;; Try `magit'
-
-;; Experiment with color themes.
