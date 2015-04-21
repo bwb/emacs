@@ -52,7 +52,7 @@
  'go-snippets
  'ido-ubiquitous
  'js2-mode
- 'json-reformat
+ 'json-mode
  'keyfreq
  'lua-mode
  'markdown-mode
