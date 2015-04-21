@@ -63,6 +63,7 @@
  'paredit
  'paredit-everywhere
  'protobuf-mode
+ 'rainbow-delimiters
  'rnc-mode
  'smex
  'typing

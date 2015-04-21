@@ -24,6 +24,7 @@
   (electric-pair-mode)
   (hl-line-mode)
   (paredit-everywhere-mode)
+  (rainbow-delimiters-mode)
   (local-set-key (kbd "C-M-o") 'bwb-prog-reformat-buffer))
 
 ;;;###autoload
