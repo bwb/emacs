@@ -53,7 +53,6 @@
 (defun bwb-go-conf ()
   (bwb-go-bind-keys)
   (bwb-go-company-backends)
-  (electric-pair-mode)
   (go-eldoc-setup))
 
 ;;;###autoload

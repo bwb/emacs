@@ -9,7 +9,7 @@
         python-fill-docstring-style 'pep-257-nn))
 
 ;;;###autoload
-(defun bwb-set-virtualenv (new-venv)
+(defun bwb-python-set-virtualenv (new-venv)
   (interactive "DSet VIRTUAL_ENV: ")
   (setq old-venv (getenv "VIRTUAL_ENV"))
   (setenv "VIRTUAL_ENV" new-venv)
