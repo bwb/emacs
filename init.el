@@ -31,7 +31,7 @@
 (setq package-user-dir (concat user-emacs-directory "packages"))
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages") t)
+             '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 (unless (package-installed-p 'package+)
   (package-install 'package+))
