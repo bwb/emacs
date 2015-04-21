@@ -55,6 +55,7 @@
  'json-mode
  'keyfreq
  'lua-mode
+ 'magit
  'markdown-mode
  'multi-term
  'occur-x
