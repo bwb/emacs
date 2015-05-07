@@ -1,6 +1,15 @@
 ;;; Configure `go-mode'.
 ;;; http://dominik.honnef.co/posts/2013/03/writing_go_in_emacs/
 
+(setq bwb-go-essential-packages
+      '("golang.org/x/net/context"
+        "golang.org/x/tools/cmd/stringer"
+        "golang.org/x/tools/cmd/vet"
+        "github.com/golang/lint/golint"
+        "github.com/nsf/gocode"
+        "github.com/rogpeppe/godef"
+        "github.com/tools/godep"))
+
 ;;;###autoload
 (defun bwb-go-end-of-line-newline-and-indent ()
   (interactive)
