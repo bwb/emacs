@@ -4,11 +4,17 @@
 (setq bwb-go-essential-packages
       '("golang.org/x/net/context"
         "golang.org/x/tools/cmd/stringer"
+        "golang.org/x/tools/cmd/oracle"
         "golang.org/x/tools/cmd/vet"
         "github.com/golang/lint/golint"
         "github.com/nsf/gocode"
         "github.com/rogpeppe/godef"
-        "github.com/tools/godep"))
+        "github.com/tools/godep")
+      bwb-go-useful-packages
+      '("github.com/awslabs/aws-sdk-go"
+        "github.com/etsy/hound/cmds/..."
+        "github.com/golang/protobuf/proto"
+        "github.com/golang/protoc-gen-go"))
 
 ;;;###autoload
 (defun bwb-go-end-of-line-newline-and-indent ()
