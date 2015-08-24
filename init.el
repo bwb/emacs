@@ -55,7 +55,9 @@
  'json-mode
  'keyfreq
  'lua-mode
- 'magit
+;; TODO magit upgrade fails:
+;; "package-compute-transaction: Package `emacs-24.4' is unavailable"
+;; 'magit
  'markdown-mode
  'multi-term
  'occur-x
