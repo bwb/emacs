@@ -51,6 +51,7 @@
  'go-mode
  'go-snippets
  'ido-ubiquitous
+ 'jq-mode
  'js2-mode
  'json-mode
  'keyfreq
