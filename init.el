@@ -42,6 +42,9 @@
  'ace-jump-mode
  'ace-link
  'ace-window
+ 'cider
+ 'clojure-cheatsheet
+ 'clojure-mode
  'company
  'company-go
  'dockerfile-mode
@@ -68,6 +71,7 @@
  'paredit-everywhere
  'protobuf-mode
  'rainbow-delimiters
+ 'rich-minority
  'rnc-mode
  'smex
  'typing
