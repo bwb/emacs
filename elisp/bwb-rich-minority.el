@@ -6,8 +6,11 @@
   (rich-minority-mode 1)
   (setq rm-blacklist
         '(" $"
+          " =>"
+          " Anzu"
           " company"
           " MRev"
+          " Par-"
           " Paredit"
           " WS"
           " yas")))
