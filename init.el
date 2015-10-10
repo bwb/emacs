@@ -42,11 +42,14 @@
  'ace-jump-mode
  'ace-link
  'ace-window
+ 'aggressive-indent
+ 'anzu
  'cider
  'clojure-cheatsheet
  'clojure-mode
  'company
  'company-go
+ 'company-web
  'dockerfile-mode
  'epc
  'exec-path-from-shell
@@ -69,12 +72,14 @@
  'package+
  'paredit
  'paredit-everywhere
+ 'popwin
  'protobuf-mode
  'rainbow-delimiters
  'rich-minority
  'rnc-mode
  'smex
  'typing
+ 'web-mode
  'writegood-mode
  'yaml-mode
  'yasnippet)
