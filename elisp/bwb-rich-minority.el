@@ -9,6 +9,7 @@
           " =>"
           " Anzu"
           " company"
+          " ElDoc"
           " MRev"
           " Par-"
           " Paredit"

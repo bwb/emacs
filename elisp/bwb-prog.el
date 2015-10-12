@@ -21,6 +21,7 @@
 (defun bwb-prog-conf ()
   (bwb-prog-hl-line)
   (bwb-prog-saveplace)
+  (eldoc-mode)
   (electric-pair-mode)
   (hl-line-mode)
   (paredit-everywhere-mode)
