@@ -3,18 +3,24 @@
 
 (setq bwb-go-essential-packages
       '("golang.org/x/net/context"
-        "golang.org/x/tools/cmd/stringer"
+        "golang.org/x/tools/cmd/benchcmp"
+        "golang.org/x/tools/cmd/goimports"
         "golang.org/x/tools/cmd/oracle"
+        "golang.org/x/tools/cmd/stringer"
         "golang.org/x/tools/cmd/vet"
         "github.com/golang/lint/golint"
         "github.com/nsf/gocode"
         "github.com/rogpeppe/godef"
         "github.com/tools/godep")
       bwb-go-useful-packages
-      '("github.com/awslabs/aws-sdk-go"
+      '("github.com/aws/aws-sdk-go/..."
         "github.com/etsy/hound/cmds/..."
         "github.com/golang/protobuf/proto"
-        "github.com/golang/protoc-gen-go"))
+        "github.com/golang/protoc-gen-go"
+        "github.com/kisielk/errcheck"
+        "github.com/mattn/go-sqlite3"
+        ;; "google.golang.org/api/{service}/{version}"
+        ))
 
 ;;;###autoload
 (defun bwb-go-end-of-line-newline-and-indent ()
@@ -68,6 +74,7 @@
 (defun bwb-go-conf ()
   (bwb-go-bind-keys)
   (bwb-go-company-backends)
+  (setq gofmt-command "goimports" )
   (go-eldoc-setup))
 
 ;;;###autoload
