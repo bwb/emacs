@@ -42,7 +42,6 @@
  'ace-jump-mode
  'ace-link
  'ace-window
- 'aggressive-indent
  'anzu
  'cider
  'clojure-cheatsheet
