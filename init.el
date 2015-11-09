@@ -48,6 +48,7 @@
  'clojure-mode
  'company
  'company-go
+ 'company-jedi
  'company-web
  'dockerfile-mode
  'epc

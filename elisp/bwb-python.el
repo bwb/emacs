@@ -2,11 +2,7 @@
 
 ;;;###autoload
 (defun bwb-python-setup ()
-  ;; https://github.com/tkf/emacs-jedi/issues/120
-  (set (make-local-variable 'ac-max-width) 0.5)
-  (setq jedi:complete-on-dot t
-        jedi:get-in-function-call-delay 100
-        python-fill-docstring-style 'pep-257-nn))
+  (add-to-list 'company-backends 'company-jedi))
 
 ;;;###autoload
 (defun bwb-python-set-virtualenv (new-venv)
@@ -16,6 +12,4 @@
   (message "VIRTUAL_ENV was %s, now %s" old-venv new-venv))
 
 ;;;###autoload
-(progn
-  (add-hook 'python-mode-hook 'jedi:setup)
-  (add-hook 'python-mode-hook 'bwb-python-setup))
+(add-hook 'python-mode-hook 'bwb-python-setup)
