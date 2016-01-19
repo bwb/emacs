@@ -33,7 +33,7 @@
           ("M-M" . term-send-forward-kill-word)         ; forward-kill-word
           ("M-DEL" . term-send-raw-meta)                ; backward-kill-word
           ("M-N" . term-send-backward-kill-word)        ; unix-word-rubout?!
-          ("M-o" . term-send-backspace)
+          ;; ("M-o" . term-send-backspace) ; collides with `ace-window`
           ;; History movement
           ("M-p" . term-send-up)
           ("M-n" . term-send-down)
