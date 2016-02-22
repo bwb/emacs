@@ -19,6 +19,7 @@
         "github.com/golang/protoc-gen-go"
         "github.com/kisielk/errcheck"
         "github.com/mattn/go-sqlite3"
+        "rsc.io/sizeof"
         ;; "google.golang.org/api/{service}/{version}"
         ))
 
