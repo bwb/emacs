@@ -55,6 +55,7 @@
  'exec-path-from-shell
  'go-eldoc
  'go-mode
+ 'go-rename
  'go-snippets
  'ido-ubiquitous
  'jq-mode
@@ -77,6 +78,7 @@
  'rainbow-delimiters
  'rich-minority
  'rnc-mode
+ 'rust-mode
  'smex
  'typing
  'web-mode
@@ -164,8 +166,7 @@
       enable-recursive-minibuffers t
       indicate-empty-lines t
       inhibit-startup-screen t
-      require-final-newline "ask"
-      visible-bell t)
+      require-final-newline "ask")
 
 ;;; Set buffer-local defaults.
 

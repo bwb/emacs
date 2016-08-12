@@ -1,0 +1,4 @@
+# name: Rust mutable variable binding with type annotations.
+# key: lmt
+# --
+let mut $1: $2 = $3;

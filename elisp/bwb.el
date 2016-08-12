@@ -65,7 +65,8 @@ SYMBOL becomes *SYMBOL*, with point after the right *.  Otherwise
   (setq
    mac-command-modifier 'meta
    browse-url-generic-program "open"
-   ispell-program-name "aspell")
+   ispell-program-name "aspell"
+   ring-bell-function 'ignore)
   (bwb-fix-mac-os-x-env))
 
 (defun bwb-init-work ()

@@ -1,0 +1,4 @@
+# name: Rust vec!
+# key: v
+# --
+vec![$1]
