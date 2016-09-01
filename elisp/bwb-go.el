@@ -1,28 +1,6 @@
 ;;; Configure `go-mode'.
 ;;; http://dominik.honnef.co/posts/2013/03/writing_go_in_emacs/
 
-(setq bwb-go-essential-packages
-      '("golang.org/x/net/context"
-        "golang.org/x/tools/cmd/benchcmp"
-        "golang.org/x/tools/cmd/goimports"
-        "golang.org/x/tools/cmd/oracle"
-        "golang.org/x/tools/cmd/stringer"
-        "golang.org/x/tools/cmd/vet"
-        "github.com/golang/lint/golint"
-        "github.com/nsf/gocode"
-        "github.com/rogpeppe/godef"
-        "github.com/tools/godep")
-      bwb-go-useful-packages
-      '("github.com/aws/aws-sdk-go/..."
-        "github.com/etsy/hound/cmds/..."
-        "github.com/golang/protobuf/proto"
-        "github.com/golang/protoc-gen-go"
-        "github.com/kisielk/errcheck"
-        "github.com/mattn/go-sqlite3"
-        "rsc.io/sizeof"
-        ;; "google.golang.org/api/{service}/{version}"
-        ))
-
 ;;;###autoload
 (defun bwb-go-end-of-line-newline-and-indent ()
   (interactive)

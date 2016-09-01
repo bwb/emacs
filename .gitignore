@@ -11,4 +11,4 @@ tramp
 .keyfreq*
 .ido.last
 .recentf
-
+.unused-custom.el

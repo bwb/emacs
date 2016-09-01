@@ -110,6 +110,9 @@
 (eval-when-compile (require 'cl))
 (require 'bwb)
 
+;;; Don't use custom.
+(setq custom-file (concat user-emacs-directory ".unused-custom.el"))
+
 ;;; Perform OS-specific initialization.
 
 (cond
