@@ -1,6 +1,5 @@
 ;;; Configure `magit-mode'.
 
 ;;;###autoload
-;;(progn
-;;  (require 'magit)
-;;  (setq magit-last-seen-setup-instructions "1.4.0"))
+(with-eval-after-load 'magit-mode
+  (global-set-key (kbd "<f10>") 'magit-status))
