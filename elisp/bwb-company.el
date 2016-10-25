@@ -19,10 +19,11 @@
 
 ;;;###autoload
 (defun bwb-company-conf ()
+  (with-eval-after-load 'company
+    (company-flx-mode +1))
   (company-mode t)
   (local-set-key (kbd "M-SPC") 'company-complete)
   (setq company-tooltip-limit 20
         company-idle-delay nil))
-
 ;;;###autoload
 (add-hook 'prog-mode-hook 'bwb-company-conf)

@@ -47,6 +47,7 @@
  'clojure-cheatsheet
  'clojure-mode
  'company
+ 'company-flx
  'company-go
  'company-jedi
  'company-web
