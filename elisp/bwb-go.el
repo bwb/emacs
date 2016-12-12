@@ -51,6 +51,7 @@
 
 ;;;###autoload
 (defun bwb-go-conf ()
+  (require 'go-guru)
   (bwb-go-bind-keys)
   (bwb-go-company-backends)
   (setq gofmt-command "goimports" )

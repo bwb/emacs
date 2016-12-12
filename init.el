@@ -55,6 +55,7 @@
  'epc
  'exec-path-from-shell
  'go-eldoc
+ 'go-guru
  'go-mode
  'go-rename
  'go-snippets
