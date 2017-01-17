@@ -1,0 +1,5 @@
+# name: Rust mutable variable binding with type inference.
+# key: lm
+# expand-env: ((yas/indent-line 'fixed))
+# --
+let mut $1 = $2;

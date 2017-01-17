@@ -27,7 +27,6 @@
 ;; http://melpa.org/
 ;;
 ;; Emacs 24+ has built-in package management.
-
 (setq package-user-dir (concat user-emacs-directory "packages"))
 (require 'package)
 (add-to-list 'package-archives
