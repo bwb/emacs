@@ -8,7 +8,7 @@
    mathematical reasoning pretty extensively. Rather, computer science
    is like engineering; it is all about getting something to do
    something, rather than just dealing with abstractions, as in the
-   pre-Smith geology
+   pre-Smith geology.
 
    -- Richard Feynman, Feynman Lectures on Computation, 1970
 
