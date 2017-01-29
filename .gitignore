@@ -4,10 +4,9 @@
 .smex-items
 auto-save-list
 backup
-elisp/elisp-autoloads.el
 packages
-saved-places
-tramp
+.saved-places
+.tramp
 .keyfreq*
 .ido.last
 .recentf
