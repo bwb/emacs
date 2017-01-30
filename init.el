@@ -204,7 +204,7 @@
 (use-package hl-line
   :ensure t)
 
-(use-package ibuffer-mode
+(use-package ibuffer
   :config
   (global-set-key (kbd "C-x C-b") 'ibuffer))
 
@@ -368,7 +368,7 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
 (use-package rainbow-delimiters
   :ensure t)
 
-(use-package recentf-mode
+(use-package recentf
   :config
   (setq recentf-save-file (concat user-emacs-directory ".recentf")))
 
@@ -473,7 +473,7 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
   (scroll-bar-mode -1)
   (tool-bar-mode -1)
   ;; TODO try other fonts
-  (add-to-list 'default-frame-alist) '(font . "Inconsolata-14")
+  (add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
   (setq insert-directory-program "gls"
         mac-command-modifier 'meta
         browse-url-generic-program "open"
