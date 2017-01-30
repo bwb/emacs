@@ -309,9 +309,7 @@
                               ("C-m" . term-send-raw)
                               ("M-," . term-send-input)))
   (global-set-key (kbd "C-x t") 'multi-term-next)
-  (global-set-key (kbd "C-x T") 'multi-term)
-  ;; Create a terminal at startup.
-  (multi-term))
+  (global-set-key (kbd "C-x T") 'multi-term))
 
 (use-package nxml-mode
   :config
@@ -463,6 +461,9 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
 (use-package yasnippet
   :ensure t
   :config
+  (defun bwb-yasnippet-disable ()
+    (yas-minor-mode -1))
+  (add-hook 'term-mode-hook 'bwb-yasnippet-disable)
   (yas-global-mode))
 
 ;;; Conditional Configuration
@@ -476,9 +477,9 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
   (scroll-bar-mode -1)
   (tool-bar-mode -1)
   ;; TODO try other fonts
-  (add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
-  (setq insert-directory-program "gls"
-        mac-command-modifier 'meta
+  ;; (add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
+  (exec-path-from-shell-initialize)
+  (setq mac-command-modifier 'meta
         browse-url-generic-program "open"
         ispell-program-name "aspell"
         ring-bell-function 'ignore))
@@ -487,7 +488,7 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
  ((string-match "linux" system-configuration)
   (bwb-init-linux))
  ((string-match "darwin" system-configuration)
-  (bwb-init-mac-os-x))
+  (bwb-init-macos))
  (t
   (message "no `system-configuration' specific settings found")))
 
@@ -555,4 +556,5 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
 
 ;;; Start processes.
 
+(multi-term)
 (server-start)
