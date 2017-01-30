@@ -70,6 +70,7 @@
 (use-package cider
   :ensure t
   :config
+  (setq cider-repl-use-pretty-printing t)
   (add-hook 'cider-repl-mode-hook 'paredit-mode))
 
 (use-package clojure-cheatsheet
