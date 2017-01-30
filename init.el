@@ -83,6 +83,9 @@
 (use-package clojure-mode-extra-font-locking
   :ensure t)
 
+(use-package clojure-snippets
+  :ensure t)
+
 (use-package company
   :ensure t
   ;; TODO use custom faces
