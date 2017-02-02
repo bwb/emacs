@@ -30,3 +30,9 @@
       natural order of things.
 
    -- Douglas Adams, "The Salmon of Doubt"
+
+.. epigraphs::
+
+   Every man is like the company he wont to keep.
+
+   -- Euripedes, "Phoenix", Frag. 809
