@@ -356,7 +356,7 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
           (insert "*")
           (forward-thing 'symbol)
           (insert "*"))))
-  (define-key prog-mode-map (kbd "C-c *") 'bwb-earmuff-symbol)
+  (define-key prog-mode-map (kbd "C-c *") 'bwb-prog-earmuff-symbol)
 
   (defun bwb-prog-conf ()
     (eldoc-mode)
