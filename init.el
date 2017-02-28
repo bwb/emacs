@@ -70,7 +70,10 @@
 (use-package cider
   :ensure t
   :config
-  (setq cider-repl-use-pretty-printing t)
+  (setq cider-repl-pop-to-buffer-on-connect 'display-only
+        cider-repl-use-pretty-printing t)
+  (add-hook 'cider-mode-hook 'cider-company-enable-fuzzy-completion)
+  (add-hook 'cider-repl-mode-hook 'cider-company-enable-fuzzy-completion)
   (add-hook 'cider-repl-mode-hook 'paredit-mode))
 
 (use-package clojure-cheatsheet
@@ -95,11 +98,6 @@
   (setq company-tooltip-limit 20
         company-idle-delay nil)
   (add-hook 'after-init-hook 'global-company-mode))
-
-(use-package company-flx
-  :ensure t
-  :config
-  (company-flx-mode +1))
 
 (use-package company-go
   :ensure t)
