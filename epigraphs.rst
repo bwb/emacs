@@ -31,7 +31,7 @@
 
    -- Douglas Adams, "The Salmon of Doubt"
 
-.. epigraphs::
+.. epigraph::
 
    Every man is like the company he wont to keep.
 
