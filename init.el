@@ -222,7 +222,7 @@
         ido-save-directory-list-file (concat user-emacs-directory ".ido.last"))
   (ido-mode t))
 
-(use-package ido-ubiquitous
+(use-package ido-completing-read+
   :ensure t
   :config
   (ido-ubiquitous-mode t))
@@ -416,10 +416,12 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
 (use-package sublime-themes
   :ensure t
   :config
-  (load-theme 'mccarthy t)
+  ;; Previously using mccarthy
+  ;; (load-theme 'mccarthy t)
+  ;; mccarthy hl-line-mode may require (set-face-attribute hl-line-face nil :underline nil)
+  (load-theme 'granger t)
   (with-eval-after-load 'hl-line
-    (set-face-background hl-line-face "white")
-    (set-face-attribute hl-line-face nil :underline nil)))
+    (set-face-background hl-line-face "grey10")))
 
 (use-package tramp-cache
   :config
