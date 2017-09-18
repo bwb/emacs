@@ -126,6 +126,7 @@
         (dired-find-alternate-file)
       (dired-find-file)))
 
+  (setq dired-dwim-target t)
   (define-key dired-mode-map (kbd "C-M-o") 'dired-omit-mode)
   ;; Hides `dired-tree-up'
   (define-key dired-mode-map (kbd "C-M-u") 'th-dired-up-directory)
