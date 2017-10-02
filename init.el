@@ -207,6 +207,9 @@
 (use-package go-snippets
   :ensure t)
 
+(use-package graphviz-dot-mode
+  :ensure t)
+
 ;;; TODO try helm (and helm-powered versions of imenu, occur,
 ;;; find-files, and (Projectile's?) browse-project).
 
