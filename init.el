@@ -267,6 +267,9 @@
   (keyfreq-mode 1)
   (keyfreq-autosave-mode 1))
 
+(use-package kotlin-mode
+  :ensure t)
+
 (use-package markdown-mode
   :ensure t)
 
