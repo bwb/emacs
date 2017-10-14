@@ -278,6 +278,9 @@
 (use-package kotlin-mode
   :ensure t)
 
+(use-package lua-mode
+  :ensure t)
+
 (use-package markdown-mode
   :ensure t)
 
