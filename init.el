@@ -435,8 +435,6 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
 (use-package sublime-themes
   :ensure t
   :config
-  ;; Previously using mccarthy
-  ;; (load-theme 'mccarthy t)
   ;; mccarthy hl-line-mode may require (set-face-attribute hl-line-face nil :underline nil)
   (load-theme 'granger t)
   (with-eval-after-load 'hl-line
@@ -496,8 +494,7 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
   "Tune Emacs for macOS."
   (scroll-bar-mode -1)
   (tool-bar-mode -1)
-  ;; TODO try other fonts
-  ;; (add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
+  (set-default-font "Source Code Pro 12")
   (setq mac-command-modifier 'meta
         browse-url-generic-program "open"
         ispell-program-name "aspell"
