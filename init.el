@@ -148,9 +148,6 @@
         ediff-window-setup-function 'ediff-setup-windows-plain
         ediff-keep-variants nil))
 
-(use-package exec-path-from-shell
-  :ensure t)
-
 (use-package expand-region
   :ensure t
   :config
@@ -292,7 +289,8 @@
 (use-package multi-term
   :ensure t
   :config
-  (setq multi-term-program "/bin/bash")
+  (setq multi-term-program "/bin/bash"
+        multi-term-program-switches "--login")
 
   (defun bwb-term-mode ()
     (define-key term-raw-map (kbd "C-y") 'term-paste)
@@ -500,7 +498,6 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
   (tool-bar-mode -1)
   ;; TODO try other fonts
   ;; (add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
-  (exec-path-from-shell-initialize)
   (setq mac-command-modifier 'meta
         browse-url-generic-program "open"
         ispell-program-name "aspell"
