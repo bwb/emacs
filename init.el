@@ -126,6 +126,9 @@
         (dired-find-alternate-file)
       (dired-find-file)))
 
+  (when (string= system-type "darwin")
+    (setq dired-use-ls-dired nil))
+
   (setq dired-dwim-target t)
   (define-key dired-mode-map (kbd "C-M-o") 'dired-omit-mode)
   ;; Hides `dired-tree-up'
@@ -501,12 +504,12 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
         ring-bell-function 'ignore))
 
 (cond
- ((string-match "linux" system-configuration)
+ ((string= "linux" system-type)
   (bwb-init-linux))
- ((string-match "darwin" system-configuration)
+ ((string= "darwin" system-type)
   (bwb-init-macos))
  (t
-  (message "no `system-configuration' specific settings found")))
+  (message "no `system-type' specific settings found")))
 
 ;; Here's a template for `system-name' specific configuration.
 ;; (cond
