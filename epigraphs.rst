@@ -36,3 +36,12 @@
    Every man is like the company he wont to keep.
 
    -- Euripedes, "Phoenix", Frag. 809
+
+.. epigraph::
+
+   He believes that the present is rooted in the past, and we must
+   know the sources of art if it is to be coherent. He does not
+   believe in slavish copying. He believes the past should be
+   transformed into art for our time
+
+   -- The Art of Hermann Zapf
