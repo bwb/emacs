@@ -151,6 +151,12 @@
         ediff-window-setup-function 'ediff-setup-windows-plain
         ediff-keep-variants nil))
 
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (when (string= system-type "darwin")
+    (exec-path-from-shell-initialize)))
+
 (use-package expand-region
   :ensure t
   :config
