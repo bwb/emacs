@@ -480,6 +480,11 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
               term-mode))
   (global-whitespace-mode))
 
+(use-package writegood-mode
+  :ensure t
+  :config
+  (global-set-key (kbd "C-c g") 'writegood-mode))
+
 (use-package yaml-mode
   :ensure t
   :config
