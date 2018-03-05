@@ -82,9 +82,6 @@
   (add-hook 'cider-repl-mode-hook 'cider-company-enable-fuzzy-completion)
   (add-hook 'cider-repl-mode-hook 'paredit-mode))
 
-(use-package clojure-cheatsheet
-  :ensure t)
-
 (use-package clojure-mode
   :ensure t
   :config
