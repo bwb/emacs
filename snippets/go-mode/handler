@@ -1,0 +1,6 @@
+# name: http.Handler func
+# key: handler
+# --
+func ${1:name}(w http.ResponseWriter, r *http.Request) {
+     $0
+}

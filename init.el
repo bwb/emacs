@@ -103,7 +103,10 @@
   (add-hook 'after-init-hook 'global-company-mode))
 
 (use-package company-go
-  :ensure t)
+  :ensure t
+  :config
+  (with-eval-after-load 'company
+    (add-to-list 'company-backends 'company-go)))
 
 (use-package company-web
   :ensure t)

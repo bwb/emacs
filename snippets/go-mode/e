@@ -1,0 +1,6 @@
+# name: if err != nil block
+# key: e
+# --
+if err != nil {
+   $0
+}
