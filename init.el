@@ -293,7 +293,9 @@
 (use-package magit
   :ensure t
   :config
-  (global-set-key (kbd "<f10>") 'magit-status))
+  (global-set-key (kbd "<f10>") 'magit-status)
+  (setq magit-log-arguments '("--graph" "--decorate" "++header" "-n256")
+        magit-merge-arguments '("--ff-only")))
 
 (use-package multi-term
   :ensure t
