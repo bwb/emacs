@@ -1,0 +1,9 @@
+# name: HTTP middleware
+# key: middleware
+# --
+func ${1:name}(next http.HandlerFunc) http.HandlerFunc {
+     return func(w http.ResponseWriter, r *http.Request) {
+            $0
+            next.ServeHTTP(w, r)
+     }
+}
