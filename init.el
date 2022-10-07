@@ -524,7 +524,7 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
   "Tune Emacs for macOS."
   (scroll-bar-mode -1)
   (tool-bar-mode -1)
-  (set-default-font "Source Code Pro 12")
+  (set-frame-font "Source Code Pro 12")
   (setq mac-command-modifier 'meta
         browse-url-generic-program "open"
         ispell-program-name "aspell"
