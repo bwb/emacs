@@ -297,7 +297,7 @@
 (use-package multi-term
   :ensure t
   :config
-  (setq multi-term-program "/bin/bash"
+  (setq multi-term-program "/usr/local/bin/bash"
         multi-term-program-switches "--login")
 
   (defun bwb-term-mode ()
