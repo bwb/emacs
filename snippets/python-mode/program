@@ -4,22 +4,9 @@
 # --
 # -*- coding: utf-8
 """$1."""
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
-import argparse
-
-
-def _argparser():
-    ap = argparse.ArgumentParser()
-    arg = ap.add_argument
-    ap.set_defaults()
-    return ap
 
 
 def main(args=None):
-    ns = _argparser().parse_args(args)
     $0
 
 
