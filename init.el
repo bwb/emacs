@@ -445,6 +445,23 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
   :config
   ;; mccarthy hl-line-mode may require (set-face-attribute hl-line-face nil :underline nil)
   (load-theme 'granger t)
+  (custom-theme-set-faces
+   'granger
+   ;; http://colorbrewer2.org is a good source of color schemes
+   ;; this will do for now
+   `(default                          ((t (:foreground "#f7f7f7" :background ,"#000000"))))
+   ;; greys
+   `(font-lock-constant-face          ((t (:foreground "#f7f7f7"))))
+   `(font-lock-string-face            ((t (:foreground "#d9d9d9"))))
+   `(font-lock-comment-face           ((t (:foreground "#969696"))))
+   `(font-lock-comment-delimiter-face ((t (:foreground "#969696"))))
+   `(font-lock-doc-string-face        ((t (:foreground "#969696"))))
+   ;; blues
+   `(font-lock-variable-name-face     ((t (:foreground "#eff3ff"))))
+   `(font-lock-keyword-face           ((t (:foreground "#9ecae1"))))
+   `(font-lock-function-name-face     ((t (:foreground "#6baed6"))))
+   `(font-lock-type-face              ((t (:foreground "#3182bd"))))
+   `(font-lock-builtin-face           ((t (:foreground "#08519c")))))
   (with-eval-after-load 'hl-line
     (set-face-background hl-line-face "grey10")))
 
