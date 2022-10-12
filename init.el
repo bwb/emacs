@@ -285,7 +285,8 @@
   :ensure t)
 
 (use-package markdown-mode
-  :ensure t)
+  :ensure t
+  :mode ("\\.md\\'" . gfm-mode))
 
 (use-package magit
   :ensure t
