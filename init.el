@@ -444,6 +444,8 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
 (use-package sublime-themes
   :ensure t
   :config
+  ;; Emacs 27.1 changed theme-activation
+  (setq custom--inhibit-theme-enable nil)
   ;; mccarthy hl-line-mode may require (set-face-attribute hl-line-face nil :underline nil)
   (load-theme 'granger t)
   (custom-theme-set-faces
