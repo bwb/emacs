@@ -286,7 +286,9 @@
 
 (use-package markdown-mode
   :ensure t
-  :mode ("\\.md\\'" . gfm-mode))
+  :mode ("\\.md\\'" . gfm-mode)
+  :config
+  (set-face-attribute 'markdown-code-face nil :family "Source Code Pro"))
 
 (use-package magit
   :ensure t
