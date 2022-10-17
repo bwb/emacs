@@ -456,19 +456,21 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
    ;; this will do for now
    `(default                          ((t (:foreground "#f7f7f7" :background ,"#000000"))))
    ;; greys
-   `(font-lock-constant-face          ((t (:foreground "#f7f7f7"))))
-   `(font-lock-string-face            ((t (:foreground "#d9d9d9"))))
-   `(font-lock-comment-face           ((t (:foreground "#969696"))))
-   `(font-lock-comment-delimiter-face ((t (:foreground "#969696"))))
-   `(font-lock-doc-string-face        ((t (:foreground "#969696"))))
+   `(font-lock-string-face            ((t (:foreground "#cccccc")))) ; stringy
+   `(font-lock-comment-face           ((t (:foreground "#969696")))) ; commenty
+   `(font-lock-comment-delimiter-face ((t (:foreground "#969696")))) ; commenty
+   `(font-lock-doc-string-face        ((t (:foreground "#969696")))) ; commenty
    ;; blues
-   `(font-lock-variable-name-face     ((t (:foreground "#eff3ff"))))
-   `(font-lock-keyword-face           ((t (:foreground "#9ecae1"))))
-   `(font-lock-function-name-face     ((t (:foreground "#6baed6"))))
-   `(font-lock-type-face              ((t (:foreground "#3182bd"))))
-   `(font-lock-builtin-face           ((t (:foreground "#08519c")))))
+   `(font-lock-function-name-face     ((t (:foreground "#6baed6")))) ; functiony
+   `(font-lock-keyword-face           ((t (:foreground "#6baed6")))) ; functiony
+   `(font-lock-builtin-face           ((t (:foreground "#6baed6")))) ; functiony
+   `(font-lock-variable-name-face     ((t (:foreground "#3182bd")))) ; typey
+   `(font-lock-type-face              ((t (:foreground "#3182bd")))) ; typey
+   `(font-lock-constant-face          ((t (:foreground "#3182bd")))) ; typey
+   ;; reds
+   `(font-lock-warning-face           ((t (:foreground "#de2d26")))))
   (with-eval-after-load 'hl-line
-    (set-face-background hl-line-face "grey10")))
+    (set-face-background hl-line-face "1a1a1a")))
 
 (use-package tramp-cache
   :config
