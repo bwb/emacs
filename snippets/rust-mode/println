@@ -1,5 +1,0 @@
-# name: Rust println! macro.
-# key: p
-# expand-env: ((yas/indent-line 'fixed))
-# --
-println!("$1"$2);

@@ -1,4 +1,0 @@
-# name: Rust variable binding.
-# key: l
-# --
-let $1 = $2;

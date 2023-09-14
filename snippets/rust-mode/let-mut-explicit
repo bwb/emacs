@@ -1,5 +1,0 @@
-# name: Rust mutable variable binding with explicit type.
-# key: lmt
-# expand-env: ((yas/indent-line 'fixed))
-# --
-let mut $1: $2 = $3;

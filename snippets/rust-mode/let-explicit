@@ -1,5 +1,0 @@
-# name: Rust variable binding with explicit type.
-# key: lt
-# expand-env: ((yas/indent-line 'fixed))
-# --
-let $1: $2 = $3;

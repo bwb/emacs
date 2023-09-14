@@ -1,6 +1,0 @@
-# name: Rust for loop
-# key: f
-# --
-for $1 in $2 {
-    $0
-}

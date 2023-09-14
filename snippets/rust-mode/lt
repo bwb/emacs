@@ -1,4 +1,0 @@
-# name: Rust variable binding with type annotations.
-# key: lt
-# --
-let $1: $2 = $3;

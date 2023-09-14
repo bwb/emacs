@@ -1,4 +1,0 @@
-# name: Rust mutable variable binding.
-# key: lm
-# --
-let mut $1 = $2;
