@@ -422,6 +422,11 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
           " WS"
           " yas")))
 
+(use-package rust-mode
+  :ensure t
+  :config
+  (setq rust-format-on-save t))
+
 (use-package saveplace
   :config
   (setq save-place-file (concat user-emacs-directory ".saved-places")
