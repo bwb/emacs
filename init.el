@@ -288,7 +288,11 @@
   :ensure t
   :mode ("\\.md\\'" . gfm-mode)
   :config
-  (set-face-attribute 'markdown-code-face nil :family "Source Code Pro"))
+  ;; See the `markdown-faces' customization group for this mode for face names.
+  (set-face-attribute 'markdown-code-face nil :family "Source Code Pro")
+  (set-face-attribute 'markdown-gfm-checkbox-face nil :inherit 'font-lock-comment-face)
+  (set-face-attribute 'markdown-list-face nil :inherit 'font-lock-builtin-face)
+  (set-face-attribute 'markdown-plain-url-face nil :inherit 'font-lock-constant-face))
 
 (use-package magit
   :ensure t
@@ -467,8 +471,11 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
    `(font-lock-variable-name-face     ((t (:foreground "#3182bd")))) ; typey
    `(font-lock-type-face              ((t (:foreground "#3182bd")))) ; typey
    `(font-lock-constant-face          ((t (:foreground "#3182bd")))) ; typey
-   ;; reds
-   `(font-lock-warning-face           ((t (:foreground "#de2d26")))))
+   ;; purples
+   `(font-lock-warning-face           ((t (:foreground "#756bb1"))))
+   `(warning                          ((t (:foreground "#756bb1"))))
+   `(error                            ((t (:foreground "#6a51a3")))))
+
   (with-eval-after-load 'hl-line
     (set-face-background hl-line-face "1a1a1a")))
 
