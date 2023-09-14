@@ -1,4 +1,5 @@
-# name: Rust println!
+# -*- mode: snippet -*-
+# name: println!
 # key: p
 # --
-println!("$1"$2);
+println!("$1"$2);$0
