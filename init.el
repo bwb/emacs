@@ -431,7 +431,21 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
 (use-package rust-mode
   :ensure t
   :config
-  (setq rust-format-on-save t))
+  (setq rust-format-on-save t)
+
+  (defun bwb-rust-new-line-below ()
+    (interactive)
+    (end-of-line)
+    (newline-and-indent))
+
+  (defun bwb-rust-semicolon-new-line-below ()
+    (interactive)
+    (end-of-line)
+    (insert ";")
+    (newline-and-indent))
+
+  (define-key rust-mode-map (kbd "C-<return>") 'bwb-rust-new-line-below)
+  (define-key rust-mode-map (kbd "C-S-<return>") 'bwb-rust-semicolon-new-line-below))
 
 (use-package saveplace
   :config

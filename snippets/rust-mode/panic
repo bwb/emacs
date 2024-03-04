@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: panic with debug-print
+# key: panic
+# --
+panic!("$1{:?}"$2)$0
