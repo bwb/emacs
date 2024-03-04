@@ -73,6 +73,12 @@
   ;; Open the link at point in the url-generic-program.
   (global-set-key (kbd "C-x ;") 'browse-url))
 
+(use-package cc-mode
+  :ensure t
+  :config
+  (add-to-list 'c-default-style
+               '(c-mode . "linux")))
+
 (use-package cider
   :ensure t
   :config
