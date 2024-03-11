@@ -310,8 +310,7 @@
 (use-package multi-term
   :ensure t
   :config
-  (setq multi-term-program "/usr/local/bin/bash"
-        multi-term-program-switches "--login")
+  (setq multi-term-program-switches "--login")
 
   (defun bwb-term-mode ()
     (define-key term-raw-map (kbd "C-y") 'term-paste)
@@ -565,6 +564,7 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
   (tool-bar-mode -1)
   (set-frame-font "Source Code Pro 12")
   (setq mac-command-modifier 'meta
+        multi-term-program "/opt/homebrew/bin/bash"
         browse-url-generic-program "open"
         ispell-program-name "aspell"
         ring-bell-function 'ignore))
