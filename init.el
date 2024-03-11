@@ -221,9 +221,6 @@
 (use-package go-rename
   :ensure t)
 
-(use-package go-snippets
-  :ensure t)
-
 (use-package graphviz-dot-mode
   :ensure t)
 
