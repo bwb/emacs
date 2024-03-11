@@ -148,9 +148,6 @@
   (setq dired-omit-files "^\\..*")
   (define-key dired-mode-map (kbd "C-M-o") 'dired-omit-mode))
 
-(use-package dockerfile-mode
-  :ensure t)
-
 (use-package ediff
   :config
   (setq ediff-split-window-function 'split-window-horizontally
