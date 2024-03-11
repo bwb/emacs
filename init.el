@@ -392,14 +392,10 @@ SYMBOL becomes *SYMBOL*, with point after the right *. Otherwise
   (defun bwb-prog-conf ()
     (eldoc-mode)
     (electric-pair-mode)
-    (hl-line-mode)
-    (rainbow-delimiters-mode))
+    (hl-line-mode))
   (add-hook 'prog-mode-hook 'bwb-prog-conf))
 
 ;;; TODO try Projectile.
-
-(use-package rainbow-delimiters
-  :ensure t)
 
 (use-package recentf
   :config
